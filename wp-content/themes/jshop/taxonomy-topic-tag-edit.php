@@ -5,8 +5,10 @@
  *
  * @package bbPress
  * @subpackage Theme
+ 
  */
 
+ 
 get_header(); ?>
 
 	<?php do_action( 'bbp_before_main_content' ); ?>

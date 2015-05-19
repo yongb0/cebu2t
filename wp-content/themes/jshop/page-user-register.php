@@ -8,6 +8,7 @@
  */
 
 // No logged in users
+
 bbp_logged_in_redirect();
 
 // Begin Template

@@ -11,6 +11,7 @@
 bbp_logged_in_redirect();
 
 // Begin Template
+
 get_header(); ?>
 
 	<?php do_action( 'bbp_before_main_content' ); ?>
