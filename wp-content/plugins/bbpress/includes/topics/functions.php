@@ -35,6 +35,8 @@ if ( !defined( 'ABSPATH' ) ) exit;
 function bbp_insert_topic( $topic_data = array(), $topic_meta = array() ) {
 
 	// Parse arguments against default values
+
+	// Author : John robert Roy 
 	$topic_data = bbp_parse_args( $topic_data, array(
 		'post_parent'    => 0, // forum ID
 		'post_status'    => bbp_get_public_status_id(),
@@ -47,7 +49,7 @@ function bbp_insert_topic( $topic_data = array(), $topic_meta = array() ) {
 		'comment_status' => 'closed',
 		'menu_order'     => 0,
 	), 'insert_topic' );
-
+// Author : John robert Roy
 	// Insert topic
 	$topic_id   = wp_insert_post( $topic_data );
 
@@ -209,6 +211,8 @@ function bbp_new_topic_handler( $action = '' ) {
 
 	/** Topic Price *********************************************************/
 	// Author : John Robert , Roy
+	// Author : John robert Roy
+	// Author : John robert Roy
 	if ( !empty( $_POST['bbp_topic_price'] ) )
 		$topic_price = $_POST['bbp_topic_price'];
 
@@ -346,6 +350,8 @@ function bbp_new_topic_handler( $action = '' ) {
 
 	// Add the content of the form to $topic_data as an array.
 	// Just in time manipulation of topic data before being created
+	// Author : John robert Roy
+	// Author : John robert Roy
 	$topic_data = apply_filters( 'bbp_new_topic_pre_insert', array(
 		'post_author'    => $topic_author,
 		'post_title'     => $topic_title,
