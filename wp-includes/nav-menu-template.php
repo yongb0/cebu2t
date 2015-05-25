@@ -112,7 +112,18 @@ class Walker_Nav_Menu extends Walker {
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-		$output .= $indent . '<li' . $id . $class_names .'>';
+		//Author John Robert Jerodiaz Roy //
+		if(
+			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Login'
+			&&
+			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Register'
+			&&
+			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Edit Profile'
+			&&
+			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='LOGIN'
+			){
+			$output .= $indent . '<li' . $id . $class_names .'>';
+		}
 
 		$atts = array();
 		$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
@@ -150,8 +161,21 @@ class Walker_Nav_Menu extends Walker {
 
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
+		//$attributes 
 		/** This filter is documented in wp-includes/post-template.php */
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+
+		// Author : John Robert  - Roy
+		if(
+			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Login'
+			&&
+			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Register'
+			&&
+			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Edit Profile'
+			&&
+			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='LOGIN'
+			){
+					$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			}
 		$item_output .= '</a>';
 		$item_output .= $args->after;
 
@@ -224,9 +248,10 @@ class Walker_Nav_Menu extends Walker {
 function wp_nav_menu( $args = array() ) {
 	static $menu_id_slugs = array();
 
-	$defaults = array( 'menu' => '', 'container' => 'div', 'container_class' => '', 'container_id' => '', 'menu_class' => 'menu', 'menu_id' => '',
-	'echo' => true, 'fallback_cb' => 'wp_page_menu', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-	'depth' => 0, 'walker' => '', 'theme_location' => '' );
+	$defaults = array( 
+		'menu' => '', 'container' => 'div', 'container_class' => '', 'container_id' => '', 'menu_class' => 'menu', 'menu_id' => '',
+		'echo' => true, 'fallback_cb' => 'wp_page_menu', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+		'depth' => 0, 'walker' => '', 'theme_location' => '' );
 
 	$args = wp_parse_args( $args, $defaults );
 	/**
@@ -503,7 +528,8 @@ function _wp_menu_item_classes_by_context( &$menu_items ) {
 		$menu_items[$key]->current = false;
 
 		$classes = (array) $menu_item->classes;
-		$classes[] = 'menu-item';
+		// Author : John Robert Jerodiaz
+		$classes[] = 'menu-item';   //this is for adding css.style of list
 		$classes[] = 'menu-item-type-' . $menu_item->type;
 		$classes[] = 'menu-item-object-' . $menu_item->object;
 

@@ -566,8 +566,16 @@ if($row1->Type=='term_checkbox')
     <div id="UPB-Button-area">
       <div class="UPB-Button-input forgot-passwordd">
       <?php wp_nonce_field('upb_register_form'); ?>
-      <input type="submit" value="Submit" class="UPB-Button" id="submit" name="submit" >
-      <input type="reset" value="Reset" class="UPB-Button" id="reset" name="reset" />
+      <input type="submit" value="Submit" style="background-color: skyblue; 
+        border: 2px solid #ddd;
+        height: 30px;
+        width: 80px;
+      border-radius: 5px;" id="submit" name="submit" >
+      <input type="reset" value="Reset" style="background-color: skyblue; 
+        border: 2px solid #ddd;
+        height: 30px;
+        width: 80px;
+      border-radius: 5px;" id="reset" name="reset" />
             <?php
 			$qry="SELECT value FROM $upb_option WHERE fieldname='upb_facebook_login'";
 			$facebook_login = $wpdb->get_var($qry);

@@ -1081,7 +1081,7 @@ function bbp_reply_author_display_name( $reply_id = 0 ) {
 			$author_id = bbp_get_reply_author_id( $reply_id );
 
 			// Try to get a display name
-			$author_name = get_the_author_meta( 'display_name', $author_id );
+			$author_name = get_the_author_meta( 'first_name', $author_id );
 
 			// Fall back to user login
 			if ( empty( $author_name ) ) {
@@ -1133,12 +1133,16 @@ function bbp_reply_author_avatar( $reply_id = 0, $size = 40 ) {
 	 *                        author avatar, reply id and size
 	 * @return string Avatar of author of the reply
 	 */
+//================================================================================================
 	function bbp_get_reply_author_avatar( $reply_id = 0, $size = 40 ) {
 		$reply_id = bbp_get_reply_id( $reply_id );
+		//$reply_id = get_user_meta( bbp_get_topic_author_id(), 'avtar_image' );
 		if ( !empty( $reply_id ) ) {
 			// Check for anonymous user
 			if ( !bbp_is_reply_anonymous( $reply_id ) ) {
-				$author_avatar = get_avatar( bbp_get_reply_author_id( $reply_id ), $size );
+				$avtar_image = get_user_meta( bbp_get_reply_author_id( $reply_id ), 'avtar_image' );
+				$author_avatar = '<img src="'.$avtar_image[0].'" width="50" style="border: 2px solid black;"/>';
+				//$author_avatar = get_avatar( bbp_get_reply_author_id( $reply_id ), $size );
 			} else {
 				$author_avatar = get_avatar( get_post_meta( $reply_id, '_bbp_anonymous_email', true ), $size );
 			}
@@ -1218,6 +1222,8 @@ function bbp_reply_author_link( $args = '' ) {
 			$link_title   = !empty( $link_title ) ? ' title="' . esc_attr( $link_title ) . '"' : '';
 			$author_links = array();
 
+			
+//==========================================================================================================================
 			// Get avatar
 			if ( 'avatar' === $r['type'] || 'both' === $r['type'] ) {
 				$author_links['avatar'] = bbp_get_reply_author_avatar( $reply_id, $r['size'] );

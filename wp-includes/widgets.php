@@ -810,10 +810,10 @@ function register_sidebar($args = array()) {
 		'id' => "sidebar-$i",
 		'description' => '',
 		'class' => '',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'before_widget' => '<li id="%1$s" class=" widget %2$s">',
 		'after_widget' => "</li>\n",
-		'before_title' => '<h2 class="widgettitle">',
-		'after_title' => "</h2>\n",
+		'before_title' => '<div class="panel panel-default"><div class="panel-heading"><h4 class="widgettitle">',
+		'after_title' => "</h4></div>\n",
 	);
 
 	$sidebar = wp_parse_args( $args, $defaults );

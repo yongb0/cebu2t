@@ -32,15 +32,14 @@
 			</div>
 		</div>
 
-		<div class="mlogo">
-			<div class="sidebar-user2 span2"><?php _e( 'Powered by', 'jshop' ); ?> <a href="http://wordpress.org" target="_blank">WordPress</a>. <?php _e( 'Theme', 'jshop' ); ?> <a href="http://justpx.com/" target="_blank">JShop</a></div>
-
-
-		</div>		
+				
 	</div>
 </div>
 
 
 	<?php wp_footer(); ?>
+	<script src="http://2thinkerscebu.local/wp-content/themes/jshop/js/jquery.min.js"></script>
+	<script src="http://2thinkerscebu.local/wp-content/themes/jshop/js/bootstrap.min.js"></script>
+
 </body>
 </html>

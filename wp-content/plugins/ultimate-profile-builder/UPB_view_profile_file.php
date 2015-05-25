@@ -94,7 +94,7 @@
    
         <div class="img-box">
         <img src="<?php echo $avtar_image[0]; ?>" />
-        <div class="change_profile_image"><a href="<?php echo $pageURL; ?><?php echo $sign; ?>changeavatar=1" title="Change Avatar">
+        <div class="change_profile_image"><a href="<?php echo $pageURL; ?><?php echo $sign; ?>changeavatar=1" title="Change Avatarzz">
        Change Avatar 
       </a></div>
         </div>
@@ -214,7 +214,7 @@
       </div><!--------custom_fields-box-------->
       <?php if($user_description!="" && checkfieldname("upb_biographicalinfoshowhide","yes")==true): ?>
       <div class="profile-about-me">
-        <h3>About Me:</h3>
+        <h1>About Me:</h1>
          <div class="toggleDiv" >
           <div class="toggleDiv1">
             <?php

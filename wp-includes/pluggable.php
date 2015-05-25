@@ -2242,16 +2242,34 @@ function get_avatar( $id_or_email, $size = 96, $default = '', $alt = '', $args =
 		}
 	}
 
+
+
+
+
+
+
+// Author : John Robert jerodiaz   - Roy =================================================================
+			$current_user = wp_get_current_user();
+			$current_id = $current_user->ID;
+			$avtar_image = get_user_meta( bbp_get_topic_author_id(), 'avtar_image' );
+			$user_info = get_userdata($current_id);
+			$user_description = $user_info->user_description;
 	$avatar = sprintf(
 		"<img alt='%s' src='%s' srcset='%s' class='%s' height='%d' width='%d' %s/>",
 		esc_attr( $args['alt'] ),
-		esc_url( $url ),
+		esc_url( $avtar_image[0] ),   // Original => esc_url( $url );
 		esc_attr( "$url2x 2x" ),
 		esc_attr( join( ' ', $class ) ),
 		(int) $args['height'],
 		(int) $args['width'],
 		$args['extra_attr']
-	);
+	); 
+// End of file by John Robert Jerodiaz =================================================================	
+
+
+
+
+
 
 	/**
 	 * Filter the avatar to retrieve.
@@ -2268,6 +2286,8 @@ function get_avatar( $id_or_email, $size = 96, $default = '', $alt = '', $args =
 	 */
 	return apply_filters( 'get_avatar', $avatar, $id_or_email, $args['size'], $args['default'], $args['alt'], $args );
 }
+
+
 endif;
 
 if ( !function_exists( 'wp_text_diff' ) ) :

@@ -1,0 +1,1462 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Supernova\n"
+"POT-Creation-Date: 2014-04-06 23:16+0530\n"
+"PO-Revision-Date: 2014-04-06 23:16+0530\n"
+"Last-Translator: Sayed Taqui <sayedwp@gmail.com>\n"
+"Language-Team: Sayed Taqui <sayedwp@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;__;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: languages\n"
+
+#: 404.php:14
+msgid "We are sorry looks like we dont have the page you are looking for"
+msgstr ""
+
+#: archive.php:27 lib/core/supernova.php:204
+msgid "Author Archive"
+msgstr ""
+
+#: archive.php:30 lib/core/supernova.php:205
+msgid "Blog Archives"
+msgstr ""
+
+#: archive.php:33 sidebar-page.php:24 sidebar.php:22
+msgid "Archives"
+msgstr ""
+
+#: comments.php:19
+msgid "says"
+msgstr ""
+
+#: comments.php:22
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php:26
+msgid " at "
+msgstr ""
+
+#: comments.php:45
+msgid "Reply"
+msgstr ""
+
+#: comments.php:59
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:104
+msgid "You must be "
+msgstr ""
+
+#: comments.php:104
+msgid "logged in"
+msgstr ""
+
+#: comments.php:104
+msgid "to post a comment."
+msgstr ""
+
+#: comments.php:111
+msgid "Logged in as"
+msgstr ""
+
+#: comments.php:111
+msgid "Log out &raquo;"
+msgstr ""
+
+#: comments.php:116
+msgid "Name"
+msgstr ""
+
+#: comments.php:119
+msgid "Email"
+msgstr ""
+
+#: comments.php:121
+msgid "Website"
+msgstr ""
+
+#: comments.php:132
+msgid "Submit Comment"
+msgstr ""
+
+#: footer.php:26
+msgid "Powered by"
+msgstr ""
+
+#: functions.php:21
+msgid "Sidebar Home"
+msgstr ""
+
+#: functions.php:23
+msgid "I will only show on Home page"
+msgstr ""
+
+#: functions.php:30
+msgid "Sidebar Page"
+msgstr ""
+
+#: functions.php:32
+msgid "I will show on all pages except home"
+msgstr ""
+
+#: functions.php:39
+msgid "Header Widgets"
+msgstr ""
+
+#: functions.php:41
+msgid "I will show next to logo( I CAN HANDLE ONLY ONE WIDGET)"
+msgstr ""
+
+#: functions.php:48
+msgid "Footer Widgets"
+msgstr ""
+
+#: functions.php:50
+msgid "I will show at the footer"
+msgstr ""
+
+#: functions.php:111
+msgid "Header Navigation"
+msgstr ""
+
+#: functions.php:112
+msgid "Header Categories"
+msgstr ""
+
+#: functions.php:113 lib/admin/arrays.php:46
+msgid "Main Navigation"
+msgstr ""
+
+#: functions.php:114
+msgid "Footer Navigation"
+msgstr ""
+
+#: functions.php:131
+msgid "... Read More"
+msgstr ""
+
+#: loop-single.php:17
+msgid "Edit this entry"
+msgstr ""
+
+#: loop.php:21
+msgid "Sorry Nothing Found"
+msgstr ""
+
+#: loop.php:23
+msgid "Sorry, we did not find any match for the searched term"
+msgstr ""
+
+#: search.php:17
+msgid "Search Results for "
+msgstr ""
+
+#: searchform.php:13
+msgid "Search..."
+msgstr ""
+
+#: sidebar-page.php:19 sidebar.php:17 lib/admin/arrays.php:482
+msgid "Pages"
+msgstr ""
+
+#: sidebar-page.php:31 sidebar.php:29 lib/core/supernova.php:60
+msgid "Categories"
+msgstr ""
+
+#: includes/after-post.php:19
+msgid "About "
+msgstr ""
+
+#: includes/after-post.php:21 lib/functions/supernova-hooks.php:116
+msgid "View all posts by "
+msgstr ""
+
+#: includes/before-post.php:18
+msgid "Decrease font-size"
+msgstr ""
+
+#: includes/before-post.php:18
+msgid "Increase font size"
+msgstr ""
+
+#: includes/inc/nav.php:14
+msgid "&laquo; Older Entries"
+msgstr ""
+
+#: includes/inc/nav.php:15
+msgid "Newer Entries &raquo;"
+msgstr ""
+
+#: lib/admin/admin-int.php:24
+msgid "Get Customization Done Starting With Just $10"
+msgstr ""
+
+#: lib/admin/admin-int.php:77
+msgid "Thank You"
+msgstr ""
+
+#: lib/admin/admin-setup.php:12 lib/admin/admin-setup.php:41
+msgid "Theme Options"
+msgstr ""
+
+#: lib/admin/admin-setup.php:12
+msgid "Supernova Options"
+msgstr ""
+
+#: lib/admin/admin-setup.php:48
+msgid "Save Settings"
+msgstr ""
+
+#: lib/admin/admin-setup.php:66
+msgid "Reset All"
+msgstr ""
+
+#: lib/admin/admin-setup.php:144
+msgid "Options"
+msgstr ""
+
+#: lib/admin/admin-setup.php:147
+msgid "Change Supernova Settings"
+msgstr ""
+
+#: lib/admin/arrays.php:19
+msgid "Upload Favicon"
+msgstr ""
+
+#: lib/admin/arrays.php:21
+msgid ""
+"Favicon is the tiny icon that you see on your browser's tab. Either create a "
+"16x16px image or create it online and upload it here."
+msgstr ""
+
+#: lib/admin/arrays.php:24 lib/admin/arrays.php:33 lib/admin/arrays.php:42
+#: lib/admin/arrays.php:51
+msgid "General"
+msgstr ""
+
+#: lib/admin/arrays.php:28
+msgid "Top Most Navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:30
+msgid "Will remove the top most navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:37
+msgid "Category Navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:39
+msgid "Will remove categories from header"
+msgstr ""
+
+#: lib/admin/arrays.php:48
+msgid "Will remove the main navigation which is below header"
+msgstr ""
+
+#: lib/admin/arrays.php:59
+msgid "Layout Width"
+msgstr ""
+
+#: lib/admin/arrays.php:61
+msgid "This is the total width of your website's layout in pixels"
+msgstr ""
+
+#: lib/admin/arrays.php:64 lib/admin/arrays.php:76 lib/admin/arrays.php:88
+#: lib/admin/arrays.php:105 lib/admin/arrays.php:114 lib/admin/arrays.php:123
+msgid "Layout"
+msgstr ""
+
+#: lib/admin/arrays.php:71
+msgid "Content Width"
+msgstr ""
+
+#: lib/admin/arrays.php:73
+msgid "Decide the width of the content area (in percentage)."
+msgstr ""
+
+#: lib/admin/arrays.php:83
+msgid "Sidebar Width"
+msgstr ""
+
+#: lib/admin/arrays.php:85
+msgid "THE TOTAL OF CONTENT AND SIDEBAR WIDTH SHOULD BE 100%."
+msgstr ""
+
+#: lib/admin/arrays.php:95
+msgid "Sidebar Position"
+msgstr ""
+
+#: lib/admin/arrays.php:109
+msgid "Responsivness"
+msgstr ""
+
+#: lib/admin/arrays.php:111
+msgid "You website would look the same in small screen"
+msgstr ""
+
+#: lib/admin/arrays.php:118
+msgid "Responsivness for tablet"
+msgstr ""
+
+#: lib/admin/arrays.php:120
+msgid ""
+"Site would look the same on tablets however would be responsive for small "
+"phones(less than 321px)"
+msgstr ""
+
+#: lib/admin/arrays.php:130
+msgid "Color Scheme"
+msgstr ""
+
+#: lib/admin/arrays.php:136 lib/admin/arrays.php:161 lib/admin/arrays.php:170
+#: lib/admin/arrays.php:179 lib/admin/arrays.php:188 lib/admin/arrays.php:198
+#: lib/admin/arrays.php:210 lib/admin/arrays.php:222 lib/admin/arrays.php:234
+#: lib/admin/arrays.php:246 lib/admin/arrays.php:261 lib/admin/arrays.php:271
+#: lib/admin/arrays.php:281 lib/admin/arrays.php:291 lib/admin/arrays.php:301
+#: lib/admin/arrays.php:312 lib/admin/arrays.php:322 lib/admin/arrays.php:332
+#: lib/admin/arrays.php:342 lib/admin/arrays.php:352
+msgid "Styling"
+msgstr ""
+
+#: lib/admin/arrays.php:140
+msgid "Font Family"
+msgstr ""
+
+#: lib/admin/arrays.php:142
+msgid "Will affect the font family of the post content & sidebar"
+msgstr ""
+
+#: lib/admin/arrays.php:159
+msgid "Select Font Style"
+msgstr ""
+
+#: lib/admin/arrays.php:165
+msgid "Footer Background"
+msgstr ""
+
+#: lib/admin/arrays.php:167
+msgid "You can use footer background image or color. Default image url is "
+msgstr ""
+
+#: lib/admin/arrays.php:174
+msgid "Footer Background Color"
+msgstr ""
+
+#: lib/admin/arrays.php:176
+msgid "To show the background color remove the background image first."
+msgstr ""
+
+#: lib/admin/arrays.php:183
+msgid "Write Custom CSS"
+msgstr ""
+
+#: lib/admin/arrays.php:183
+msgid "(No style tag)"
+msgstr ""
+
+#: lib/admin/arrays.php:185
+msgid ""
+"CSS written here will be applied everywhere on your theme, and loads after "
+"style.css, so it will override any existing css property. Also this css will "
+"not be lost even after you update supernova theme"
+msgstr ""
+
+#: lib/admin/arrays.php:193
+msgid "Post Content"
+msgstr ""
+
+#: lib/admin/arrays.php:197 lib/admin/arrays.php:209 lib/admin/arrays.php:221
+#: lib/admin/arrays.php:233 lib/admin/arrays.php:245
+msgid "Font Sizes"
+msgstr ""
+
+#: lib/admin/arrays.php:205 lib/admin/arrays.php:285
+msgid "Post Heading"
+msgstr ""
+
+#: lib/admin/arrays.php:217
+msgid "Site Heading"
+msgstr ""
+
+#: lib/admin/arrays.php:229
+msgid "Site Discription"
+msgstr ""
+
+#: lib/admin/arrays.php:241 lib/admin/arrays.php:295
+msgid "Sidebar Heading"
+msgstr ""
+
+#: lib/admin/arrays.php:255
+msgid "Footer Text Color"
+msgstr ""
+
+#: lib/admin/arrays.php:260 lib/admin/arrays.php:270 lib/admin/arrays.php:280
+#: lib/admin/arrays.php:290 lib/admin/arrays.php:300
+msgid "Font Colors"
+msgstr ""
+
+#: lib/admin/arrays.php:265
+msgid "Footer Heading Color"
+msgstr ""
+
+#: lib/admin/arrays.php:275
+msgid "Post Paragraph"
+msgstr ""
+
+#: lib/admin/arrays.php:306
+msgid "Capitalization in Navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:308
+msgid "Will make the main navagation lower case"
+msgstr ""
+
+#: lib/admin/arrays.php:311 lib/admin/arrays.php:321 lib/admin/arrays.php:331
+#: lib/admin/arrays.php:341 lib/admin/arrays.php:351
+msgid "Extra Styles"
+msgstr ""
+
+#: lib/admin/arrays.php:316
+msgid "Capitalization in Sidebar"
+msgstr ""
+
+#: lib/admin/arrays.php:318 lib/admin/arrays.php:328
+msgid "Will make the main sidebar and footer heading lower case"
+msgstr ""
+
+#: lib/admin/arrays.php:326
+msgid "Capitalization in Heading"
+msgstr ""
+
+#: lib/admin/arrays.php:336
+msgid "V border in Navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:338
+msgid "Will remove the v border from navigation."
+msgstr ""
+
+#: lib/admin/arrays.php:346
+msgid "V border in Sidebar"
+msgstr ""
+
+#: lib/admin/arrays.php:348
+msgid "Will remove the v border from sidebar & footer."
+msgstr ""
+
+#: lib/admin/arrays.php:362
+msgid ""
+"Please do not upload heavy images which increase your page load time, and "
+"use the exact size so the images do not strech nor do they affect your page "
+"load time. "
+msgstr ""
+
+#: lib/admin/arrays.php:362
+msgid "Click here"
+msgstr ""
+
+#: lib/admin/arrays.php:362
+msgid " to know the correct size of your slider images.<br>"
+msgstr ""
+
+#: lib/admin/arrays.php:362
+msgid "Default : 735 X 300px"
+msgstr ""
+
+#: lib/admin/arrays.php:362
+msgid "Size : Around 50kb."
+msgstr ""
+
+#: lib/admin/arrays.php:362
+msgid "Its recommended to use online tools like "
+msgstr ""
+
+#: lib/admin/arrays.php:362
+msgid " to compress jpeg and "
+msgstr ""
+
+#: lib/admin/arrays.php:362
+msgid ""
+" for compressing png images or use WP Smush.it Plugin and make your site "
+"load faster."
+msgstr ""
+
+#: lib/admin/arrays.php:364 lib/admin/arrays.php:375 lib/admin/arrays.php:386
+#: lib/admin/arrays.php:397 lib/admin/arrays.php:408 lib/admin/arrays.php:419
+#: lib/admin/arrays.php:430 lib/admin/arrays.php:441 lib/admin/arrays.php:452
+#: lib/admin/arrays.php:462 lib/admin/arrays.php:475 lib/admin/arrays.php:487
+#: lib/admin/arrays.php:498 lib/admin/arrays.php:511 lib/admin/arrays.php:521
+#: lib/admin/arrays.php:534
+msgid "Slider"
+msgstr ""
+
+#: lib/admin/arrays.php:368
+msgid "Slide One"
+msgstr ""
+
+#: lib/admin/arrays.php:370 lib/admin/arrays.php:381 lib/admin/arrays.php:392
+#: lib/admin/arrays.php:403 lib/admin/arrays.php:414 lib/admin/arrays.php:425
+#: lib/admin/arrays.php:436 lib/admin/arrays.php:447
+msgid "Choose Post + Image OR just post which already has featured image.Click"
+msgstr ""
+
+#: lib/admin/arrays.php:370 lib/admin/arrays.php:381 lib/admin/arrays.php:392
+#: lib/admin/arrays.php:403
+msgid " to know the SIZE of the slider Image"
+msgstr ""
+
+#: lib/admin/arrays.php:379
+msgid "Slide Two"
+msgstr ""
+
+#: lib/admin/arrays.php:390
+msgid "Slide Three"
+msgstr ""
+
+#: lib/admin/arrays.php:401
+msgid "Slide Four"
+msgstr ""
+
+#: lib/admin/arrays.php:412
+msgid "Slide Five"
+msgstr ""
+
+#: lib/admin/arrays.php:414 lib/admin/arrays.php:425 lib/admin/arrays.php:436
+#: lib/admin/arrays.php:447
+msgid "to know the SIZE of the slider Image"
+msgstr ""
+
+#: lib/admin/arrays.php:423
+msgid "Slide Six"
+msgstr ""
+
+#: lib/admin/arrays.php:434
+msgid "Slide Seven"
+msgstr ""
+
+#: lib/admin/arrays.php:445
+msgid "Slide Eight"
+msgstr ""
+
+#: lib/admin/arrays.php:457
+msgid "Show Slider"
+msgstr ""
+
+#: lib/admin/arrays.php:459
+msgid "Will remove slider from the home page(saves 18Kb)"
+msgstr ""
+
+#: lib/admin/arrays.php:461 lib/admin/arrays.php:474 lib/admin/arrays.php:486
+#: lib/admin/arrays.php:497 lib/admin/arrays.php:510 lib/admin/arrays.php:520
+#: lib/admin/arrays.php:533
+msgid "Slider Settings"
+msgstr ""
+
+#: lib/admin/arrays.php:467
+msgid "Slide Effect"
+msgstr ""
+
+#: lib/admin/arrays.php:469
+msgid "Will change slider effect"
+msgstr ""
+
+#: lib/admin/arrays.php:472
+msgid "select slide effect"
+msgstr ""
+
+#: lib/admin/arrays.php:479
+msgid "Slides From?"
+msgstr ""
+
+#: lib/admin/arrays.php:481
+msgid "If turned off, you will be able to select pages in place of posts"
+msgstr ""
+
+#: lib/admin/arrays.php:482
+msgid "Posts"
+msgstr ""
+
+#: lib/admin/arrays.php:491
+msgid "Automate Slides From?"
+msgstr ""
+
+#: lib/admin/arrays.php:493
+msgid "Will pick up posts from whatever has been selected here"
+msgstr ""
+
+#: lib/admin/arrays.php:494
+msgid "Sticky Posts"
+msgstr ""
+
+#: lib/admin/arrays.php:494 lib/widgets/post-tabs.php:103
+#: lib/widgets/recent-posts.php:32
+msgid "Recent Posts"
+msgstr ""
+
+#: lib/admin/arrays.php:494 lib/admin/arrays.php:658 lib/admin/arrays.php:710
+#: lib/core/supernova.php:301 lib/functions/custom-functions.php:234
+#: lib/metaboxes/metaboxes.php:66 lib/widgets/post-tabs.php:104
+msgid "Popular Posts"
+msgstr ""
+
+#: lib/admin/arrays.php:494 lib/admin/arrays.php:720
+#: lib/metaboxes/metaboxes.php:61 lib/widgets/post-tabs.php:105
+msgid "Recommended Posts"
+msgstr ""
+
+#: lib/admin/arrays.php:494
+msgid "Let me Select"
+msgstr ""
+
+#: lib/admin/arrays.php:503
+msgid "Below Heading"
+msgstr ""
+
+#: lib/admin/arrays.php:505
+msgid "Will change Slider Post Excerpt"
+msgstr ""
+
+#: lib/admin/arrays.php:506
+msgid "Show Date"
+msgstr ""
+
+#: lib/admin/arrays.php:506 lib/admin/arrays.php:780
+msgid "Show Excerpt"
+msgstr ""
+
+#: lib/admin/arrays.php:506
+msgid "Just Heading"
+msgstr ""
+
+#: lib/admin/arrays.php:515 lib/admin/arrays.php:788
+msgid "Excerpt Length"
+msgstr ""
+
+#: lib/admin/arrays.php:528
+msgid "Heading Length"
+msgstr ""
+
+#: lib/admin/arrays.php:547 lib/admin/arrays.php:558 lib/admin/arrays.php:569
+#: lib/admin/arrays.php:580 lib/admin/arrays.php:591 lib/admin/arrays.php:602
+msgid "Add Link to Show Icon"
+msgstr ""
+
+#: lib/admin/arrays.php:552 lib/admin/arrays.php:563 lib/admin/arrays.php:574
+#: lib/admin/arrays.php:585 lib/admin/arrays.php:596 lib/admin/arrays.php:607
+#: lib/admin/arrays.php:621
+msgid "Social"
+msgstr ""
+
+#: lib/admin/arrays.php:611
+msgid "Icon Color"
+msgstr ""
+
+#: lib/admin/arrays.php:613
+msgid ""
+"Will change Icon colors, you would need it if you use a light background "
+"color for footer"
+msgstr ""
+
+#: lib/admin/arrays.php:620
+msgid "Icon Colors"
+msgstr ""
+
+#: lib/admin/arrays.php:629
+msgid "Footer Text"
+msgstr ""
+
+#: lib/admin/arrays.php:631
+msgid "Will replace the footer text"
+msgstr ""
+
+#: lib/admin/arrays.php:636 lib/admin/arrays.php:648 lib/admin/arrays.php:660
+#: lib/admin/arrays.php:672 lib/admin/arrays.php:684 lib/admin/arrays.php:696
+#: lib/admin/arrays.php:706 lib/admin/arrays.php:716 lib/admin/arrays.php:726
+#: lib/admin/arrays.php:735 lib/admin/arrays.php:744 lib/admin/arrays.php:753
+#: lib/admin/arrays.php:763 lib/admin/arrays.php:773 lib/admin/arrays.php:784
+#: lib/admin/arrays.php:794 lib/admin/arrays.php:805 lib/admin/arrays.php:814
+#: lib/admin/arrays.php:823 lib/admin/arrays.php:832 lib/admin/arrays.php:842
+#: lib/admin/arrays.php:852 lib/admin/arrays.php:861 lib/admin/arrays.php:871
+#: lib/admin/arrays.php:881 lib/admin/arrays.php:891 lib/admin/arrays.php:901
+#: lib/admin/arrays.php:911 lib/admin/arrays.php:921 lib/admin/arrays.php:931
+#: lib/admin/arrays.php:941
+msgid "Advanced"
+msgstr ""
+
+#: lib/admin/arrays.php:640
+msgid "Latest Blog Text"
+msgstr ""
+
+#: lib/admin/arrays.php:642
+msgid ""
+"Changes latest blog text on the home page. To Translate this text emtpy this "
+"field and then translate it from translation file."
+msgstr ""
+
+#: lib/admin/arrays.php:646 lib/functions/custom-functions.php:233
+#: lib/functions/supernova-hooks.php:34
+msgid "Latest Blogs"
+msgstr ""
+
+#: lib/admin/arrays.php:647 lib/admin/arrays.php:659 lib/admin/arrays.php:671
+#: lib/admin/arrays.php:683 lib/admin/arrays.php:695 lib/admin/arrays.php:705
+#: lib/admin/arrays.php:715 lib/admin/arrays.php:725
+msgid "Popular/Recommended"
+msgstr ""
+
+#: lib/admin/arrays.php:652
+msgid "Popular Text"
+msgstr ""
+
+#: lib/admin/arrays.php:654
+msgid ""
+"Changes popular text on the home page. To Translate this text emtpy this "
+"field and then translate it from translation file."
+msgstr ""
+
+#: lib/admin/arrays.php:664
+msgid "Recommended Text"
+msgstr ""
+
+#: lib/admin/arrays.php:666
+msgid ""
+"Changes recommended text on the home page. To Translate this text emtpy this "
+"field and then translate it from translation file."
+msgstr ""
+
+#: lib/admin/arrays.php:670 lib/core/supernova.php:293
+#: lib/functions/custom-functions.php:235
+msgid "Recommended"
+msgstr ""
+
+#: lib/admin/arrays.php:676
+msgid "Loader Text"
+msgstr ""
+
+#: lib/admin/arrays.php:678
+msgid "changes loader button text"
+msgstr ""
+
+#: lib/admin/arrays.php:682 lib/core/supernova.php:305
+msgid "Show More"
+msgstr ""
+
+#: lib/admin/arrays.php:688
+msgid "Popular Posts Depend on"
+msgstr ""
+
+#: lib/admin/arrays.php:690
+msgid ""
+"ACTUAL COUNT: This is default. Popular posts are shown depending on the "
+"number of visits on each posts, most popular first(i.e. in descending "
+"order). NUMBER OF COMMENTS: The popular posts would not be calculated on the "
+"actual visits, instead the posts which has the most comments would get "
+"precedence. If you use some caching plugin, its possible that the theme is "
+"not able to capture the actual counts based on visits, so you can still show "
+"popular posts depending on the number of comments. LET ME SELECT: Once this "
+"option is selected you would have the freedom to choose the popular posts by "
+"yourself. As you select this, one more option would appear right below the "
+"recommended post in each post editor. This option can be also be usefull if "
+"you want to name it something else like editor's pick and show what you want "
+msgstr ""
+
+#: lib/admin/arrays.php:691
+msgid "Actual Count"
+msgstr ""
+
+#: lib/admin/arrays.php:691
+msgid "Number of Comments"
+msgstr ""
+
+#: lib/admin/arrays.php:691
+msgid "Let me select"
+msgstr ""
+
+#: lib/admin/arrays.php:700
+msgid "Ajax Post Loader"
+msgstr ""
+
+#: lib/admin/arrays.php:702
+msgid "Will remove ajax post loader from pagination"
+msgstr ""
+
+#: lib/admin/arrays.php:712
+msgid "Will remove popular posts tab from home page"
+msgstr ""
+
+#: lib/admin/arrays.php:722
+msgid "Will remove recommended posts tab from home page"
+msgstr ""
+
+#: lib/admin/arrays.php:730
+msgid "Sidebar on Home Page"
+msgstr ""
+
+#: lib/admin/arrays.php:732
+msgid "Will make the home page full width and enlarge the slider"
+msgstr ""
+
+#: lib/admin/arrays.php:739
+msgid "Sticky Navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:741
+msgid "Will remove stick effect(saves 3Kb)"
+msgstr ""
+
+#: lib/admin/arrays.php:748
+msgid "Dropdown Effect"
+msgstr ""
+
+#: lib/admin/arrays.php:750
+msgid "Removes the navigation dropdown effect and arrows(saves 14Kb)"
+msgstr ""
+
+#: lib/admin/arrays.php:757
+msgid "Manage Meta"
+msgstr ""
+
+#: lib/admin/arrays.php:759
+msgid "Manage meta shown below posts"
+msgstr ""
+
+#: lib/admin/arrays.php:762 lib/admin/arrays.php:772 lib/admin/arrays.php:783
+#: lib/admin/arrays.php:793
+msgid "Post Settings"
+msgstr ""
+
+#: lib/admin/arrays.php:767
+msgid "All Meta"
+msgstr ""
+
+#: lib/admin/arrays.php:769
+msgid "Will remove all meta from the post"
+msgstr ""
+
+#: lib/admin/arrays.php:777
+msgid "In Post Listing"
+msgstr ""
+
+#: lib/admin/arrays.php:779
+msgid "Will show full content inplace of excerpt"
+msgstr ""
+
+#: lib/admin/arrays.php:780
+msgid "Show Full Content"
+msgstr ""
+
+#: lib/admin/arrays.php:800
+msgid "Search In Top Navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:802
+msgid "Will remove search box from the top most navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:809
+msgid "Search In Main Navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:811
+msgid "Will remove search box from main navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:818
+msgid "Back to Top"
+msgstr ""
+
+#: lib/admin/arrays.php:820
+msgid "Will remove back to top from the bottom right"
+msgstr ""
+
+#: lib/admin/arrays.php:827
+msgid "Pagination"
+msgstr ""
+
+#: lib/admin/arrays.php:829
+msgid ""
+"Will remove theme's default pagination so you can use some plugin you like"
+msgstr ""
+
+#: lib/admin/arrays.php:836
+msgid "Breadcrumb"
+msgstr ""
+
+#: lib/admin/arrays.php:838
+msgid ""
+"Will remove breadcrumb from your theme, if you use SEO by Yoast Plugin, the "
+"yoast breadcrumb replaces it by itself."
+msgstr ""
+
+#: lib/admin/arrays.php:841 lib/admin/arrays.php:851 lib/admin/arrays.php:870
+#: lib/admin/arrays.php:880
+msgid "Article Page"
+msgstr ""
+
+#: lib/admin/arrays.php:846
+msgid "Font Resizer"
+msgstr ""
+
+#: lib/admin/arrays.php:848
+msgid "Will remove font resizer from each single post"
+msgstr ""
+
+#: lib/admin/arrays.php:856
+msgid "Comments In Pages"
+msgstr ""
+
+#: lib/admin/arrays.php:858
+msgid "Will remove comments only from pages"
+msgstr ""
+
+#: lib/admin/arrays.php:865
+msgid "Comments In Posts"
+msgstr ""
+
+#: lib/admin/arrays.php:867
+msgid "Will remove comments only from posts"
+msgstr ""
+
+#: lib/admin/arrays.php:875
+msgid "Remove Author Box"
+msgstr ""
+
+#: lib/admin/arrays.php:877
+msgid "Will remove author info box from each single post"
+msgstr ""
+
+#: lib/admin/arrays.php:886
+msgid "Header Script"
+msgstr ""
+
+#: lib/admin/arrays.php:888
+msgid ""
+"The script entered here will go to the head section of you theme, do not use "
+"script tag"
+msgstr ""
+
+#: lib/admin/arrays.php:895
+msgid "Default"
+msgstr ""
+
+#: lib/admin/arrays.php:897
+msgid ""
+"If you dont have a thumbnail for any post , this thumbnail will be used."
+msgstr ""
+
+#: lib/admin/arrays.php:900 lib/admin/arrays.php:910 lib/admin/arrays.php:920
+#: lib/admin/arrays.php:930 lib/admin/arrays.php:940
+msgid "Featured Image"
+msgstr ""
+
+#: lib/admin/arrays.php:905
+msgid "Show In Post Listing"
+msgstr ""
+
+#: lib/admin/arrays.php:907
+msgid "Will remove thumbnails from post listing including home page"
+msgstr ""
+
+#: lib/admin/arrays.php:915
+msgid "Show On Posts"
+msgstr ""
+
+#: lib/admin/arrays.php:917
+msgid ""
+"Will remove featured image from single posts however featured image will "
+"show as thumbnail in post listing (if you want to remove featured image only "
+"from some pages use CSS instead, use <small> .single .supernova_thumb"
+"{display:none} </small> for each page)"
+msgstr ""
+
+#: lib/admin/arrays.php:925
+msgid "Show On Pages"
+msgstr ""
+
+#: lib/admin/arrays.php:927
+msgid ""
+"Will remove featured image from all pages . Use css <small> .page ."
+"supernova_thumb{display:none} </small> for individual pages if you want)"
+msgstr ""
+
+#: lib/admin/arrays.php:935
+msgid "Automate Featured Image"
+msgstr ""
+
+#: lib/admin/arrays.php:937
+msgid "Will stop picking up the featured images from each post automatically"
+msgstr ""
+
+#: lib/admin/arrays.php:949
+msgid "Header Ad"
+msgstr ""
+
+#: lib/admin/arrays.php:951
+msgid "Drop your ad code here and the ad will show in the header next to logo"
+msgstr ""
+
+#: lib/admin/arrays.php:954 lib/admin/arrays.php:963 lib/admin/arrays.php:972
+#: lib/admin/arrays.php:981 lib/admin/arrays.php:990 lib/admin/arrays.php:999
+#: lib/admin/arrays.php:1008
+msgid "Manage Ads"
+msgstr ""
+
+#: lib/admin/arrays.php:958
+msgid "Below Navigation"
+msgstr ""
+
+#: lib/admin/arrays.php:960
+msgid "Ad will show below navigation, above slider"
+msgstr ""
+
+#: lib/admin/arrays.php:967
+msgid "Above Posts"
+msgstr ""
+
+#: lib/admin/arrays.php:969
+msgid "Ad will show right above the posts on home page, below slider"
+msgstr ""
+
+#: lib/admin/arrays.php:976
+msgid "Below Posts"
+msgstr ""
+
+#: lib/admin/arrays.php:978
+msgid "Ad will show below the posts"
+msgstr ""
+
+#: lib/admin/arrays.php:985
+msgid "Above Footer"
+msgstr ""
+
+#: lib/admin/arrays.php:987
+msgid "Ad will show right above the footer where content ends"
+msgstr ""
+
+#: lib/admin/arrays.php:994
+msgid "Above Single Post"
+msgstr ""
+
+#: lib/admin/arrays.php:996
+msgid "Ad will show right above the single post"
+msgstr ""
+
+#: lib/admin/arrays.php:1003
+msgid "Below Single Post"
+msgstr ""
+
+#: lib/admin/arrays.php:1005
+msgid "Ad will show below single post"
+msgstr ""
+
+#: lib/admin/arrays.php:1016 lib/admin/arrays.php:1019
+msgid "Support"
+msgstr ""
+
+#: lib/admin/field-options.php:59 lib/admin/field-options.php:438
+msgid "Upload"
+msgstr ""
+
+#: lib/admin/field-options.php:60 lib/admin/field-options.php:439
+#: lib/admin/field-options.php:481
+msgid "Remove"
+msgstr ""
+
+#: lib/admin/field-options.php:207
+msgid ""
+"Okay, now you can select the poplular posts like you select recommended "
+"posts meaning from every individual posts"
+msgstr ""
+
+#: lib/admin/support.php:13
+msgid ""
+"If you have any suggestion, question or issues, no matter how big or small "
+"it is, feel free to ask on WordPress"
+msgstr ""
+
+#: lib/admin/support.php:13 lib/core/supernova.php:226
+msgid "support"
+msgstr ""
+
+#: lib/admin/support.php:13
+msgid "forum, or "
+msgstr ""
+
+#: lib/admin/support.php:13
+msgid "contact me directly"
+msgstr ""
+
+#: lib/admin/support.php:13
+msgid " I will try to reply as quickly as possible."
+msgstr ""
+
+#: lib/admin/support.php:14 lib/core/supernova.php:227
+msgid "If you like this theme please rate it on WordPress"
+msgstr ""
+
+#: lib/admin/support.php:14 lib/core/supernova.php:227
+msgid "theme reviews"
+msgstr ""
+
+#: lib/admin/support.php:14 lib/core/supernova.php:227
+msgid "page"
+msgstr ""
+
+#: lib/admin/support.php:15
+msgid "To know how the final theme looks, view the theme "
+msgstr ""
+
+#: lib/admin/support.php:15
+msgid "Demo"
+msgstr ""
+
+#: lib/admin/support.php:21
+msgid "Getting Started:"
+msgstr ""
+
+#: lib/admin/support.php:22
+msgid ""
+" All features of this theme have been kept on, so you dont have hard time "
+"understanding them and you can remove the ones you dont want, however there "
+"are couple of things you would want to know on the first use of this theme. "
+msgstr ""
+
+#: lib/admin/support.php:23
+msgid "Sidebar:"
+msgstr ""
+
+#: lib/admin/support.php:23
+msgid ""
+" Supernova has two sidebars, \"Sidebar Home\" would only show on the home "
+"page and \"Sidebar Page\" would show on all pages except home.\" "
+msgstr ""
+
+#: lib/admin/support.php:24
+msgid "Recommended Posts:"
+msgstr ""
+
+#: lib/admin/support.php:24
+msgid ""
+" Recommended posts can be chosen from where you create or edit posts, at the "
+"bottom right of the sidebar.\" "
+msgstr ""
+
+#: lib/admin/support.php:25
+msgid "Author Info Box:"
+msgstr ""
+
+#: lib/admin/support.php:25
+msgid " Author info box information can be filled from user profile."
+msgstr ""
+
+#: lib/admin/support.php:26
+msgid "Navigation:"
+msgstr ""
+
+#: lib/admin/support.php:26
+msgid ""
+" Your theme supports four navigations, Header Navigation, Header Categories, "
+"Main Navigation and Footer Navigation, when you activate this theme, the "
+"menu items may not appear correctly since they are not saved, so please go "
+"to Appearance>Menus and save each navigation menu"
+msgstr ""
+
+#: lib/admin/support.php:27
+msgid "Plugins:"
+msgstr ""
+
+#: lib/admin/support.php:27
+msgid ""
+" Though the theme loads fast however its highly recommended to use 'WP TOTAL "
+"CACHE' plugin to decrease the page load time even more."
+msgstr ""
+
+#: lib/admin/support.php:30
+msgid "What's new in this version(1.5.2)?"
+msgstr ""
+
+#: lib/admin/support.php:31
+msgid ""
+"1) New Option to manage featured images from Advanced > Featured image tab."
+msgstr ""
+
+#: lib/admin/support.php:32
+msgid ""
+"2) Added options to automate slider posts. You can show sticky, popular, "
+"recommended or recent posts automatically."
+msgstr ""
+
+#: lib/admin/support.php:33
+msgid "3) Options page redesigned to match the new look of wordpress 3.8."
+msgstr ""
+
+#: lib/admin/support.php:34
+msgid "4) Supernova is now much more flexible for child themes."
+msgstr ""
+
+#: lib/admin/support.php:35
+msgid "5) Styled categories widget."
+msgstr ""
+
+#: lib/admin/support.php:36
+msgid "6) Fixed all known bugs.(Please report if you find any issue) ."
+msgstr ""
+
+#: lib/admin/support.php:39
+msgid "Having Problem?:"
+msgstr ""
+
+#: lib/admin/support.php:40
+msgid ""
+"If something goes wrong or stops working all of a sudden, follow these steps "
+"before putting the blame on your theme"
+msgstr ""
+
+#: lib/admin/support.php:41
+msgid ""
+"a) Switch to Wordpress default Twenty Twelve theme to see if its a theme "
+"related issue or a plugin which is causing problem, dont worry, the theme "
+"settings would not be lost"
+msgstr ""
+
+#: lib/admin/support.php:42
+msgid "b) Deactivate all plugins and see if that solves the problem."
+msgstr ""
+
+#: lib/admin/support.php:43
+msgid "c) Please reset settings of Supernova theme"
+msgstr ""
+
+#: lib/admin/support.php:44
+msgid ""
+"If the problem could not be solved even after following these three steps "
+"check worpdress support forum for Supernova and see if there is already a "
+"solution to it or start a new discussion"
+msgstr ""
+
+#: lib/admin/support.php:45
+msgid ""
+"Supernova doesn't alter your existing database, so you can always switch "
+"back to your old theme and all your previous settings would be intact."
+msgstr ""
+
+#: lib/admin/support.php:47
+msgid "Get customization done starting with only $10"
+msgstr ""
+
+#: lib/admin/support.php:48
+msgid ""
+"Now you can contact me to get any customization done to your theme starting "
+"with as low as $10. "
+msgstr ""
+
+#: lib/admin/support.php:53
+msgid "Please support the development of your theme"
+msgstr ""
+
+#: lib/admin/support.php:56
+msgid "Buy me a cup of coffee"
+msgstr ""
+
+#: lib/admin/support.php:61
+msgid "Designed & Developed By: "
+msgstr ""
+
+#: lib/core/supernova.php:71
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: lib/core/supernova.php:206
+msgid "Search Results"
+msgstr ""
+
+#: lib/core/supernova.php:221
+msgid "Theme Support"
+msgstr ""
+
+#: lib/core/supernova.php:226
+msgid ""
+"If you have any question or issues related to the theme, you can always ask "
+"on WordPress"
+msgstr ""
+
+#: lib/core/supernova.php:226
+msgid "forum"
+msgstr ""
+
+#: lib/core/supernova.php:461
+msgid "Header Logo Position"
+msgstr ""
+
+#: lib/core/supernova.php:466
+msgid "Left "
+msgstr ""
+
+#: lib/core/supernova.php:470
+msgid "Center "
+msgstr ""
+
+#: lib/core/supernova.php:474
+msgid "Right "
+msgstr ""
+
+#: lib/enqueue/front-enqueue.php:95
+msgid "Loading"
+msgstr ""
+
+#: lib/enqueue/front-enqueue.php:95 lib/functions/supernova-ajax.php:184
+#: lib/functions/supernova-ajax.php:224
+msgid "Sorry no more posts available, please check back later"
+msgstr ""
+
+#: lib/enqueue/front-enqueue.php:96
+msgid "No more posts available"
+msgstr ""
+
+#: lib/functions/custom-functions.php:84
+msgid ""
+"This theme works best on the latest version of WordPress, some features "
+"might not work properly on this version"
+msgstr ""
+
+#: lib/functions/custom-functions.php:401
+msgid "Leave A Comment"
+msgstr ""
+
+#: lib/functions/custom-functions.php:401
+msgid "1 comment"
+msgstr ""
+
+#: lib/functions/custom-functions.php:471
+#: lib/functions/custom-functions.php:536
+msgid "No Comments"
+msgstr ""
+
+#: lib/functions/custom-functions.php:472
+#: lib/functions/custom-functions.php:538
+msgid "1 Comment"
+msgstr ""
+
+#: lib/functions/custom-functions.php:473
+#: lib/functions/custom-functions.php:534
+msgid "% Comments"
+msgstr ""
+
+#: lib/functions/custom-functions.php:474
+msgid "Comments Off"
+msgstr ""
+
+#: lib/functions/custom-functions.php:486
+msgid "Enter your password to view comments."
+msgstr ""
+
+#: lib/functions/custom-functions.php:513
+#, php-format
+msgid "Comment on %s"
+msgstr ""
+
+#: lib/functions/supernova-ajax.php:184 lib/functions/supernova-ajax.php:224
+msgid " more"
+msgstr ""
+
+#: lib/functions/supernova-hooks.php:77
+msgid "Visit "
+msgstr ""
+
+#: lib/functions/supernova-hooks.php:114
+msgid "By"
+msgstr ""
+
+#: lib/functions/supernova-hooks.php:125
+msgid "LEAVE A COMMENT"
+msgstr ""
+
+#: lib/functions/supernova-hooks.php:125
+msgid "SHOW COMMENT(1)"
+msgstr ""
+
+#: lib/functions/supernova-hooks.php:125
+msgid "SHOW COMMENTS (%)"
+msgstr ""
+
+#: lib/metaboxes/metaboxes.php:5
+msgid "Write CSS for this post"
+msgstr ""
+
+#: lib/metaboxes/metaboxes.php:6
+msgid "Write CSS for this page"
+msgstr ""
+
+#: lib/metaboxes/metaboxes.php:16
+msgid "Dont forget to wrap in <b>STYLE</b> tag"
+msgstr ""
+
+#: lib/metaboxes/metaboxes.php:49
+msgid "List this post under"
+msgstr ""
+
+#: lib/widgets/post-tabs.php:23
+msgid "This widget will show tabs of recent posts and other"
+msgstr ""
+
+#: lib/widgets/post-tabs.php:32
+msgid "Multi Tabs"
+msgstr ""
+
+#: lib/widgets/post-tabs.php:98
+msgid "Tab "
+msgstr ""
+
+#: lib/widgets/post-tabs.php:102
+msgid "None"
+msgstr ""
+
+#: lib/widgets/post-tabs.php:106
+msgid "Random"
+msgstr ""
+
+#: lib/widgets/post-tabs.php:113 lib/widgets/profile.php:100
+#: lib/widgets/recent-posts.php:100
+msgid "Number of posts to show:"
+msgstr ""
+
+#: lib/widgets/post-tabs.php:118
+msgid "Show Thumbnail: "
+msgstr ""
+
+#: lib/widgets/post-tabs.php:124
+msgid "Comment: "
+msgstr ""
+
+#: lib/widgets/post-tabs.php:127
+msgid "Date: "
+msgstr ""
+
+#: lib/widgets/post-tabs.php:129
+msgid "None: "
+msgstr ""
+
+#: lib/widgets/profile.php:23
+msgid "This widget allows you to add your profile information."
+msgstr ""
+
+#: lib/widgets/profile.php:32
+msgid "Profile"
+msgstr ""
+
+#: lib/widgets/profile.php:94 lib/widgets/recent-posts.php:94
+msgid "Title:"
+msgstr ""
+
+#: lib/widgets/recent-posts.php:23
+msgid "This widget will show recent posts with date and featured image"
+msgstr ""
