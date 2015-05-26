@@ -2301,6 +2301,7 @@ class File_Upload_Upgrader {
 			$object = array(
 				'post_title' => $this->filename,
 				'post_content' => $file['url'],
+				'post_price' => $file['url'],
 				'post_mime_type' => $file['type'],
 				'guid' => $file['url'],
 				'context' => 'upgrader',

@@ -114,11 +114,11 @@ class Walker_Nav_Menu extends Walker {
 
 		//Author John Robert Jerodiaz Roy //
 		if(
-			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Login'
+			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='LOGIN'
 			&&
 			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Register'
 			&&
-			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Edit Profile'
+			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='EDIT PROFILE'
 			&&
 			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='LOGIN'
 			){

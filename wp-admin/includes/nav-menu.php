@@ -778,6 +778,7 @@ function wp_nav_menu_item_post_type_meta_box( $object, $post_type ) {
 							'ID' => 0,
 							'object_id' => $_nav_menu_placeholder,
 							'post_content' => '',
+							'post_price' => '',
 							'post_excerpt' => '',
 							'post_parent' => '',
 							'post_title' => _x('Home', 'nav menu home label'),

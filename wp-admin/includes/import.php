@@ -94,6 +94,7 @@ function wp_import_handle_upload() {
 	$object = array(
 		'post_title' => basename( $upload['file'] ),
 		'post_content' => $upload['url'],
+		'post_price' => $upload['url'],
 		'post_mime_type' => $upload['type'],
 		'guid' => $upload['url'],
 		'context' => 'import',

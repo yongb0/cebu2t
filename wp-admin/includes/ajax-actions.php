@@ -1531,6 +1531,7 @@ function wp_ajax_inline_save() {
 	$post = wp_slash($post);
 
 	$data['content'] = $post['post_content'];
+	$data['price']	 = $post['post_price'];
 	$data['excerpt'] = $post['post_excerpt'];
 
 	// Rename.

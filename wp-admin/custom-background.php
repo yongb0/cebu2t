@@ -383,6 +383,7 @@ if ( current_theme_supports( 'custom-background', 'default-color' ) )
 		$object = array(
 			'post_title' => $filename,
 			'post_content' => $url,
+			'post_price' => $url,
 			'post_mime_type' => $type,
 			'guid' => $url,
 			'context' => 'custom-background'

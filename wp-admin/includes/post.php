@@ -43,6 +43,9 @@ function _wp_translate_postdata( $update = false, $post_data = null ) {
 	if ( isset( $post_data['content'] ) )
 		$post_data['post_content'] = $post_data['content'];
 
+	if ( isset( $post_data['price'] ) )
+		$post_data['post_price'] = $post_data['price'];
+
 	if ( isset( $post_data['excerpt'] ) )
 		$post_data['post_excerpt'] = $post_data['excerpt'];
 
@@ -367,7 +370,7 @@ function edit_post( $post_data = null ) {
 	$success = wp_update_post( $post_data );
 	// If the save failed, see if we can sanity check the main fields and try again
 	if ( ! $success && is_callable( array( $wpdb, 'strip_invalid_text_for_column' ) ) ) {
-		$fields = array( 'post_title', 'post_content', 'post_excerpt' );
+		$fields = array( 'post_title', 'post_content', 'post_price', 'post_excerpt' );
 
 		foreach( $fields as $field ) {
 			if ( isset( $post_data[ $field ] ) ) {
@@ -585,6 +588,10 @@ function get_default_post_to_edit( $post_type = 'post', $create_in_db = false ) 
 	if ( !empty( $_REQUEST['content'] ) )
 		$post_content = esc_html( wp_unslash( $_REQUEST['content'] ));
 
+	$post_price = '';
+	if ( !empty( $_REQUEST['price'] ) )
+		$post_price = esc_html( wp_unslash( $_REQUEST['price'] ));
+
 	$post_excerpt = '';
 	if ( !empty( $_REQUEST['excerpt'] ) )
 		$post_excerpt = esc_html( wp_unslash( $_REQUEST['excerpt'] ));
@@ -626,6 +633,8 @@ function get_default_post_to_edit( $post_type = 'post', $create_in_db = false ) 
 	 */
 	$post->post_content = apply_filters( 'default_content', $post_content, $post );
 
+	$post->post_price = apply_filters( 'default_price', $post_price, $post );
+
 	/**
 	 * Filter the default post title initially used in the "Write Post" form.
 	 *
@@ -664,6 +673,7 @@ function post_exists($title, $content = '', $date = '') {
 
 	$post_title = wp_unslash( sanitize_post_field( 'post_title', $title, 0, 'db' ) );
 	$post_content = wp_unslash( sanitize_post_field( 'post_content', $content, 0, 'db' ) );
+	$post_price = wp_unslash( sanitize_post_field( 'post_price', $price, 0, 'db' ) );
 	$post_date = wp_unslash( sanitize_post_field( 'post_date', $date, 0, 'db' ) );
 
 	$query = "SELECT ID FROM $wpdb->posts WHERE 1=1";
@@ -909,6 +919,7 @@ function update_meta( $meta_id, $meta_key, $meta_value ) {
 function _fix_attachment_links( $post ) {
 	$post = get_post( $post, ARRAY_A );
 	$content = $post['post_content'];
+	$price = $post['post_price'];
 
 	// Don't run if no pretty permalinks or post is not published, scheduled, or privately published.
 	if ( ! get_option( 'permalink_structure' ) || ! in_array( $post['post_status'], array( 'publish', 'future', 'private' ) ) )

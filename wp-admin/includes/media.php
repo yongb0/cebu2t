@@ -397,6 +397,7 @@ function media_handle_sideload($file_array, $post_id, $desc = null, $post_data =
 	$file = $file['file'];
 	$title = preg_replace('/\.[^.]+$/', '', basename($file));
 	$content = '';
+	$price = '';
 
 	// Use image exif/iptc data for title and caption defaults if possible.
 	if ( $image_meta = @wp_read_image_metadata($file) ) {
@@ -416,6 +417,7 @@ function media_handle_sideload($file_array, $post_id, $desc = null, $post_data =
 		'post_parent' => $post_id,
 		'post_title' => $title,
 		'post_content' => $content,
+		'post_price'	=>	$price
 	), $post_data );
 
 	// This should never be set as it would then overwrite an existing attachment.
@@ -633,6 +635,8 @@ function media_upload_form_handler() {
 
 		if ( isset($attachment['post_content']) )
 			$post['post_content'] = $attachment['post_content'];
+		if ( isset($attachment['post_price']) )
+			$post['post_price'] = $attachment['post_price'];
 		if ( isset($attachment['post_title']) )
 			$post['post_title'] = $attachment['post_title'];
 		if ( isset($attachment['post_excerpt']) )
@@ -1185,6 +1189,11 @@ function get_attachment_fields_to_edit($post, $errors = null) {
 		'post_content' => array(
 			'label'      => __('Description'),
 			'value'      => $edit_post->post_content,
+			'input'      => 'textarea'
+		),
+		'post_price' => array(
+			'label'      => __('Description'),
+			'value'      => $edit_post->post_price,
 			'input'      => 'textarea'
 		),
 		'url'          => array(
