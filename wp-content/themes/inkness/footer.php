@@ -7,16 +7,106 @@
  * @package Inkness
  */
 ?>
+
+
+
+
+
+
+  <script src="http://2thinkerscebu.local/wp-content/themes/inkness/reads/readmore.js"></script>
+
+  <script>
+
+// external js: isotope.pkgd.js
+
+jQuery(document).ready( function() {
+  
+  jQuery('.grid').isotope({
+    itemSelector: 'article',
+    masonry: {
+      columnWidth: 2
+    }
+  });
+
+
+var height = 0;
+    jQuery('.fdc p').readmore({speed: 500,
+
+    beforeToggle: function(trigger, element, expanded){
+       height = jQuery(element).parent('.fdc').parent('.article-rest').parent('.article-wrapper').parent('article').height();
+
+      }, 
+    afterToggle: function(trigger, element, expanded) {
+        if(! expanded) { 
+        
+         setTimeout(function(){
+       		
+       //jQuery('#primary-home .row article').equalHeights();
+
+
+
+       var parent = jQuery('#primary-home');
+ parent.find('.row').each(function(i,e){
+  //jQuery(e).children('article').equalHeights();
+ });
+       },600);
+
+        }else{
+	         setTimeout(function(){
+	       		
+	       jQuery(element).parent('.fdc').parent('.article-rest').parent('.article-wrapper').parent('article').css('height','auto');
+	       
+	      },600);
+        }
+        jQuery('.grid').isotope({
+    itemSelector: 'article',
+    masonry: {
+      columnWidth: 2
+    }
+  });
+      }
+  });
+
+
+});
+
+    
+  </script>
+
+  
+
+
+
+
+
+
+
+
+
 	</div>
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer row" role="contentinfo">
-	<div class="container">
-		<div id="footertext" class="col-md-7">
-        	All about Cebu. all right reserved 2015 - 2016
-        </div>
-	</div>   
-	</footer><!-- #colophon -->
+<nav  style="height: 20px;" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+	<div style="border-top: 2px solid #eee;" >
+	  	<div class="container " >
+
+	  	<div class="row" style="height: 20px; margin-top: 10px;">
+	  		<div class="col-sm-8">
+			  	<div>
+			  	Copyright &copy 2015 -2016 All About Cebu. All Rights Reserved
+			  	</div>
+			</div>
+			<div class="col-sm-4">
+			  	<div class="pull-right" >
+			  		www.cebu.2thinkers.net
+			  	</div>
+			</div>
+	  	</div>
+
+	  	</div>
+  	</div>
+</nav>
+
 	
 </div><!-- #page -->
 

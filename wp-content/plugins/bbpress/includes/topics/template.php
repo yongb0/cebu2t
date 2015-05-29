@@ -713,24 +713,6 @@ function bbp_topic_content( $topic_id = 0 ) {
 		return apply_filters( 'bbp_get_topic_content', $content, $topic_id );
 	}
 
-	//===============================================================================================
-
-	
-function bbp_topic_price( $topic_id = 0 ) {
-	echo bbp_get_topic_price( $topic_id );
-}
-	
-	
-	function bbp_get_topic_price( $topic_id = 0 ) {
-		$topic_id = bbp_get_topic_id( $topic_id );
-
-		
-		$price = get_post_field( 'post_price', $topic_id );
-
-		return apply_filters( 'bbp_get_topic_price', $price, $topic_id );
-	}
-	//=============================================================================================================
-
 /**
  * Output the excerpt of the topic
  *

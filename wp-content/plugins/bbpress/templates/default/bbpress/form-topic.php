@@ -9,8 +9,6 @@
 
 ?>
 
-
-
 <?php if ( !bbp_is_single_forum() ) : ?>
 
 <div id="bbpress-forums">
@@ -77,17 +75,31 @@
 						<label for="bbp_topic_title"><?php printf( __( 'Topic Title (Maximum Length: %d):', 'bbpress' ), bbp_get_title_max_length() ); ?></label><br />
 						<input type="text" id="bbp_topic_title" value="<?php bbp_form_topic_title(); ?>" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_topic_title" maxlength="<?php bbp_title_max_length(); ?>" />
 					</p>
-					<p>
-						<label for="bbp_topic_price"><?php printf( __( 'Price' )); ?></label><br />
-						<input type="text" id="bbp_topic_price" name="bbp_topic_price" tabindex="<?php bbp_tab_index(); ?>" size="40"   />
-					</p>
-					<p>
-					<input type="radio" name="bbs_choice" value="Buying" checked> Buying<br>
-					<input type="radio" name="bbs_choice" value="Selling" > Selling
-					</p>
-
 
 					<?php do_action( 'bbp_theme_after_topic_form_title' ); ?>
+
+
+
+<?php // Author :  John Robert - Roy ?>
+					<?php do_action( 'bbp_theme_before_topic_form_price' ); ?>
+					<p>
+						<label for="bbp_topic_price">Price</label><br />
+						<input type="text" id="bbp_topic_price" value="" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_topic_price" maxlength="<?php bbp_title_max_length(); ?>" />
+					</p>
+					<?php do_action( 'bbp_theme_after_topic_form_price' ); ?>
+
+
+					<p>
+					<input type="radio" name="bbp_topic_choice" value="buying"> Buying<br>
+					<input type="radio" name="bbp_topic_choice" value="Selling" checked> Selling
+					</p>
+<?php // Author :  John Robert - Roy ?>
+
+
+
+
+
+					
 
 					<?php do_action( 'bbp_theme_before_topic_form_content' ); ?>
 

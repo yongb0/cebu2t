@@ -995,6 +995,8 @@ class Walker_Category extends Walker {
 			return;
 		}
 
+		if(($cat_name!='英語フレーズ')&&($cat_name!='未分類')&&($cat_name!='セブ情報')) {	
+
 		$link = '<a href="' . esc_url( get_term_link( $category ) ) . '" ';
 		if ( $args['use_desc_for_title'] && ! empty( $category->description ) ) {
 			/**
@@ -1080,6 +1082,9 @@ class Walker_Category extends Walker {
 		} else {
 			$output .= "\t$link<br />\n";
 		}
+
+} // end of my customize if
+
 	}
 
 	/**

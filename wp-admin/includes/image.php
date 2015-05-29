@@ -168,7 +168,6 @@ function wp_generate_attachment_metadata( $attachment_id, $file ) {
 					'post_mime_type' => $metadata['image']['mime'],
 					'post_type' => 'attachment',
 					'post_content' => '',
-					'post_price'	=>	''
 				);
 				/**
 				 * Filter the parameters for the attachment thumbnail creation.

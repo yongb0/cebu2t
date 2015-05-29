@@ -112,18 +112,7 @@ class Walker_Nav_Menu extends Walker {
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-		//Author John Robert Jerodiaz Roy //
-		if(
-			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='LOGIN'
-			&&
-			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Register'
-			&&
-			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='EDIT PROFILE'
-			&&
-			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='LOGIN'
-			){
-			$output .= $indent . '<li' . $id . $class_names .'>';
-		}
+		$output .= $indent . '<li' . $id . $class_names .'>';
 
 		$atts = array();
 		$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
@@ -161,21 +150,8 @@ class Walker_Nav_Menu extends Walker {
 
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
-		//$attributes 
 		/** This filter is documented in wp-includes/post-template.php */
-
-		// Author : John Robert  - Roy
-		if(
-			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Login'
-			&&
-			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Register'
-			&&
-			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='Edit Profile'
-			&&
-			$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after!='LOGIN'
-			){
-					$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			}
+		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= '</a>';
 		$item_output .= $args->after;
 
@@ -528,8 +504,7 @@ function _wp_menu_item_classes_by_context( &$menu_items ) {
 		$menu_items[$key]->current = false;
 
 		$classes = (array) $menu_item->classes;
-		// Author : John Robert Jerodiaz
-		$classes[] = 'menu-item';   //this is for adding css.style of list
+		$classes[] = 'menu-item';
 		$classes[] = 'menu-item-type-' . $menu_item->type;
 		$classes[] = 'menu-item-object-' . $menu_item->object;
 

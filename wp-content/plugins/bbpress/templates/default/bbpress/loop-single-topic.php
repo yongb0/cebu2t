@@ -53,11 +53,7 @@
 
 		<?php do_action( 'bbp_theme_before_topic_title' ); ?>
 
-		<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>">
-		<?php bbp_topic_title(); ?>
-		<br>
-		Price : <?php bbp_topic_price(); ?>
-		</a>
+		<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>"><?php bbp_topic_title(); ?></a>
 
 		<?php do_action( 'bbp_theme_after_topic_title' ); ?>
 
@@ -72,11 +68,7 @@
 				<?php if (isset($avtar_image[0])&& $avtar_image[0]!=''): ?> 
 						<img src="<?php echo $avtar_image[0]; ?>" width="50" style="border:2px solid black;"/> 
 				<?php endif; ?>
-			 <span class="bbp-topic-started-by">
-				 <?php  
-				 	printf( __( 'Started by: %1$s', 'bbpress' ), bbp_get_topic_author_link() ); 
-				 ?>
-			 </span> 
+			 <span class="bbp-topic-started-by"><?php printf( __( 'Started by: %1$s', 'bbpress' ), bbp_get_topic_author_link() ); ?></span> 
 				
 		
 			<?php do_action( 'bbp_theme_after_topic_started_by' ); ?>

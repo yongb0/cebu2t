@@ -66,6 +66,10 @@ if(isset($_POST['submit']))//Controls behaviour of login button
    <div id="top-entry-header">
     <div class="login-success"> Login Success! </div>
     <div class="login-dis"> Please choose your destination. </div>
+    <?php
+    	header("location: http://cebu.2thinkers.net");
+    	exit();
+    ?>
    </div>
    
   <div id="UPB-Standard-Form-entry-content">
@@ -177,7 +181,7 @@ function validateLogin()
 </script>
 <form class="UPB-login-form" method="post" action="" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
   
-  <div id="UPB-Standard-Form">
+  <div >
   <div id="UPB-Standard-Form-entry-content">
   <?php if(isset($loginErr)): ?>
   <div id="loginErr" class="reg_frontErr"> <?php echo $loginErr; ?> </div>
@@ -214,14 +218,9 @@ function validateLogin()
   <div id="UPB-Button-area">
       <div class="UPB-Button-input">
       <?php wp_nonce_field('upb_login_form'); ?>
-        <input type="submit" value="Log In"  
-        style="background-color: skyblue; 
-        border: 2px solid #ddd;
-        height: 30px;
-        width: 80px;
-    	border-radius: 5px;"  id="login" name="submit">
+        <input type="submit" value="Log In" class="UPB-Button pull-right" style="margin-right: 50px;" id="login" name="submit">
       </div>
-      <div class="UPB-forgot-pass"> Forget Password? <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">Click here</a> to resend </div>
+      <div class="UPB-forgot-pass text-center"> Forget Password? <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">Click here</a> to resend </div>
       
       <div class="clear"></div>
 	  

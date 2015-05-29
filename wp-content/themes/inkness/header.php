@@ -15,7 +15,30 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+
+
+
 <?php wp_head(); ?>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.0/isotope.pkgd.min.js"></script>
+<style>
+	.grid {
+  max-width: 1200px;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+  float: left;
+}	
+</style>
 </head>
 
 <body <?php body_class(); ?>>
@@ -32,7 +55,6 @@
 				}
 			else { ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1> 
-
 			<?php	
 			}
 			?>
@@ -40,31 +62,28 @@
 			
 			<div id="social-icons" class="col-md-5 col-xs-12">
 
-				<?php if(is_user_logged_in()) { ?>
-					<div style="color:white;">
-			
 
-			<?php  if (is_user_logged_in()){
+<div style="color:white">
+<?php  if (is_user_logged_in()){
+		global $current_user; get_currentuserinfo();
+		echo('Welcome, ' . $current_user->user_login . ' | ');
+	} else {
+		echo "Welcome, Visitor | ";
+	};
+?>
+</div>
 
-					global $current_user; get_currentuserinfo();
-					echo('Welcome, ' . $current_user->user_login . ' | ');
-					}
-					else {
-					echo "Welcome, Visitor | ";
-					};
-			?>
 
-						<a href="http://2thinkerscebu.local/?page_id=496">Edit Profile</a> 
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="http://2thinkerscebu.local/wp-login.php?action=logout&redirect_to=http%3A%2F%2F2thinkerscebu.local%2F%3Fpage_id%3D496&_wpnonce=b403a7974d">Logout</a>
-					</div>
-				<?php } else {?>
-				<div>
-					<a href="http://2thinkerscebu.local/?page_id=493">Login</a> 
-						&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="http://2thinkerscebu.local/?page_id=489">Register</a>
-				</div>
-				<?php } ?>
+<?php if(is_user_logged_in()) { ?>
+	<a href="http://cebu.2thinkers.net/?page_id=193">Edit Profile</a> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a class="UPB-Button" title="Logout" href="http://cebu.2thinkers.net/wp-login.php?action=logout&redirect_to=http%3A%2F%2Fcebu.2thinkers.net%2F%3Fpage_id%3D178&_wpnonce=85e651145f">Logout</a>
+<?php } else { ?>
+	<a href="http://2thinkerscebu.local/?page_id=493">Login</a> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="http://2thinkerscebu.local/?page_id=489">Register</a>
+<?php } ?>
+
 
 			    <?php if ( of_get_option('facebook', true) != "") { ?>
 				 <a target="_blank" href="<?php echo esc_url(of_get_option('facebook', true)); ?>" title="Facebook" ><i class="social-icon fa fa-facebook-square"></i></a>
@@ -153,5 +172,10 @@
 			}
 		}
 		?>
+
+
+
 		<div id="content" class="site-content row clearfix clear">
 		<div class="container col-md-12"> 
+
+		

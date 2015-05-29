@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
 	if (jQuery(window).width() > 991 ) {
 		setTimeout(function() {
 			for (var i = 0; i < 15; i++) {
-				jQuery('#primary-home .row-'+i+' article').equalHeights();
+				//jQuery('#primary-home .row-'+i+' article').equalHeights();
 				}
 	      }, 1250);
 	 }     				

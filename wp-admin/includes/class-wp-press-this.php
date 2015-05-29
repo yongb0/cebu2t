@@ -116,7 +116,6 @@ class WP_Press_This {
 			'ID'            => $post_id,
 			'post_title'    => ( ! empty( $_POST['post_title'] ) ) ? sanitize_text_field( trim( $_POST['post_title'] ) ) : '',
 			'post_content'  => ( ! empty( $_POST['post_content'] ) ) ? trim( $_POST['post_content'] ) : '',
-			'post_price'  => ( ! empty( $_POST['post_price'] ) ) ? trim( $_POST['post_price'] ) : '',
 			'post_type'     => 'post',
 			'post_status'   => 'draft',
 			'post_format'   => ( ! empty( $_POST['post_format'] ) ) ? sanitize_text_field( $_POST['post_format'] ) : '',
@@ -133,7 +132,6 @@ class WP_Press_This {
 		}
 
 		$post['post_content'] = $this->side_load_images( $post_id, $post['post_content'] );
-		$post['post_price'] = $this->side_load_images( $post_id, $post['post_price'] );
 
 		$updated = wp_update_post( $post, true );
 
@@ -1164,7 +1162,6 @@ class WP_Press_This {
 		}
 
 		$post_content = $this->get_suggested_content( $data );
-		$post_price = $this->get_suggested_content( $data );
 
 		// Get site settings array/data.
 		$site_settings = $this->site_settings();

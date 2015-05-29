@@ -331,7 +331,6 @@ class WP_Widget_Archives extends WP_Widget {
 <?php
 		} else {
 ?>
-		<div class="panel-body">
 		<ul>
 <?php
 		/**
@@ -349,7 +348,6 @@ class WP_Widget_Archives extends WP_Widget {
 		) ) );
 ?>
 		</ul>
-		</div>
 <?php
 		}
 
@@ -626,7 +624,7 @@ class WP_Widget_Categories extends WP_Widget {
 <?php
 		} else {
 ?>
-		<ul><div class="panel-body">
+		<ul>
 <?php
 		$cat_args['title_li'] = '';
 
@@ -635,11 +633,11 @@ class WP_Widget_Categories extends WP_Widget {
 		 *
 		 * @since 2.8.0
 		 *
-		 * @param array $calculhmac(clent, data)t_args An array of Categories widget options.
+		 * @param array $cat_args An array of Categories widget options.
 		 */
 		wp_list_categories( apply_filters( 'widget_categories_args', $cat_args ) );
 ?>
-		</div></div></ul>
+		</ul>
 <?php
 		}
 
@@ -750,23 +748,16 @@ class WP_Widget_Recent_Posts extends WP_Widget {
 		<?php if ( $title ) {
 			echo $args['before_title'] . $title . $args['after_title'];
 		} ?>
-		<div class="panel-body">
-			<ul>
-			<table class="table table-bordered table-hover">
-			<?php while ( $r->have_posts() ) : $r->the_post(); ?>
-				<tr><td>
-				<li style="list-style-type: none; ">
-					<a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
-				<?php if ( $show_date ) : ?>
-					<span class="post-date"><?php echo get_the_date(); ?></span>
-				<?php endif; ?>
-				</li>
-				</td></tr>
-			<?php endwhile; ?>
-			</table>
-			</ul>
-		</div> <!-- this is end of panel body -->
-	</div> <!-- this is end of panel -->
+		<ul>
+		<?php while ( $r->have_posts() ) : $r->the_post(); ?>
+			<li>
+				<a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
+			<?php if ( $show_date ) : ?>
+				<span class="post-date"><?php echo get_the_date(); ?></span>
+			<?php endif; ?>
+			</li>
+		<?php endwhile; ?>
+		</ul>
 		<?php echo $args['after_widget']; ?>
 <?php
 		// Reset the global $the_post as this query will have stomped on it
@@ -909,28 +900,23 @@ class WP_Widget_Recent_Comments extends WP_Widget {
 			$output .= $args['before_title'] . $title . $args['after_title'];
 		}
 
-		$output .= '<div class="panel-body"><ul id="recentcomments">
-		<table class="table table-bordered table-hover">
-		
-		';
+		$output .= '<ul id="recentcomments">';
 		if ( $comments ) {
 			// Prime cache for associated posts. (Prime post term cache if we need it for permalinks.)
 			$post_ids = array_unique( wp_list_pluck( $comments, 'comment_post_ID' ) );
 			_prime_post_caches( $post_ids, strpos( get_option( 'permalink_structure' ), '%category%' ), false );
 
 			foreach ( (array) $comments as $comment) {
-				$output .= '<tr><td><li class="recentcomments" style="list-style-type: none;">';
+				$output .= '<li class="recentcomments">';
 				/* translators: comments widget: 1: comment author, 2: post link */
 				$output .= sprintf( _x( '%1$s on %2$s', 'widgets' ),
 					'<span class="comment-author-link">' . get_comment_author_link() . '</span>',
 					'<a href="' . esc_url( get_comment_link( $comment->comment_ID ) ) . '">' . get_the_title( $comment->comment_post_ID ) . '</a>'
 				);
-				$output .= '</td></tr></li>';
+				$output .= '</li>';
 			}
 		}
-		$output .= '
-		</table>
-		</ul></div></div>';
+		$output .= '</ul>';
 		$output .= $args['after_widget'];
 
 		echo $output;

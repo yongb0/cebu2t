@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('grid-item'); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
@@ -17,8 +17,18 @@
 		<?php if (has_post_thumbnail() ) : ?>
 		<div class="featured-image-single">
 			<?php
-				the_post_thumbnail();
+				//the_post_thumbnail();
+			$postId = get_the_ID();
+
+
+	    		$imgId = get_post_thumbnail_id($postId);
+	    		$image = wp_get_attachment_image_src($imgId,'large');
 				?>
+			<a href="<?php echo $image[0]; ?>" >
+	    		<img src="<?php echo $image[0]; ?>" alt="" style="border: 5px solid black; height: 500px;">
+	   		</a>
+
+
 		</div>
 		<?php endif; ?>
 		<?php

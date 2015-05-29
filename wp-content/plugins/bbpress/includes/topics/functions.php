@@ -26,17 +26,9 @@ if ( !defined( 'ABSPATH' ) ) exit;
  * @param array $topic_data Forum post data
  * @param arrap $topic_meta Forum meta data
  */
-
-
-
-
-
-
 function bbp_insert_topic( $topic_data = array(), $topic_meta = array() ) {
 
 	// Parse arguments against default values
-
-	// Author : John robert Roy 
 	$topic_data = bbp_parse_args( $topic_data, array(
 		'post_parent'    => 0, // forum ID
 		'post_status'    => bbp_get_public_status_id(),
@@ -44,12 +36,11 @@ function bbp_insert_topic( $topic_data = array(), $topic_meta = array() ) {
 		'post_author'    => bbp_get_current_user_id(),
 		'post_password'  => '',
 		'post_content'   => '',
-		'post_price'	=>	'',
 		'post_title'     => '',
 		'comment_status' => 'closed',
 		'menu_order'     => 0,
 	), 'insert_topic' );
-// Author : John robert Roy
+
 	// Insert topic
 	$topic_id   = wp_insert_post( $topic_data );
 
@@ -83,27 +74,6 @@ function bbp_insert_topic( $topic_data = array(), $topic_meta = array() ) {
 
 	// Return new topic ID
 	return $topic_id;
-}
-
-
-
-
-
-
-add_filter('manage_posts_columns', 'my_columns');
-function my_columns($columns) {
-    $columns['post_choice'] = 'post_choice';
-    return $columns;
-} 
-
-add_action('manage_posts_custom_column',  'my_show_columns');
-function my_show_columns($name) {
-    global $post;
-    switch ($name) {
-        case 'post_choice':
-            $post_choice = get_post_meta($post->ID, 'post_choice', true);
-            echo $post_choice;
-    }
 }
 
 /** Post Form Handlers ********************************************************/
@@ -209,16 +179,8 @@ function bbp_new_topic_handler( $action = '' ) {
 	if ( !empty( $_POST['bbp_topic_content'] ) )
 		$topic_content = $_POST['bbp_topic_content'];
 
-	/** Topic Price *********************************************************/
-	// Author : John Robert , Roy
-	// Author : John robert Roy
-	// Author : John robert Roy
-	if ( !empty( $_POST['bbp_topic_price'] ) )
-		$topic_price = $_POST['bbp_topic_price'];
-
 	// Filter and sanitize
 	$topic_content = apply_filters( 'bbp_new_topic_pre_content', $topic_content );
-	$topic_price = apply_filters( 'bbp_new_topic_pre_content', $topic_price );
 
 	// No topic content
 	if ( empty( $topic_content ) )
@@ -299,12 +261,12 @@ function bbp_new_topic_handler( $action = '' ) {
 
 	/** Topic Duplicate *******************************************************/
 
-	if ( !bbp_check_for_duplicate( array( 'post_type' => bbp_get_topic_post_type(), 'post_author' => $topic_author, 'post_price' => $topic_price, 'post_content' => $topic_content, 'anonymous_data' => $anonymous_data ) ) )
+	if ( !bbp_check_for_duplicate( array( 'post_type' => bbp_get_topic_post_type(), 'post_author' => $topic_author, 'post_content' => $topic_content, 'anonymous_data' => $anonymous_data ) ) )
 		bbp_add_error( 'bbp_topic_duplicate', __( '<strong>ERROR</strong>: Duplicate topic detected; it looks as though you&#8217;ve already said that!', 'bbpress' ) );
 
 	/** Topic Blacklist *******************************************************/
 
-	if ( !bbp_check_for_blacklist( $anonymous_data, $topic_author, $topic_title, $topic_content, $topic_price ) )
+	if ( !bbp_check_for_blacklist( $anonymous_data, $topic_author, $topic_title, $topic_content ) )
 		bbp_add_error( 'bbp_topic_blacklist', __( '<strong>ERROR</strong>: Your topic cannot be created at this time.', 'bbpress' ) );
 
 	/** Topic Status **********************************************************/
@@ -350,19 +312,15 @@ function bbp_new_topic_handler( $action = '' ) {
 
 	// Add the content of the form to $topic_data as an array.
 	// Just in time manipulation of topic data before being created
-	// Author : John robert Roy
-	// Author : John robert Roy
 	$topic_data = apply_filters( 'bbp_new_topic_pre_insert', array(
 		'post_author'    => $topic_author,
 		'post_title'     => $topic_title,
 		'post_content'   => $topic_content,
-		'post_choice'	=>	$topic_content,
 		'post_status'    => $topic_status,
 		'post_parent'    => $forum_id,
 		'post_type'      => bbp_get_topic_post_type(),
 		'tax_input'      => $terms,
 		'comment_status' => 'closed'
-		
 	) );
 
 	// Insert topic
@@ -626,14 +584,6 @@ function bbp_edit_topic_handler( $action = '' ) {
 	if ( empty( $topic_title ) )
 		bbp_add_error( 'bbp_edit_topic_title', __( '<strong>ERROR</strong>: Your topic needs a title.', 'bbpress' ) );
 
-
-    /** Topic Price *********************************************************/
-
-	// Author : John Robert , Roy
-	if ( !empty( $_POST['bbp_topic_price'] ) )
-		$topic_price = $_POST['bbp_topic_price'];
-
-
 	/** Topic Content *********************************************************/
 
 	if ( !empty( $_POST['bbp_topic_content'] ) )
@@ -710,7 +660,6 @@ function bbp_edit_topic_handler( $action = '' ) {
 		'ID'           => $topic_id,
 		'post_title'   => $topic_title,
 		'post_content' => $topic_content,
-		'post_price'	=>	$topic_price,
 		'post_status'  => $topic_status,
 		'post_parent'  => $forum_id,
 		'post_author'  => $topic_author,

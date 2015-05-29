@@ -169,7 +169,6 @@ CREATE TABLE $wpdb->posts (
   post_type varchar(20) NOT NULL default 'post',
   post_mime_type varchar(100) NOT NULL default '',
   comment_count bigint(20) NOT NULL default '0',
-  post_price text NOT NULL,
   PRIMARY KEY  (ID),
   KEY post_name (post_name($max_index_length)),
   KEY type_status_date (post_type,post_status,post_date,ID),

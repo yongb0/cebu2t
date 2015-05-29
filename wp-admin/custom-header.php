@@ -814,7 +814,6 @@ wp_nonce_field( 'custom-header-options', '_wpnonce-custom-header-options' ); ?>
 		$object = array(
 			'post_title'     => $filename,
 			'post_content'   => $url,
-			'post_price' => $url,
 			'post_mime_type' => $type,
 			'guid'           => $url,
 			'context'        => 'custom-header'
@@ -1100,7 +1099,6 @@ wp_nonce_field( 'custom-header-options', '_wpnonce-custom-header-options' ); ?>
 			'ID' => $parent_attachment_id,
 			'post_title' => basename($cropped),
 			'post_content' => $url,
-			'post_price' => $url,
 			'post_mime_type' => $image_type,
 			'guid' => $url,
 			'context' => 'custom-header'
