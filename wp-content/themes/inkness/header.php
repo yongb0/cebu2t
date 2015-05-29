@@ -73,15 +73,14 @@
 ?>
 </div>
 
-
 <?php if(is_user_logged_in()) { ?>
 	<a href="http://cebu.2thinkers.net/?page_id=193">Edit Profile</a> 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a class="UPB-Button" title="Logout" href="http://cebu.2thinkers.net/wp-login.php?action=logout&redirect_to=http%3A%2F%2Fcebu.2thinkers.net%2F%3Fpage_id%3D178&_wpnonce=85e651145f">Logout</a>
+	<a class="UPB-Button" title="Logout" href="<?php echo get_site_url(); ?>/wp-login.php?action=logout&redirect_to=http%3A%2F%2Fcebu.2thinkers.net%2F%3Fpage_id%3D178&_wpnonce=85e651145f">Logout</a>
 <?php } else { ?>
-	<a href="http://2thinkerscebu.local/?page_id=493">Login</a> 
+	<a href="<?php echo get_site_url(); ?>/?page_id=493">Login</a> 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="http://2thinkerscebu.local/?page_id=489">Register</a>
+	<a href="<?php echo get_site_url(); ?>/?page_id=489">Register</a>
 <?php } ?>
 
 			    <?php if ( of_get_option('facebook', true) != "") { ?>

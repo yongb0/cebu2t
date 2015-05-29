@@ -13,7 +13,7 @@
 
 
 
-  <script src="http://2thinkerscebu.local/wp-content/themes/inkness/reads/readmore.js"></script>
+  <script src="<?php echo get_site_url(); ?>/wp-content/themes/inkness/reads/readmore.js"></script>
 
   <script>
 
@@ -74,12 +74,6 @@ var height = 0;
   </script>
 
   
-
-
-
-
-
-
 
 
 
