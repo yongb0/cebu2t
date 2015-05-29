@@ -14,7 +14,7 @@ get_header(); ?>
 				<header class="page-header">
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'inkness' ); ?></h1>
 				</header><!-- .page-header -->
-
+				
 				<div class="page-content">
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'inkness' ); ?></p>
 
@@ -46,8 +46,9 @@ get_header(); ?>
 					?>
 
 					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-
+					
 				</div><!-- .page-content -->
+
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->

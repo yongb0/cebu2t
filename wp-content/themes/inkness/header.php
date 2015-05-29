@@ -84,7 +84,6 @@
 	<a href="http://2thinkerscebu.local/?page_id=489">Register</a>
 <?php } ?>
 
-
 			    <?php if ( of_get_option('facebook', true) != "") { ?>
 				 <a target="_blank" href="<?php echo esc_url(of_get_option('facebook', true)); ?>" title="Facebook" ><i class="social-icon fa fa-facebook-square"></i></a>
 	             <?php } ?>
