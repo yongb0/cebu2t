@@ -159,8 +159,11 @@ if(isset($_POST['submit']))//Controls behaviour of login button
 <div id="profile-page"> 
 <script type="text/javascript">
   
+
 function validateLogin()
 {
+	console.log("validate");
+
 	var user_login = document.getElementById("user_login").value;
 	var user_pass = document.getElementById("user_pass").value;
 	if (user_login==null || user_login=="")
@@ -178,6 +181,8 @@ function validateLogin()
 	}
 	return true;
 }
+
+
 </script>
 <form class="UPB-login-form" method="post" action="" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
   
