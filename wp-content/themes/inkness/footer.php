@@ -125,7 +125,7 @@ jQuery(document).ready( function() {
   if(fancyBox) {
    jQuery("a.fancybox").fancybox();//reinitialize fancybox
   }
-
+  
 });
 
 /**
