@@ -31,7 +31,7 @@ jQuery(document).ready( function() {
   },500);
   
   
-  jQuery('.fdc p').readmore({
+  /*jQuery('.fdc p').readmore({
       speed: 500,
       afterToggle: function(trigger, element, expanded) {
         if(! expanded) { 
@@ -56,11 +56,35 @@ jQuery(document).ready( function() {
           }
         });
       }
-  });
+  });*/
+  
 
+  var countChecker = jQuery('#main').find('article.archive').length;
+ 
+  if(countChecker>0){
+    jQuery('#main').find('article.archive').each(function(i,e){
+      var content = jQuery(e).find('.entry-content').html();
 
+      var contentCheck = stripHTML(jQuery(e).find('div.entry-content').html());
+      var contentLink  = jQuery(e).find('h1.entry-title a').attr("href");
 
+      if(contentCheck.length>200){
+        contentCheck   = contentCheck.substr(0,200);
+        contentCheck += "<div style='padding:10px; padding-left:0px;'><a href='"+contentLink+"'>Read More</a></div>";
+      }
+
+      jQuery(e).find('.entry-content').html(contentCheck);
+      
+    });
+  }
+  
 });
+
+function stripHTML(dirtyString) {
+    var container = document.createElement('div');
+    container.innerHTML = dirtyString;
+    return container.textContent || container.innerText;
+}
 
     
   </script>
