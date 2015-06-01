@@ -188,7 +188,7 @@ function SearchFilter($query) {
 	if ($query->is_search) {
 		$query->set('post_type', 'post');
 	}
-	
+
 	return $query;
 }
 

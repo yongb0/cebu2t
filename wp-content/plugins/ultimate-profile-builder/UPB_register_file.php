@@ -595,118 +595,16 @@ if($row1->Type=='term_checkbox')
     </div>
   </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 			}	
 		}
 ?>
 <script language="javascript" type="text/javascript"> //AJAX username validation
-			var name=false;
-			var email=false;
+      var name  =false;
+      var email =false;
 			function validete_userName()
 			{
+
 				jQuery.ajax(
 				{
 					type: "POST",
@@ -725,8 +623,10 @@ if($row1->Type=='term_checkbox')
 						}
             	
 					}
-				})
+				});
+
 			}
+
 			function validete_email() //AJAX email validation
 			{
 				jQuery.ajax(
@@ -748,6 +648,7 @@ if($row1->Type=='term_checkbox')
 					}
 				})
 			}
+
 </script>
 <?php
 	}
@@ -763,15 +664,25 @@ if($row1->Type=='term_checkbox')
         //email validation start for custom field	
         var email_val = "";
         var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var regexAN = "/^([a-zA-Z0-9 _-]+)$/";
         jQuery('.custom_error').html('');
         jQuery('.custom_error').hide();
         jQuery('.customupberror').html('');
 		
 		<?php if(isset($pwd_show) && $pwd_show == "no"): ?>
-		var password = jQuery('#inputPassword').val();
-		var confirmpassword = jQuery('#user_confirm_password').val();
-		var passwordlength = password.length;
-		if(password !="")
+    var password        = jQuery('#inputPassword').val();
+    var confirmpassword = jQuery('#user_confirm_password').val();
+    var passwordlength  = password.length;
+    var userName        = jQuery('#user_name').val();
+		
+    if(userName.length!==0){
+      var isAlphaNumeric =  regexAN.test(userName);
+      console.log(isAlphaNumeric);
+    }
+
+
+
+    if(password !="")
 		{
 			if(passwordlength < 7)
 			{
@@ -784,6 +695,7 @@ if($row1->Type=='term_checkbox')
 				jQuery('.upb_confirmpassword').children('.custom_error').show();
 			}
 		}
+
 		<?php endif; ?>
 		
         jQuery('.upb_email').each(function (index, element) {
@@ -907,6 +819,7 @@ if($row1->Type=='term_checkbox')
         } else {
             return false;
         }
+
     });
 jQuery('.upb_required').parent('.formtable').children('.lable-text').children('label').append('<sup class="upb_estric">*</sup>');
 jQuery('.upb_select_required').parent('.formtable').children('.lable-text').children('label').append('<sup class="upb_estric">*</sup>');
