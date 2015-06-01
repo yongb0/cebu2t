@@ -89,6 +89,8 @@
 
 
 
+
+
 <?php // Author :  John Robert - Roy ?>
 					<?php do_action( 'bbp_theme_before_topic_form_price' ); ?>
 					<p>
@@ -100,6 +102,7 @@
 
 					<p>
 					<input type="radio" name="bbp_topic_choice" value="buying"> Buying<br>
+					
 					<input type="radio" name="bbp_topic_choice" value="Selling" checked> Selling
 					</p>
 <?php // Author :  John Robert - Roy ?>
