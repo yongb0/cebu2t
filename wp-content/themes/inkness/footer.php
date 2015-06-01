@@ -15,6 +15,19 @@
 
   <script src="<?php echo get_site_url(); ?>/wp-content/themes/inkness/reads/readmore.js"></script>
   
+
+<script>
+
+jQuery(document).ready(
+  function(){
+    jQuery('#cread').click()
+  }
+  );
+
+</script>
+
+
+
   <script>
 
 // external js: isotope.pkgd.js
