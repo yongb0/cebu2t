@@ -1,11 +1,11 @@
 <?php
 /*Controls registration form behavior on the front end*/
-	$textdomain = 'ultimate-profile-builder';
-	$path =  plugin_dir_url(__FILE__);  // define path to link and scripts
-	$pageURL = get_permalink();
-	$sign = strpos($pageURL,'?')?'&':'?';
-	global $wpdb;
-	$upb_fields =$wpdb->prefix."upb_fields";
+  $textdomain = 'ultimate-profile-builder';
+  $path       =  plugin_dir_url(__FILE__);  // define path to link and scripts
+  $pageURL    = get_permalink();
+  $sign       = strpos($pageURL,'?')?'&':'?';
+  global $wpdb;
+  $upb_fields =$wpdb->prefix."upb_fields";
 	extract($_REQUEST);
 	if(isset($login2))
 	{
@@ -140,11 +140,12 @@ if(isset($_POST['submit']) && $submit==1 ) // Checks if the submit button is pre
 	$retrieved_nonce = $_REQUEST['_wpnonce'];
 	if (!wp_verify_nonce($retrieved_nonce, 'upb_register_form' ) ) die( 'Failed security check' );
 
-$user_name = $_POST['user_name']; // receiving username
-$user_email = $_POST['user_email']; // receiving email address
-$inputPassword = $_POST['inputPassword']; // receiving password
-$user_confirm_password = $_POST['user_confirm_password']; // receiving confirm password
-$user_id = username_exists( $user_name ); // Checks if username is already exists.
+$user_name             = trim($_POST['user_name']); // receiving username
+$user_email            = trim($_POST['user_email']); // receiving email address
+$inputPassword         = trim($_POST['inputPassword']); // receiving password
+$user_confirm_password = trim($_POST['user_confirm_password']); // receiving confirm password
+$user_id               = username_exists( $user_name ); // Checks if username is already exists.
+
 if ( !$user_id and email_exists($user_email) == false )//Creates password if password auto-generation is turned on in the settings
 {
 	if($pwd_show != "no")
@@ -155,9 +156,11 @@ if ( !$user_id and email_exists($user_email) == false )//Creates password if pas
 	{
 		$random_password = $inputPassword;
 	}
+
 $qry="SELECT value FROM $upb_option WHERE fieldname='upb_welcome_email_subject'";//Fetches registration email Subject from dashboard settings
 $subject = $wpdb->get_var($qry);
 $user_id = wp_create_user( $user_name, $random_password, $user_email );//Creates new WP user after successful registration
+
   if($subject == "")
   {
 	$subject = get_bloginfo('name');//Auto inserts email Subject if it is not defined in dashboard settings
@@ -595,138 +598,50 @@ if($row1->Type=='term_checkbox')
     </div>
   </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 			}	
 		}
 ?>
 <script language="javascript" type="text/javascript"> //AJAX username validation
-			var name=false;
-			var email=false;
+      var name  =false;
+      var email =false;
+
+      var checkingRegex = false;
+
 			function validete_userName()
 			{
-				jQuery.ajax(
-				{
-					type: "POST",
-					url: '<?php echo get_option('siteurl').'/wp-admin/admin-ajax.php';?>?action=ajaxcalls&cookie=encodeURIComponent(document.cookie)&function=validateUser&name=' + jQuery("#user_name").val(),
-					success : function (serverResponse)
-					{
-								
-						if (serverResponse == "true") {
-							jQuery("#nameErr").html("<?php _e('Sorry, username already exist',$textdomain);?>");
-							jQuery("#nameErr").css('display','block');
-							jQuery("#submit").attr('disabled', true);
-						} else {
-							jQuery("#nameErr").html('');
-							jQuery("#nameErr").css('display','none');
-							jQuery("#submit").attr('disabled', false);
-						}
-            	
-					}
-				})
+
+        var regexAN  = "/^([a-zA-Z0-9 _-]+)$/";
+        var userName = jQuery('#user_name').val();
+        if(userName.length!==0){
+          if (userName.match(/[^a-zA-Z0-9 ]/g)){
+            jQuery('#user_name').parent().find('.custom_error').html('<?php _e('Please enter a valid username.',$textdomain);?>');
+            jQuery('#user_name').parent().find('.custom_error').show();
+          } else {
+
+            jQuery.ajax(
+            {
+              type: "POST",
+              url: '<?php echo get_option('siteurl').'/wp-admin/admin-ajax.php';?>?action=ajaxcalls&cookie=encodeURIComponent(document.cookie)&function=validateUser&name=' + jQuery("#user_name").val(),
+              success : function (serverResponse)
+              {
+                    
+                if (serverResponse == "true") {
+                  jQuery("#nameErr").html("<?php _e('Sorry, username already exist',$textdomain);?>");
+                  jQuery("#nameErr").css('display','block');
+                  jQuery("#submit").attr('disabled', true);
+                } else {
+                  jQuery("#nameErr").html('');
+                  jQuery("#nameErr").css('display','none');
+                  jQuery("#submit").attr('disabled', false);
+                }
+                  
+              }
+            });
+          }
+        }
 			}
+
 			function validete_email() //AJAX email validation
 			{
 				jQuery.ajax(
@@ -748,6 +663,7 @@ if($row1->Type=='term_checkbox')
 					}
 				})
 			}
+
 </script>
 <?php
 	}
@@ -763,15 +679,18 @@ if($row1->Type=='term_checkbox')
         //email validation start for custom field	
         var email_val = "";
         var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var regexAN = "/^([a-zA-Z0-9 _-]+)$/";
         jQuery('.custom_error').html('');
         jQuery('.custom_error').hide();
         jQuery('.customupberror').html('');
 		
 		<?php if(isset($pwd_show) && $pwd_show == "no"): ?>
-		var password = jQuery('#inputPassword').val();
-		var confirmpassword = jQuery('#user_confirm_password').val();
-		var passwordlength = password.length;
-		if(password !="")
+    var password        = jQuery('#inputPassword').val();
+    var confirmpassword = jQuery('#user_confirm_password').val();
+    var passwordlength  = password.length;
+    var userName        = jQuery('#user_name').val();
+
+    if(password !="")
 		{
 			if(passwordlength < 7)
 			{
@@ -784,6 +703,7 @@ if($row1->Type=='term_checkbox')
 				jQuery('.upb_confirmpassword').children('.custom_error').show();
 			}
 		}
+
 		<?php endif; ?>
 		
         jQuery('.upb_email').each(function (index, element) {
@@ -907,6 +827,7 @@ if($row1->Type=='term_checkbox')
         } else {
             return false;
         }
+
     });
 jQuery('.upb_required').parent('.formtable').children('.lable-text').children('label').append('<sup class="upb_estric">*</sup>');
 jQuery('.upb_select_required').parent('.formtable').children('.lable-text').children('label').append('<sup class="upb_estric">*</sup>');

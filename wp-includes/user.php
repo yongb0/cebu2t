@@ -1954,7 +1954,7 @@ function wp_insert_user( $userdata ) {
 	} else {
 		$display_name = $userdata['display_name'];
 	}
-
+	
 	/**
 	 * Filter a user's display name before the user is created or updated.
 	 *

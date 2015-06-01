@@ -669,14 +669,13 @@ footer.entry-meta {
   border-radius: 5px;
 }
 h1.page-title {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
   color: #999999;
   font-family: "Open Sans", Times, serif;
   font-weight: bold;
   display: inline-block;
   border-bottom: solid 4px #999999;
   margin-top: -15px;
-  margin-left:17px !important;
 }
 .page-header {
   border-bottom: 0px;
