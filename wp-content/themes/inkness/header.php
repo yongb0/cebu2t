@@ -71,14 +71,16 @@
 </div>
 
 <?php if(is_user_logged_in()) { ?>
-	<a href="http://cebu.2thinkers.net/?page_id=193">Edit Profile</a> 
+	<a href="<?php echo get_site_url(); ?>/?page_id=193">Edit Profile</a> 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<a class="UPB-Button" title="Logout" href="<?php echo get_site_url(); ?>/wp-login.php?action=logout&redirect_to=http%3A%2F%2Fcebu.2thinkers.net%2F%3Fpage_id%3D178&_wpnonce=85e651145f">Logout</a>
 <?php } else { ?>
 	<a href="<?php echo get_site_url(); ?>/?page_id=493">Login</a> 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="<?php echo get_site_url(); ?>/?page_id=489">Register</a>
+	<a href="<?php echo get_site_url(); ?>/?p=191">Register</a>
 <?php } ?>
+
+	
 
 			    <?php if ( of_get_option('facebook', true) != "") { ?>
 				 <a target="_blank" href="<?php echo esc_url(of_get_option('facebook', true)); ?>" title="Facebook" ><i class="social-icon fa fa-facebook-square"></i></a>

@@ -3,7 +3,6 @@
  * @package Inkness
  */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class("homa archive col-md-4 grid-item"); ?>>
 <div class="article-wrapper">	
 	<?php if (has_post_thumbnail()) : ?>
@@ -25,7 +24,7 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
+	
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>

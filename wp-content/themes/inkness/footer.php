@@ -14,7 +14,7 @@
 
 
   <script src="<?php echo get_site_url(); ?>/wp-content/themes/inkness/reads/readmore.js"></script>
-
+  
   <script>
 
 // external js: isotope.pkgd.js
@@ -29,41 +29,31 @@ jQuery(document).ready( function() {
   });
 
 
-var height = 0;
-    jQuery('.fdc p').readmore({speed: 500,
 
-    beforeToggle: function(trigger, element, expanded){
-       height = jQuery(element).parent('.fdc').parent('.article-rest').parent('.article-wrapper').parent('article').height();
-
-      }, 
-    afterToggle: function(trigger, element, expanded) {
+  jQuery('.fdc p').readmore({
+      speed: 500,
+      afterToggle: function(trigger, element, expanded) {
         if(! expanded) { 
-        
-         setTimeout(function(){
-       		
-       //jQuery('#primary-home .row article').equalHeights();
+          setTimeout(function(){
+            var parent = jQuery('#primary-home');
+            parent.find('.row').each(function(i,e){
+            });
+          },600);
 
-
-
-       var parent = jQuery('#primary-home');
- parent.find('.row').each(function(i,e){
-  //jQuery(e).children('article').equalHeights();
- });
-       },600);
-
-        }else{
-	         setTimeout(function(){
+        } else {
+	        setTimeout(function(){
 	       		
-	       jQuery(element).parent('.fdc').parent('.article-rest').parent('.article-wrapper').parent('article').css('height','auto');
+	        jQuery(element).parent('.fdc').parent('.article-rest').parent('.article-wrapper').parent('article').css('height','auto');
 	       
-	      },600);
+	        },600);
         }
+
         jQuery('.grid').isotope({
-    itemSelector: 'article',
-    masonry: {
-      columnWidth: 2
-    }
-  });
+          itemSelector: 'article',
+          masonry: {
+            columnWidth: 2
+          }
+        });
       }
   });
 
@@ -72,10 +62,6 @@ var height = 0;
 
     
   </script>
-
-  
-
-
 
 	</div>
 	</div><!-- #content -->

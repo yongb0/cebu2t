@@ -40,12 +40,11 @@
 		$query="SELECT value FROM $upb_option WHERE fieldname='upb_recaptcha'";
 		$captcha_show = $wpdb->get_var($query);
 		
-		
-		
-	    include 'UPB_theme.php'; 
-        if ( is_user_logged_in() ) // check if user logged in or not
-        {
+    if ( is_user_logged_in() ) // check if user logged in or not
+    {
 ?>
+
+
 <!--HTML when accessing registration form when user is already logged in-->
 <div id="UPB-Standard-Form">
   <div id="UPB-Standard-Form-entry-content">
@@ -75,7 +74,6 @@
   </div><!--------UPB-Standard-Form-entry-content-------->
   
  <div class="clear"></div>
- 
 </div><!------UPB-Standard-Form------>
 <?php
 		}
@@ -279,7 +277,9 @@ else
 {
 ?>
 <!--HTML for displaying registration form-->
-    <form method="post" action="" class="UPB-login-form" id="registerform" name="registerform">
+  
+
+  <form method="post" action="" class="UPB-login-form" id="registerform" name="registerform">
     <div >
     <div class="text-info-heading"><?php echo $Custom_Text;?></div>
     <div id="UPB-Standard-Form-entry-content">
@@ -327,7 +327,7 @@ if($pwd_show == "no")//Shows password field if the user is allowed to chose pass
 }
 else//If auto password generation is enabled then this will create a random password
 {
-	$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+  $random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
 ?>
           <input id="inputPassword" name="inputPassword" type="hidden" value="<?php echo $random_password; ?>" />             
           <input id="user_confirm_password" name="user_confirm_password" value="<?php echo $random_password; ?>" type="hidden"/>
@@ -339,33 +339,33 @@ else//If auto password generation is enabled then this will create a random pass
         <?php 
 if(is_array($content) && $content['role']!="")
 {
-	$role = $content['role'];
+  $role = $content['role'];
 }
 else
 {
-	$role = "subscriber";	
+  $role = "subscriber"; 
 }
 $qry1 = "select * from $upb_fields where registration = '1' and user_group like '%".$role."%' order by ordering asc";
 $reg1 = $wpdb->get_results($qry1);
-	 foreach($reg1 as $row1)
-	 {
-		 $key = str_replace(" ","_",$row1->Name);
-		 $value = $row1->Value;
-		 if($row1->Type=='heading')
-		 {?>
+   foreach($reg1 as $row1)
+   {
+     $key = str_replace(" ","_",$row1->Name);
+     $value = $row1->Value;
+     if($row1->Type=='heading')
+     {?>
         <div class="formtable upb_heading">
           <h1 name="<?php echo $key;?>" class="<?php echo $row1->Class;?>"><?php echo $row1->Value;?></h1>
         </div>
         <?php 
-		}
-		if($row1->Type=='paragraph')
-		 {?>
+    }
+    if($row1->Type=='paragraph')
+     {?>
         <div class="formtable upb_paragraph">
           <p class="info-textt" name="<?php echo $key;?>" class="<?php echo $row1->Class;?>"><?php echo $row1->Option_Value;?></p>
         </div>
         <?php }
 if($row1->Type=='term_checkbox')
-		 {?>
+     {?>
          <div class="clear"></div>
         <div class="formtable forgot-password">
           <label>&nbsp;</label>
@@ -378,8 +378,8 @@ if($row1->Type=='term_checkbox')
           
         </div>
         <?php }
-		if($row1->Type=='DatePicker')
-		 {?>
+    if($row1->Type=='DatePicker')
+     {?>
         <div class="formtable">
           <div class="lable-text">
             <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
@@ -390,8 +390,8 @@ if($row1->Type=='term_checkbox')
           </div>
         </div>
         <?php }
-		 if($row1->Type=='text')
-		 {?>
+     if($row1->Type=='text')
+     {?>
         <div class="formtable">
           <div class="lable-text">
             <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
@@ -402,8 +402,8 @@ if($row1->Type=='term_checkbox')
           </div>
         </div>
         <?php }
-		if($row1->Type=='email')
-		 {?>
+    if($row1->Type=='email')
+     {?>
         <div class="formtable">
           <div class="lable-text">
             <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
@@ -414,8 +414,8 @@ if($row1->Type=='term_checkbox')
           </div>
         </div>
         <?php }
-		if($row1->Type=='number')
-		 {?>
+    if($row1->Type=='number')
+     {?>
         <div class="formtable">
           <div class="lable-text">
             <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
@@ -426,8 +426,8 @@ if($row1->Type=='term_checkbox')
           </div>
         </div>
         <?php }
-		if($row1->Type=='textarea')
-		{?>
+    if($row1->Type=='textarea')
+    {?>
         <div class="formtable">
           <div class="lable-text radio-label">
             <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
@@ -438,58 +438,58 @@ if($row1->Type=='term_checkbox')
           </div>
         </div>
         <?php }
-		if($row1->Type=='radio')
-		{
-			 $array_value = explode(',',$value);
-			?>
+    if($row1->Type=='radio')
+    {
+       $array_value = explode(',',$value);
+      ?>
         <div class="formtable">
           <div class="lable-text radio-label">
             <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
           </div>
           <div class="input-box radio-box <?php if($row1->Require==1)echo 'upb_radiorequired';?>">
             <?php 
-									$arr_radio = explode(',',$row1->Option_Value);
-									foreach($arr_radio as $radio)
-									{?>
+                  $arr_radio = explode(',',$row1->Option_Value);
+                  foreach($arr_radio as $radio)
+                  {?>
             <div class="upb-check-text">
-			<div class="Checkbox">
-			<label><?php echo $radio; ?></label>
+      <div class="Checkbox">
+      <label><?php echo $radio; ?></label>
             <input type="radio" class="regular-text  <?php echo $row1->Class;?>" value="<?php echo $radio;?>" <?php if($value!=""){if(in_array($radio,$array_value))echo 'checked';} ?> id="<?php echo $key;?>" name="<?php echo $key;?>"  <?php if($row1->Readonly==1)echo 'disabled';?>>
             </div></div>
-			<?php } ?>
+      <?php } ?>
             <br class="clear">
             <div class="reg_frontErr custom_error upb_error_text" style="display:none;"></div>
           </div>
         </div>
         <?php }
-		if($row1->Type=='checkbox')
-	   {
-		   $array_value = explode(',',$value);
-		   ?>
+    if($row1->Type=='checkbox')
+     {
+       $array_value = explode(',',$value);
+       ?>
         <div class="formtable">
           <div class="lable-text radio-label">
             <label for="<?php echo $key;?>"><?php echo $row1->Name; ?></label>
           </div>
           <div class="input-box upb_checkbox <?php if($row1->Require==1)echo 'upb_checkboxrequired';?>">
             <?php 
-			$arr_radio = explode(',',$row1->Option_Value);
-			$radio_count = 1;
-			foreach($arr_radio as $radio)
-			{?>
+      $arr_radio = explode(',',$row1->Option_Value);
+      $radio_count = 1;
+      foreach($arr_radio as $radio)
+      {?>
             <div class="upb-check-text">
-			<div class="Checkbox">
-			<label><?php echo $radio; ?></label>
+      <div class="Checkbox">
+      <label><?php echo $radio; ?></label>
             <input type="checkbox" class="regular-text <?php echo $row1->Class;?>" value="<?php echo $radio;?>" id="<?php echo $key;?>"  name="<?php echo $key.'[]';?>" <?php if($value!=""){if(in_array($radio,$array_value))echo 'checked';} ?> <?php if($row1->Readonly==1)echo 'disabled';?>></div></div>
             <?php $radio_count++; 
-			} ?>
+      } ?>
              <br class="clear">
             <div class="reg_frontErr custom_error upb_error_text" style="display:none;"></div>
           </div>
         </div>
         <?php }
-		
-	   if($row1->Type=='select')
-	   {?>
+    
+     if($row1->Type=='select')
+     {?>
         <div class="formtable">
           <div class="lable-text">
             <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
@@ -497,64 +497,66 @@ if($row1->Type=='term_checkbox')
           <div class="input-box upb_select <?php if($row1->Require==1)echo 'upb_select_required';?>">
             <select class="regular-text <?php echo $row1->Class;?>" id="<?php echo $key;?>" name="<?php echo $key;?>" <?php if($row1->Readonly==1)echo 'disabled';?>>
               <?php
-			  $arr = explode(',',$row1->Option_Value);
-			  foreach($arr as $ar)
-			  {
-				  ?>
+        $arr = explode(',',$row1->Option_Value);
+        foreach($arr as $ar)
+        {
+          ?>
               <option value="<?php echo $ar;?>" <?php if($ar==$value)echo 'selected';?>><?php echo $ar;?></option>
-              <?php	
-			  }
-			  ?>
+              <?php 
+        }
+        ?>
             </select>
             <div class="reg_frontErr custom_error upb_error_text" style="display:none;"></div>
           </div>
         </div>
         <?php }
-		/* country field */
-		if($row1->Type=='country')
-	   {?>
+    /* country field */
+    if($row1->Type=='country')
+     {?>
         <div class="formtable">
           <div class="lable-text">
             <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
           </div>
           <div class="input-box upb_select upb_country <?php if($row1->Require==1)echo 'upb_select_required';?>">
             <select class="regular-text <?php echo $row1->Class;?>" id="<?php echo $key;?>" name="<?php echo $key;?>" <?php if($row1->Readonly==1)echo 'disabled';?>>
-			<?php include 'country_option_list.php'; ?>
+      <?php include 'country_option_list.php'; ?>
             </select>
             <div class="reg_frontErr custom_error upb_error_text" style="display:none;"></div>
           </div>
         </div>
         <?php }
-		
-		/* timezone field */
-		if($row1->Type=='timezone')
-	   {?>
+    
+    /* timezone field */
+    if($row1->Type=='timezone')
+     {?>
         <div class="formtable">
           <div class="lable-text">
             <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
           </div>
           <div class="input-box upb_select upb_country <?php if($row1->Require==1)echo 'upb_select_required';?>">
             <select class="regular-text <?php echo $row1->Class;?>" id="<?php echo $key;?>" name="<?php echo $key;?>" <?php if($row1->Readonly==1)echo 'disabled';?>>
-			<?php include 'time_zone_option_list.php'; ?>
+      <?php include 'time_zone_option_list.php'; ?>
             </select>
             <div class="reg_frontErr custom_error upb_error_text" style="display:none;"></div>
           </div>
         </div>
         <?php }
-		
-		 }
-		 ?>
-      
+    
+     }
+     ?>
+    
+
+
       <!-- Custom fields in Registration form ends -->
       <?php if($captcha_show=='yes') : ?>
       <div class="formtablee"> 
-      <div class="input-box_captcha" align="center"><?php echo recaptcha_get_html($publickey, $error); ?> </div>
-      <div class="reg_frontErr custom_error upb_error_text" id="divrecaptcha_response_field" style="display:none;"></div>
-      <?php /*?><div class="reg_frontErr"  style="display:none;width: 299px !important; margin-left: 170px !important;"> <?php _e('Please fill this to prove you aren\'t a robot.',$textdomain);?> </div><?php */?>
-      <?php endif; ?>
-      <div class="clear"></div>
-      
+        <div class="input-box_captcha" align="center"><?php echo recaptcha_get_html($publickey, $error); ?> </div>
+        <div class="reg_frontErr custom_error upb_error_text" id="divrecaptcha_response_field" style="display:none;"></div>
+        <?php /*?><div class="reg_frontErr"  style="display:none;width: 299px !important; margin-left: 170px !important;"> <?php _e('Please fill this to prove you aren\'t a robot.',$textdomain);?> </div><?php */?>
+        <div class="clear"></div>
       </div>
+      <?php endif; ?>
+     
       
        <div class="clear"></div>
     </div><!-----------UPB-Standard-Form-main-upb-form-------->
@@ -571,17 +573,17 @@ if($row1->Type=='term_checkbox')
         <input type="reset" value="Reset" class="btn btn-default " style="height: 30px;" id="reset" name="reset" />
       </div>
             <?php
-			$qry="SELECT value FROM $upb_option WHERE fieldname='upb_facebook_login'";
-			$facebook_login = $wpdb->get_var($qry);
-			if($facebook_login=='yes')
-			{
-				include 'facebook/upb_facebook.php';
-				upb_fb_login_validate();
-				upb_fb_loginForm();
-			}
-			?>
-       </div><!---------UPB-Button-input forgot-password----------->     
-    </div><!-----------------UPB-Button-area--------->
+      $qry="SELECT value FROM $upb_option WHERE fieldname='upb_facebook_login'";
+      $facebook_login = $wpdb->get_var($qry);
+      if($facebook_login=='yes')
+      {
+        include 'facebook/upb_facebook.php';
+        upb_fb_login_validate();
+        upb_fb_loginForm();
+      }
+      ?>
+       </div> 
+    </div>
     
     <div class="clear"></div>
     
@@ -589,6 +591,110 @@ if($row1->Type=='term_checkbox')
     </div>
     </div>
   </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 			}	
 		}
