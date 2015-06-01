@@ -119,10 +119,10 @@
 		  ?>
           </div>
           
-          <div class="change_profile_image" style="float:left !important;">
-          <a href="<?php echo $pageURL; ?><?php echo $sign; ?>changeavatar=1" title="Change Avatar">
-          Change Avatar 
-         </a></div>
+         <!--  <div class="change_profile_image" style="float:left !important;">
+         <a href="<?php echo $pageURL; ?><?php echo $sign; ?>changeavatar=1" title="Change Avatar">
+         Change Avatar 
+                  </a></div> -->
          <div class="clear"></div>
          </div>
         <?php endif; ?>
