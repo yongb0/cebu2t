@@ -67,7 +67,7 @@ font-weight:normal;
 margin:0;
 }
 #UPB-Standard-Form #UPB-Button-area{
-background-color: #f9f9f9;
+//background-color: #f9f9f9;
 margin-top: 15px;
 padding: 26px 0;
 text-align: center;
@@ -605,4 +605,19 @@ display:inline-block !important;
 .registration-form input[type="file"]{}
 #UPB-Standard-Form textarea{
 margin:0;
+}
+
+.fdc-upb-custom{
+	border: 1px solid #ccc !important;
+  	border-color: #ccc #ccc #bbb #ccc !important;
+  	border-radius: 3px !important;
+  	background: #e6e6e6 !important;
+  	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05) !important;
+ 	color: rgba(0, 0, 0, .8) !important;
+  	cursor: pointer !important;
+  	-webkit-appearance: button !important;
+  	font-size: 14px !important;
+  	line-height: 1  !important;
+  	padding: .6em 1em .4em  !important;
+  	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8)  !important;
 }

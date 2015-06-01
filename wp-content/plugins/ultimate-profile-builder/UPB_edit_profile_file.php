@@ -619,7 +619,7 @@ if($row1->Type=='number')
      <div class="UPB-Button-input forgot-passwordd">
       <input type="hidden" class="UPB-Button" name="current_ID" id="current_ID" value="<?php echo $current_ID; ?>" />
       <?php wp_nonce_field('upb_edit_profile'); ?>
-      <input type="submit" value="Save" class="UPB-Button" id="EPSubmit" name="EPSubmit">
+      <input type="submit" value="Save" class="fdc-upb-custom" id="EPSubmit" name="EPSubmit">
        <div class="clear"></div>
       </div>
       <div class="clear"></div>

@@ -570,7 +570,7 @@ if($row1->Type=='term_checkbox')
       <?php wp_nonce_field('upb_register_form'); ?>
       <div class="pull-right" style="margin-right:50px;">
         <input type="submit" value="Submit" class="btn btn-default " id="submit" name="submit" >
-        <input type="reset" value="Reset" class="btn btn-default " style="height: 30px;" id="reset" name="reset" />
+        <input type="reset" value="Reset" class="btn btn-default " style="height: 30px; font-size:14px;" id="reset" name="reset" />
       </div>
             <?php
       $qry="SELECT value FROM $upb_option WHERE fieldname='upb_facebook_login'";
