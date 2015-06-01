@@ -73,7 +73,7 @@
 <?php if(is_user_logged_in()) { ?>
 	<a href="<?php echo get_site_url(); ?>/?page_id=193">Edit Profile</a> 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a class="UPB-Button" title="Logout" href="<?php echo get_site_url(); ?>/wp-login.php?action=logout&redirect_to=http%3A%2F%2Fcebu.2thinkers.net%2F%3Fpage_id%3D178&_wpnonce=85e651145f">Logout</a>
+	<a class="UPB-Button" title="Logout" href="<?php echo wp_logout_url( $redirect ); ?>">Logout</a>
 <?php } else { ?>
 	<a href="<?php echo get_site_url(); ?>/login-3">Login</a> 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -174,5 +174,9 @@
 
 		<div id="content" class="site-content row clearfix clear">
 		<div class="container col-md-12"> 
+
+
+
+
 
 		

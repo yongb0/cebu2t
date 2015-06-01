@@ -13,8 +13,17 @@
 
 
 
+
+
+
+
   <script src="<?php echo get_site_url(); ?>/wp-content/themes/inkness/reads/readmore.js"></script>
   
+
+
+
+
+
   <script>
 
 // external js: isotope.pkgd.js
@@ -32,7 +41,11 @@ jQuery(document).ready( function() {
   },300);
   
   
+
+
+
   /*jQuery('.fdc p').readmore({
+
       speed: 500,
       afterToggle: function(trigger, element, expanded) {
         if(! expanded) { 
@@ -58,6 +71,7 @@ jQuery(document).ready( function() {
         });
       }
   });*/
+
     
   //count the number of archives in the post
   var countChecker = jQuery('#main').find('article.archive').length;
@@ -66,6 +80,7 @@ jQuery(document).ready( function() {
   if(countChecker>0){
     jQuery('#main').find('article.archive').each(function(i,e){
       var content = jQuery(e).find('.entry-content').html();
+
 
       var contentCheck = stripHTML(jQuery(e).find('div.entry-content').html());
       var contentLink  = jQuery(e).find('h1.entry-title a').attr("href");

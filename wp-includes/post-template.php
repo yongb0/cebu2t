@@ -53,6 +53,17 @@ function the_title($before = '', $after = '', $echo = true) {
 		return $title;
 }
 
+
+
+
+function new_excerpt_more($more) {
+    global $post;
+    return '... <a href="'. get_permalink($post->ID) . '">continue reading</a>.';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+
 /**
  * Sanitize the current title when retrieving or displaying.
  *
@@ -364,7 +375,7 @@ function get_the_excerpt( $deprecated = '' ) {
 	 *
 	 * @param string $post_excerpt The post excerpt.
 	 */
-	return apply_filters( 'get_the_excerpt', $post->post_excerpt );
+	return  apply_filters( 'get_the_excerpt', $post->post_excerpt );
 }
 
 /**
