@@ -26,7 +26,7 @@
 	    		$image = wp_get_attachment_image_src($imgId,'large');
 				?>
 			<a href="<?php echo $image[0]; ?>" >
-	    		<img src="<?php echo $image[0]; ?>" alt="" style="border: 5px solid black; height: 500px;">
+	    		<img src="<?php echo $image[0]; ?>" alt="" style="border: 5px solid #ccc; height: 500px;">
 	   		</a>
 			
 		</div>
