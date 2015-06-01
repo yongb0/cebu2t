@@ -611,7 +611,7 @@ if($row1->Type=='term_checkbox')
 			function validete_userName()
 			{
 
-        var regexAN  = "/^([a-zA-Z0-9 _-]+)$/";
+        var regexAN  = "/^([a-zA-Z0-9_-]+)$/";
         var userName = jQuery('#user_name').val();
         if(userName.length!==0){
           if (userName.match(/[^a-zA-Z0-9 ]/g)){

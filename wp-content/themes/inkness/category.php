@@ -25,9 +25,6 @@ get_header(); ?>
 	<div id="primary-home" class="content-area col-md-12">
 		<main id="main" class="grid" role="main">
 		
-
-		
-
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ $ink_count = 0; $ink_row_count=0 ?>
