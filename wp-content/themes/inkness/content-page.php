@@ -22,5 +22,3 @@
 	</div><!-- .entry-content -->
 	<?php edit_post_link( __( 'Edit', 'inkness' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->
-
-article-wrapper
