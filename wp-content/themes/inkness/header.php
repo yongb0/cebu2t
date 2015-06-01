@@ -73,7 +73,7 @@
 <?php if(is_user_logged_in()) { ?>
 	<a href="<?php echo get_site_url(); ?>/?page_id=193">Edit Profile</a> 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a class="UPB-Button" title="Logout" href="<?php echo get_site_url(); ?>/wp-login.php?action=logout&redirect_to=http%3A%2F%2Fcebu.2thinkers.net%2F%3Fpage_id%3D178&_wpnonce=85e651145f">Logout</a>
+	<a class="UPB-Button" title="Logout" href="<?php echo wp_logout_url( $redirect ); ?>">Logout</a>
 <?php } else { ?>
 	<a href="<?php echo get_site_url(); ?>/login-3">Login</a> 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -174,5 +174,32 @@
 
 		<div id="content" class="site-content row clearfix clear">
 		<div class="container col-md-12"> 
+
+
+
+
+<h1>
+
+<?php
+//list each role and each user with that role (works if logged in)
+//see http://wordpress.org/support/topic/256436 if not logged in:
+global $wp_roles;
+  $name = translate_with_context($name);
+  echo '<p>List of users in the role '.$role .' ('. $name . '):</p>';
+  $this_role = "'[[:<:]]".$role."[[:>:]]'";
+  $query = "SELECT * FROM $wpdb->users WHERE ID = 1";
+  $users_of_this_role = $wpdb->get_results($query);
+  if ($users_of_this_role) {
+    foreach($users_of_this_role as $user) {
+      $curuser = get_userdata($user->ID);
+      $author_post_url=get_author_posts_url($curuser->ID, $curuser->nicename);
+      echo '<p>--User nicename: '.$curuser->user_nicename .', display Name: '. $curuser->display_name . ', link to author posts <a href="' . $author_post_url . '" title="' . sprintf( __( "Posts by %s" ), $curuser->user_nicename ) . '" ' . '>' . $curuser->user_nicename .'</a></p>';
+    }
+  }
+?>
+
+</h1>
+
+
 
 		

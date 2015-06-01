@@ -13,18 +13,14 @@
 
 
 
+
+
+
+
   <script src="<?php echo get_site_url(); ?>/wp-content/themes/inkness/reads/readmore.js"></script>
   
 
-<script>
 
-jQuery(document).ready(
-  function(){
-    jQuery('#cread').click()
-  }
-  );
-
-</script>
 
 
 
@@ -44,7 +40,7 @@ jQuery(document).ready( function() {
   },500);
   
   
-  jQuery('.fdc p').readmore({
+/*  jQuery('.fdc p').readmore({
       speed: 500,
       afterToggle: function(trigger, element, expanded) {
         if(! expanded) { 
@@ -69,7 +65,7 @@ jQuery(document).ready( function() {
           }
         });
       }
-  });
+  });*/
 
 
 
