@@ -67,7 +67,7 @@ if(isset($_POST['submit']))//Controls behaviour of login button
     <div class="login-success"> Login Success! </div>
     <div class="login-dis"> Please choose your destination. </div>
     <?php
-    	header("location: http://cebu.2thinkers.net");
+    	header("Location: ".get_site_url());
     	exit();
     ?>
    </div>
@@ -191,34 +191,34 @@ function validateLogin()
   <?php if(isset($loginErr)): ?>
   <div id="loginErr" class="reg_frontErr"> <?php echo $loginErr; ?> </div>
   <?php endif; ?>
-   <div class="UPB-Standard-Form-main-upb-form">
-     <div class="login-form">
+
+   	<div class="UPB-Standard-Form-main-upb-form">
+    	<div class="login-form">
+     		
+	      	<div class="formtable">
+		    	<label for="user_login"> Username </label>
+		     	<input type="text" size="20" value="<?php if(isset($user_login)) echo $user_login; ?>" class="input" id="user_login" name="user_login" >
+	      	</div>
+      		<div class="reg_frontErr" id="divuser_login" style="display:none;">Please enter a username.</div>
+      
+      		<div class="formtable">
+	      		<label for="user_pass"> Password </label>
+	      		<input type="password" size="20" value="" class="input" id="user_pass" name="user_pass" >
+      		</div>
+      
+      		<div class="reg_frontErr" id="divuser_pass" style="display:none;">Please enter a password.</div>
+      
+       		<div class="clear"></div>
+       		<div class="formtable forgot-password">
+       			<label>&nbsp;</label>
+       			<input type="checkbox" value="true" id="rememberme" name="rememberme">
+       			Remember Me
+       		</div>
+      	
+     	</div>
      
-      <div class="formtable">
-      <label for="user_login"> Username </label>
-      <input type="text" size="20" value="<?php if(isset($user_login)) echo $user_login; ?>" class="input" id="user_login" name="user_login" >
-      </div>
-      <div class="reg_frontErr" id="divuser_login" style="display:none;">Please enter a username.</div>
-      
-      <div class="formtable">
-      <label for="user_pass"> Password </label>
-      <input type="password" size="20" value="" class="input" id="user_pass" name="user_pass" >
-      </div>
-      
-      <div class="reg_frontErr" id="divuser_pass" style="display:none;">Please enter a password.</div>
-      
-       <div class="clear"></div>
-       <div class="formtable forgot-password">
-       <label>&nbsp;</label>
-       <input type="checkbox" value="true" id="rememberme" name="rememberme">
-       Remember Me
-       </div>
-      
-     </div><!-------login-form----->
-      
-   <div class="clear"></div>   
-      
-   </div><!----------UPB-Standard-Form-main-upb-form------>
+   		<div class="clear"></div>   
+   	</div><!----------UPB-Standard-Form-main-upb-form------>
   </div><!--------UPB-Standard-Form-entry-content-------->
   <div id="UPB-Button-area">
       <div class="UPB-Button-input">

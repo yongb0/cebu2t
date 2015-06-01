@@ -211,7 +211,7 @@
     </div>
     <div class="UPB-Button-input">
        <a class="UPB-Button" href="javascript:void(0);" onclick="javascript:history.back();">Go back to edit-profile</a>
-       <a class="UPB-Button" href="<?php echo $pageURL.$sign; ?>login4=1" title="Home-Page">Go back to site</a>
+       <a class="UPB-Button" href="<?php echo get_site_url(); ?>" title="Home-Page">Go back to site</a>
        <div class="clear"></div>
    </div>
    <div class="clear"></div>
