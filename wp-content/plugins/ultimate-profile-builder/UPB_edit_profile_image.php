@@ -155,21 +155,25 @@ else {
     }
 </script>
    <div id="UPB-Standard-Form-entry-content">
-    <form method="post" action="" class="UPB-login-form" id="your-profile" enctype="multipart/form-data" onsubmit="javascript: return ValidateFileUpload();">
+    <form method="post" action="" class="UPB-login-form form-horizontal" id="your-profile" enctype="multipart/form-data" onsubmit="javascript: return ValidateFileUpload();">
       
-      <div class="formtable edit_profile_image_div">
-      <label for="avtar_image">Display picture publicly as</label>
-      <div class="input-box">
-      <input type="file" onchange="return ValidateFileUpload()" class="" value="" id="avtar_image" name="avtar_image">
+      <div class="form-group edit_profile_image_div">
+        <label for="avtar_image">Display picture publicly as</label>
+        <div class="input-box">
+          <input type="file" onchange="return ValidateFileUpload()" class="" value="" id="avtar_image" name="avtar_image">
+        </div>
       </div>
-      </div>
+
       <div class="customupberror" style="display:none"></div>
+
       <div class="clear"></div>
+
       <div class="UPB-Button-input forgot-passwordd">
-      <input class="UPB-Button" type="hidden" name="current_ID" id="current_ID" value="<?php echo $current_ID;?>">
-      <?php wp_nonce_field('upb_change_avatar'); ?>
-      <input class="UPB-Button" type="submit" value="Save" class="UltimatePB-Button" id="EPSubmit" name="EPSubmit">
+        <input class="UPB-Button" type="hidden" name="current_ID" id="current_ID" value="<?php echo $current_ID;?>">
+        <?php wp_nonce_field('upb_change_avatar'); ?>
+        <input class="UPB-Button" type="submit" value="Save" class="UltimatePB-Button" id="EPSubmit" name="EPSubmit">
       </div>
+      
     </form>
     <form method="post" action="" id="remove_avatar" name="remove_avatar" class="remove_current_avatar">
      <div class="UPB-Button-input">

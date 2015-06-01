@@ -72,31 +72,31 @@
 <div id="UPB-Standard-Form">
     <div id="top-entry-header-user-name">
       <h3>
-      <?php the_author_meta('first_name',$current_id); ?>
-      &nbsp;
-      <?php the_author_meta('last_name',$current_id); ?>
-     </h3>
+        <?php the_author_meta('first_name',$current_id); ?>
+        &nbsp;
+        <?php the_author_meta('last_name',$current_id); ?>
+      </h3>
+      
       <div class="UPB-Button-input right"> 
-    <a class="UPB-Button" href="<?php echo $pageURL; ?><?php echo $sign; ?>login5=1" title="Edit Profile">Edit</a> 
-    <a class="UPB-Button" href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">Logout</a>
-    <div class="clear"></div>
-   </div>
-   
-   <div class="clear"></div>
-   
-   </div><!----------------top-entry-header-user-name---------->
-  <div id="UPB-Standard-Form-entry-content">
+        <a class="UPB-Button" href="<?php echo $pageURL; ?><?php echo $sign; ?>login5=1" title="Edit Profile">Edit</a> 
+        <div class="clear"></div>
+      </div>
+      
+      <div class="clear"></div>
+      
+    </div><!----------------top-entry-header-user-name---------->
+
+
+
+  <div id="UPB-Standard-Form-entry-content" style="padding:0px;">
      
-     <div class="UPB-Standard-Form-main-upb-form">
+    <div class="UPB-Standard-Form-main-upb-form">
     <div class="profile-img-device-box profile_image_box_area">
       <div class="left-box">
         <?php if(isset($avtar_image[0]) && $avtar_image[0]!='') :?>
-   
+        
         <div class="img-box">
         <img src="<?php echo $avtar_image[0]; ?>" />
-        <div class="change_profile_image"><a href="<?php echo $pageURL; ?><?php echo $sign; ?>changeavatar=1" title="Change Avatarzz">
-       Change Avatar 
-      </a></div>
         </div>
         <?php else :?>
          <div class="img-box">
@@ -133,6 +133,7 @@
         <div class="user-name-info">Nick Name:
           <?php the_author_meta('nickname',$current_id); ?>
         </div>
+
         <?php endif; ?>
         <?php if (checkfieldname("upb_usernameshowhide","yes")==true ) : ?>
         <div class="user-name-info user-name-info">User Name:
@@ -164,11 +165,13 @@
           <?php the_author_meta('jabber',$current_id); ?>
         </div>
         <?php endif; ?>
-     <div class="clear"></div>
-     </div>
+        <div class="clear"></div>
+      </div>
+
       <div class="clear"></div>
       
-      </div><!--------------profile-img-device-box-------->
+      </div>
+
       <!--Custom fields start-->
       <div class="custom_fields-box">
       

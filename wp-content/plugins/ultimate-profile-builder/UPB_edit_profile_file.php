@@ -218,9 +218,9 @@
    </div>
    </div>
   <div class="clear"></div>
-  </div><!-----------UPB-Standard-Form-entry-content-------->
+  </div>
    <div class="clear"></div>
-</div><!---------UPB-Standard-Form--------->
+</div>
 <?php
 			}
 			else /*Start edit profile view on the front end*/
@@ -228,9 +228,15 @@
 ?>
 <div id="UPB-Standard-Form">
   <h2 class="UPB-Standard-form-second-tittle"> Edit Profile </h2>
-  <div id="top-entry-header">Basic Information
-  <a class="cancel-and-go" href="javascript:void(0);" onclick="javascript:history.back();"> Cancel and go back </a>
+  <div class="clearfix">
+  	<div class="pull-left">
+  		Basic Information
+  	</div>
+  	<div class="pull-right">
+  		<a class="cancel-and-go" href="javascript:void(0);" onclick="javascript:history.back();"> Cancel and go back </a>
+  	</div>
   </div>
+
   <script type="text/javascript">
     function ValidateFileUpload() {
         var fuData = document.getElementById('avtar_image');
@@ -335,109 +341,124 @@ else {
           return true;
     }
 </script>
-<form method="post" action="" id="your-profile" class="UPB-login-form" enctype="multipart/form-data" onsubmit="javascript: return validateyour_profile();">
+<style>
+	#your-profile .form-control{
+		padding:5px;
+		border:1px solid #ccc;
+	}
+</style>
+
+<form method="post" action="" id="your-profile" class="UPB-login-form form-horizontal" enctype="multipart/form-data" onsubmit="javascript: return validateyour_profile();">
   <div id="UPB-Standard-Form-entry-content">
    <div class="UPB-Standard-Form-main-upb-form">
       <div class="login-form registration-form">
        
-  <?php if (checkfieldname("upb_usernameshowhide","yes")==true): ?>
-    <div class="formtable">
+ 	<?php if (checkfieldname("upb_usernameshowhide","yes")==true): ?>
+    
+    <div class="form-group">
       <label for="user_login">Username <br/>
-      <span class="edit-info">This field cannot be edited</span></label>
+      	<span class="edit-info">This field cannot be edited</span>
+      </label>
       <div class="input-box">
-        <input type="text" class="regular-text" disabled="disabled" value="<?php echo $user_login; ?>" id="user_login" name="user_login">
+        <input type="text" class="regular-text form-control" disabled="disabled" value="<?php echo $user_login; ?>" id="user_login" name="user_login">
       </div>
     </div>
+	
     <?php endif; ?>
     <?php if (checkfieldname("upb_emailshowhide","yes")==true): ?>
-    <div class="formtable">
+    <div class="form-group">
           <label for="email">E-mail<br/>
           <span class="edit-info">This field cannot be edited</span></label>
      <div class="input-box">
-        <input type="text" class="regular-text" disabled="disabled" value="<?php echo $user_e_mail; ?>" id="email" name="email">
+        <input type="text" class="regular-text form-control" disabled="disabled" value="<?php echo $user_e_mail; ?>" id="email" name="email">
       </div>
     </div>
     <?php endif; ?>
-    <div class="formtable">
+    <div class="form-group">
         <label for="user_password">Password</label>
-      <div class="input-box">
-        <input id="inputPassword" name="inputPassword" type="password" onfocus="javascript:document.getElementById('user_confirm_password').value = '';" />
-        <div id="complexity" class="default" style="display:none;"></div>
-        <div id="password_info" class="password-pro" s >At least 7 characters please!</div>
-      </div>
+	    <div class="input-box">
+	        <input id="inputPassword" class="form-control" name="inputPassword" type="password" onfocus="javascript:document.getElementById('user_confirm_password').value = '';" />
+	        <div id="complexity" class="default" style="display:none;"></div>
+	        <div id="password_info" class="password-pro">At least 7 characters please!</div>
+	    </div>
     </div>
-    <div class="formtable">
+
+    <div class="form-group">
         <label for="user_confirm_password">Confirm Password</label>
-    <div class="input-box upbconfirm_pass">
-        <input id="user_confirm_password" name="pass2" type="password"/>
-        <div class="reg_frontErr custom_error" style="display: none;"></div>
-      </div>
+   		<div class="input-box upbconfirm_pass">
+	        <input class="form-control" id="user_confirm_password" name="pass2" type="password"/>
+	        <div class="reg_frontErr custom_error" style="display: none;"></div>
+      	</div>
     </div>
-    <div class="formtable">
+
+    <div class="form-group">
        <label for="first_name">First Name</label>
-    <div class="input-box">
-        <input type="text" value="<?php echo $user_firstname; ?>" id="first_name" name="first_name">
-      </div>
+	    <div class="input-box">
+	        <input type="text"class="form-control"  value="<?php echo $user_firstname; ?>" id="first_name" name="first_name">
+	    </div>
     </div>
-    <div class="formtable">
+	
+    <div class="form-group">
         <label for="last_name">Last Name</label>
-    <div class="input-box">
-        <input type="text" value="<?php echo $user_lastname; ?>" id="last_name" name="last_name">
-      </div>
+    	<div class="input-box">
+        	<input type="text" class="form-control" value="<?php echo $user_lastname; ?>" id="last_name" name="last_name">
+      	</div>
     </div>
+	
     <?php if (checkfieldname("upb_nicknameshowhide","yes")==true): ?>
-    <div class="formtable">
-      <label for="nickname">Nickname</label>
-      <div class="input-box">
-        <input type="text" value="<?php echo $nickname; ?>" id="nickname" name="nickname">
-      </div>
+    <div class="form-group">
+      	<label for="nickname">Nickname</label>
+      	<div class="input-box">
+        	<input type="text" class="form-control" value="<?php echo $nickname; ?>" id="nickname" name="nickname">
+      	</div>
     </div>
+
     <?php endif; ?>
      <?php if (checkfieldname("upb_websiteshowhide","yes")==true): ?>
-    <div class="formtable">
+    <div class="form-group">
         <label for="url">Website</label>
-      <div class="input-box">
-        <input type="text" value="<?php echo $user_url; ?>" id="user_url" name="user_url">
-      </div>
+      	<div class="input-box">
+        	<input type="text" class="form-control" value="<?php echo $user_url; ?>" id="user_url" name="user_url">
+      	</div>
     </div>
     <?php endif; ?>
      <?php if (checkfieldname("upb_aimshowhide","yes")==true): ?>
-    <div class="formtable">
+    <div class="form-group">
         <label for="aim">AIM</label>
-      <div class="input-box">
-        <input type="text" value="<?php echo get_user_meta($current_ID, 'aim', true); ?>" id="aim" name="aim">
-      </div>
+      	<div class="input-box">
+        	<input type="text" class="form-control" value="<?php echo get_user_meta($current_ID, 'aim', true); ?>" id="aim" name="aim">
+      	</div>
     </div>
     <?php endif; ?>
      <?php if (checkfieldname("upb_yahooimshowhide","yes")==true): ?>
-    <div class="formtable">
+    <div class="form-group">
         <label for="yim">Yahoo IM</label>
-      <div class="input-box">
-        <input type="text" value="<?php echo get_user_meta($current_ID, 'yim', true); ?>" id="yim" name="yim">
-      </div>
+      	<div class="input-box">
+        	<input type="text" class="form-control" value="<?php echo get_user_meta($current_ID, 'yim', true); ?>" id="yim" name="yim">
+      	</div>
     </div>
     <?php endif; ?>
     <?php if (checkfieldname("upb_jabbergoogletalkshowhide","yes")==true): ?>
-    <div class="formtable">
+    <div class="form-group">
         <label for="jabber">Jabber / Google Talk</label>
-      <div class="input-box">
-        <input type="text" value="<?php echo get_user_meta($current_ID,'jabber', true); ?>" id="jabber" name="jabber">
-      </div>
+      	<div class="input-box">
+        	<input type="text" class="form-control" value="<?php echo get_user_meta($current_ID,'jabber', true); ?>" id="jabber" name="jabber">
+      	</div>
     </div>
     <?php endif; ?>
     
-    <div class="formtable">
-        <label for="avtar_image">Display picture publicly as</label>
-      <div class="input-box">
-        <input type="file" onChange="return ValidateFileUpload()" value="" id="avtar_image" name="avtar_image">
-      </div>
+    <div class="form-group">
+    	<label for="avtar_image" class="col-xs-6">Display picture publicly as</label>
+    	<div class="col-xs-6">
+    		<input type="file" onChange="return ValidateFileUpload()" value="" id="avtar_image" name="avtar_image">
+    	</div>
     </div>
     <?php if (checkfieldname("upb_biographicalinfoshowhide","yes")==true): ?>
-    <div class="formtable">
+    <div class="form-group">
         <label for="description">About Me</label>
-      <div class="input-box">
-        <textarea cols="" rows="" id="description" name="description"><?php echo $user_description; ?></textarea>
-      </div>
+      	<div class="input-box">
+        	<textarea cols="" rows="10" class="form-control" id="description" name="description"><?php echo $user_description; ?></textarea>
+      	</div>
     </div>
     <?php endif; ?>
     <?php 
@@ -615,11 +636,11 @@ if($row1->Type=='number')
   <div class="clear"></div>
 </div><!----------------UPB-Standard-Form-entry-content-------->
    <div class="customupberror" style="display:none"></div>
-    <div id="UPB-Button-area">
-     <div class="UPB-Button-input forgot-passwordd">
+    <div id="UPB-Button-area" style="padding-top:0px; padding-bottom:0px;">
+     <div class="UPB-Button-input forgot-passwordd clearfix">
       <input type="hidden" class="UPB-Button" name="current_ID" id="current_ID" value="<?php echo $current_ID; ?>" />
       <?php wp_nonce_field('upb_edit_profile'); ?>
-      <input type="submit" value="Save" class="fdc-upb-custom" id="EPSubmit" name="EPSubmit">
+      	<input type="submit" value="Save" class="fdc-upb-custom pull-right" id="EPSubmit" name="EPSubmit">
        <div class="clear"></div>
       </div>
       <div class="clear"></div>
