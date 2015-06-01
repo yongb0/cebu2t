@@ -70,15 +70,15 @@
 ?>
 <!--HTML for displaying the profile-->
 <div id="UPB-Standard-Form">
-    <div id="top-entry-header-user-name">
-      <h3>
+    <div id="top-entry-header-user-name" class="clearfix">
+      <h3 class="pull-left">
         <?php the_author_meta('first_name',$current_id); ?>
         &nbsp;
         <?php the_author_meta('last_name',$current_id); ?>
       </h3>
       
-      <div class="UPB-Button-input right"> 
-        <a class="UPB-Button" href="<?php echo $pageURL; ?><?php echo $sign; ?>login5=1" title="Edit Profile">Edit</a> 
+      <div class="UPB-Button-input pull-right text-right" > 
+        <a class="UPB-Button" style="padding:0px;" href="<?php echo $pageURL; ?><?php echo $sign; ?>login5=1" title="Edit Profile">Edit</a> 
         <div class="clear"></div>
       </div>
       

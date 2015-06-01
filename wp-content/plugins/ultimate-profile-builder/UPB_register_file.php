@@ -306,23 +306,23 @@ if($pwd_show == "no")//Shows password field if the user is allowed to chose pass
 {
 ?>
       <div class="form-group"  style="padding-left:15px; padding-right:15px;">
-          <label for="user_password"><?php _e('Password',$textdomain);?></label>
-          <div class="upb_required upb_password">
-            <input id="inputPassword" class="form-control" name="inputPassword" type="password" onfocus="javascript:document.getElementById('user_confirm_password').value = '';" />
-            <!-- <div id="complexity" class="default" style="display:none; width:100%; margin-left:0px; margin-top:5px; color:#b94a48 !important; border:none !important; background-color:transparent !important;"></div>
-             --><div id="password_info" class="reg_frontErr"><?php _e('At least 7 characters please!',$textdomain);?></div>
-            <div class="reg_frontErr upb_error_text custom_error" style="display:none;"></div>
-          </div>
+        <label for="user_password"><?php _e('Password',$textdomain);?></label>
+        <div class="upb_required upb_password">
+          <input id="inputPassword" class="form-control" name="inputPassword" type="password" onfocus="javascript:document.getElementById('user_confirm_password').value = '';" />
+          <!-- <div id="complexity" class="default" style="display:none; width:100%; margin-left:0px; margin-top:5px; color:#b94a48 !important; border:none !important; background-color:transparent !important;"></div>
+           --><div id="password_info" class="reg_frontErr"><?php _e('At least 7 characters please!',$textdomain);?></div>
+          <div class="reg_frontErr upb_error_text custom_error" style="display:none;"></div>
+        </div>
       </div>
-
-      <div class="form-group" style="padding-left:15px; padding-right:15px;">
-          <label for="user_confirm_password"><?php _e('Confirm Password',$textdomain);?></label>
       
-          <div class="upb_required upb_confirmpassword">
-            <input id="user_confirm_password" class="form-control" name="user_confirm_password" type="password"/>
-            <div class="reg_frontErr upb_error_text custom_error" style="display:none;"></div>
-            <!--<div class="reg_frontErr upb_error_text" id="divuser_confirm_password" style="display:none;"><?php _e('Enter the password again to confirm',$textdomain);?></div>-->
-          </div>
+      <div class="form-group" style="padding-left:15px; padding-right:15px;">
+        <label for="user_confirm_password"><?php _e('Confirm Password',$textdomain);?></label>
+    
+        <div class="upb_required upb_confirmpassword">
+          <input id="user_confirm_password" class="form-control" name="user_confirm_password" type="password"/>
+          <div class="reg_frontErr upb_error_text custom_error" style="display:none;"></div>
+          <!--<div class="reg_frontErr upb_error_text" id="divuser_confirm_password" style="display:none;"><?php _e('Enter the password again to confirm',$textdomain);?></div>-->
+        </div>
       </div>
 
       <?php
