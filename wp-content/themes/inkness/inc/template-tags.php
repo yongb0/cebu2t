@@ -76,10 +76,7 @@ function inkness_comment( $comment, $args, $depth ) {
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
 		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body row">
 			<footer class="comment-meta">
-				<div class="comment-author vcard col-md-2 col-sm-2 hidden-xs">
-					<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, array(150,150) ); ?>
-				</div><!-- .comment-author -->
-				<div class="comment-metadata col-md-10 col-sm-10 col-xs-12">
+				<div class="comment-metadata col-xs-12">
 					<?php printf( '%s', sprintf( '<cite class="fn">%s</cite> on ', get_comment_author_link() ) ); ?>
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
