@@ -309,8 +309,8 @@ if($pwd_show == "no")//Shows password field if the user is allowed to chose pass
           <label for="user_password"><?php _e('Password',$textdomain);?></label>
           <div class="upb_required upb_password">
             <input id="inputPassword" class="form-control" name="inputPassword" type="password" onfocus="javascript:document.getElementById('user_confirm_password').value = '';" />
-            <div id="complexity" class="default" style="display:none;"></div>
-            <div id="password_info" class="reg_frontErr"><?php _e('At least 7 characters please!',$textdomain);?></div>
+            <!-- <div id="complexity" class="default" style="display:none; width:100%; margin-left:0px; margin-top:5px; color:#b94a48 !important; border:none !important; background-color:transparent !important;"></div>
+             --><div id="password_info" class="reg_frontErr"><?php _e('At least 7 characters please!',$textdomain);?></div>
             <div class="reg_frontErr upb_error_text custom_error" style="display:none;"></div>
           </div>
       </div>
