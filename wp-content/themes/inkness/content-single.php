@@ -4,7 +4,8 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('grid-item'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('grid-item singular-item'); ?>>
+	
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
@@ -12,7 +13,7 @@
 			<?php inkness_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
-
+	
 	<div class="entry-content">
 		<?php if (has_post_thumbnail() ) : ?>
 		<div class="featured-image-single">
@@ -27,8 +28,7 @@
 			<a href="<?php echo $image[0]; ?>" >
 	    		<img src="<?php echo $image[0]; ?>" alt="" style="border: 5px solid black; height: 500px;">
 	   		</a>
-
-
+			
 		</div>
 		<?php endif; ?>
 		<?php
@@ -39,7 +39,7 @@
 		?>
 	<?php the_content(); ?>
 	</div><!-- .entry-content -->
-
+	
 	<footer class="entry-meta">
 		<?php
 			/* translators: used between list items, there is a space after the comma */

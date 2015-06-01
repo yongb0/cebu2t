@@ -180,23 +180,7 @@
 
 <h1>
 
-<?php
-//list each role and each user with that role (works if logged in)
-//see http://wordpress.org/support/topic/256436 if not logged in:
-global $wp_roles;
-  $name = translate_with_context($name);
-  echo '<p>List of users in the role '.$role .' ('. $name . '):</p>';
-  $this_role = "'[[:<:]]".$role."[[:>:]]'";
-  $query = "SELECT * FROM $wpdb->users WHERE ID = 1";
-  $users_of_this_role = $wpdb->get_results($query);
-  if ($users_of_this_role) {
-    foreach($users_of_this_role as $user) {
-      $curuser = get_userdata($user->ID);
-      $author_post_url=get_author_posts_url($curuser->ID, $curuser->nicename);
-      echo '<p>--User nicename: '.$curuser->user_nicename .', display Name: '. $curuser->display_name . ', link to author posts <a href="' . $author_post_url . '" title="' . sprintf( __( "Posts by %s" ), $curuser->user_nicename ) . '" ' . '>' . $curuser->user_nicename .'</a></p>';
-    }
-  }
-?>
+
 
 </h1>
 
