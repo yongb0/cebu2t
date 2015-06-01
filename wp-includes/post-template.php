@@ -364,7 +364,7 @@ function get_the_excerpt( $deprecated = '' ) {
 	 *
 	 * @param string $post_excerpt The post excerpt.
 	 */
-	return apply_filters( 'get_the_excerpt', $post->post_excerpt );
+	return  apply_filters( 'get_the_excerpt', $post->post_excerpt );
 }
 
 /**
