@@ -41,11 +41,11 @@ jQuery(document).ready( function() {
   },300);
   
   
-<<<<<<< HEAD
-/*  jQuery('.fdc p').readmore({
-=======
+
+
+
   /*jQuery('.fdc p').readmore({
->>>>>>> 4b1b69b0b11cb60fcad64aabbc1a7d4ef730f761
+
       speed: 500,
       afterToggle: function(trigger, element, expanded) {
         if(! expanded) { 
@@ -71,8 +71,7 @@ jQuery(document).ready( function() {
         });
       }
   });*/
-<<<<<<< HEAD
-=======
+
     
   //count the number of archives in the post
   var countChecker = jQuery('#main').find('article.archive').length;
@@ -81,7 +80,7 @@ jQuery(document).ready( function() {
   if(countChecker>0){
     jQuery('#main').find('article.archive').each(function(i,e){
       var content = jQuery(e).find('.entry-content').html();
->>>>>>> 4b1b69b0b11cb60fcad64aabbc1a7d4ef730f761
+
 
       var contentCheck = stripHTML(jQuery(e).find('div.entry-content').html());
       var contentLink  = jQuery(e).find('h1.entry-title a').attr("href");

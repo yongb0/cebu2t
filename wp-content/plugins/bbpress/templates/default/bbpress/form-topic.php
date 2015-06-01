@@ -1,3 +1,12 @@
+
+
+<?php
+	global $current_user;
+      get_currentuserinfo();      
+	  $user = new WP_User( $current_user->ID  );
+	  if($user->roles[0]=='administrator') {
+?>
+
 <?php
 
 /**
@@ -265,3 +274,6 @@
 </div>
 
 <?php endif; ?>
+
+<?php } ?>
+
