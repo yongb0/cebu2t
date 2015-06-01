@@ -52,22 +52,22 @@
      <div class="already-logged">
       
       <div class="You-are-already-logged-in">
-     <h3>You are already registered.</h3>
-     </div><!--------------You-are-already-logged-in-------->
+        <h3>You are already registered.</h3>
+      </div><!--------------You-are-already-logged-in-------->
      
-      <div class="UPB-Button-input">
-      <a class="UPB-Button" href="<?php echo site_url(); ?>">Go back to Home-Page</a> 
-      <a class="UPB-Button" href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">Logout</a>
-     <div class="clear"></div>  
-    </div><!--------UPB-Button-input------->
+      <div class="clearfix text-center">
+        <a  href="<?php echo site_url(); ?>">Go back to Home-Page</a> 
+        <div class="clear"></div> 
+      </div>
+
+      <div class="clearfix text-center">
+        <a  href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">Logout</a>
+        <div class="clear"></div> 
+      </div>
     
-    <div class="clear"></div>
-   </div>
-   <div class="clear"></div>
-   
- 
-  
-  </div><!--------UPB-Standard-Form-main-upb-form------->
+      <div class="clear"></div>
+    </div>
+  </div>
   
   <div class="clear"></div>
   

@@ -608,8 +608,7 @@ if($row1->Type=='number')
 	endif; 
 	/*HTML for custom fields ends */
 	?>
-   
-  
+ 
       </div>
      <div class="clear"></div>
   </div><!----------UPB-Standard-Form-main-upb-form----------->

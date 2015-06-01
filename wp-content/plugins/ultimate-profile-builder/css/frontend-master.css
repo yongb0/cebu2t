@@ -105,15 +105,14 @@ background-image:none !important;
 }
 
 #UPB-Standard-Form .UPB-Button-input .UPB-Button:hover,#UPB-Standard-Form .UPB-Button-input .UPB-Button:active{
-border-top-color: #f1b900;
-background: #f1b900;
+//border-top-color: #f1b900;
+//background: #f1b900;
 }
 
 
 #UPB-Standard-Form input[type="submit"]:hover,
 #UPB-Standard-Form input[type="submit"]:active{
 border-top-color: #f1b900;
-background: #f1b900 !important;
 }
 .UPB-login-form{
 height:auto;

@@ -21,15 +21,15 @@
 
 jQuery(document).ready( function() {
   
-  jQuery('.grid').isotope({
-    itemSelector: 'article',
-    masonry: {
-      columnWidth: 2
-    }
-  });
-
-
-
+  setTimeout(function(){  
+    jQuery('.grid').isotope({
+      itemSelector: 'article',
+      masonry: {
+        columnWidth: 2
+      }
+    });
+  },500);
+  
   jQuery('.fdc p').readmore({
       speed: 500,
       afterToggle: function(trigger, element, expanded) {
