@@ -676,6 +676,7 @@ h1.page-title {
   display: inline-block;
   border-bottom: solid 4px #999999;
   margin-top: -15px;
+  margin-left:17px !important;
 }
 .page-header {
   border-bottom: 0px;

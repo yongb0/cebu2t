@@ -278,51 +278,53 @@ else
 ?>
 <!--HTML for displaying registration form-->
   
-
-  <form method="post" action="" class="UPB-login-form" id="registerform" name="registerform">
+  <form method="post" action="" class="UPB-login-form form-horizontal" id="registerform" name="registerform">
     <div >
     <div class="text-info-heading"><?php echo $Custom_Text;?></div>
     <div id="UPB-Standard-Form-entry-content">
       <div class="UPB-Standard-Form-main-upb-form">
         <div class="login-form registration-form">
            
-           <div class="formtable">
+          <div class="form-group"  style="padding-left:15px; padding-right:15px;">
             <label for="user_login"><?php _e('Username',$textdomain);?></label>
             <div class="upb_required">
-          <input type="text" onblur="javascript:validete_userName();" onkeyup="javascript:validete_userName();" onfocus="javascript:validete_userName();" onchange="javascript:validete_userName();" value="<?php echo (!empty($_POST['user_name']))?  $_POST['user_name']: ''; ?>"  id="user_name" name="user_name">
-          <div class="reg_frontErr upb_error_text custom_error" style="display:none;" id="nameErr"></div>
-        </div>
-           </div>
-           <div class="formtable">
-          <label for="user_email"><?php _e('E-mail',$textdomain);?></label>
-          <div class="upb_required upb_email">
-          <input type="text" onblur="javascript:validete_email();" onkeyup="javascript:validete_email();" onfocus="javascript:validete_email();" onchange="" value="<?php echo (!empty($_POST['user_email']))?  $_POST['user_email']: ''; ?>" id="user_email" name="user_email">
-          <div class="reg_frontErr upb_error_text custom_error" style="display:none;" id="emailErr"></div>
-        </div>
+              <input type="text" class="form-control" onblur="javascript:validete_userName();" onkeyup="javascript:validete_userName();" onfocus="javascript:validete_userName();" onchange="javascript:validete_userName();" value="<?php echo (!empty($_POST['user_name']))?  $_POST['user_name']: ''; ?>"  id="user_name" name="user_name">
+              <div class="reg_frontErr upb_error_text custom_error" style="display:none;" id="nameErr"></div>
+            </div>
           </div>
+
+          <div class="form-group"  style="padding-left:15px; padding-right:15px;">
+            <label for="user_email"><?php _e('E-mail',$textdomain);?></label>
+            <div class="upb_required upb_email">
+              <input type="text" class="form-control" onblur="javascript:validete_email();" onkeyup="javascript:validete_email();" onfocus="javascript:validete_email();" onchange="" value="<?php echo (!empty($_POST['user_email']))?  $_POST['user_email']: ''; ?>" id="user_email" name="user_email">
+              <div class="reg_frontErr upb_error_text custom_error" style="display:none;" id="emailErr"></div>
+            </div>
+          </div>
+          
       <?php
 if($pwd_show == "no")//Shows password field if the user is allowed to chose password during registration
 {
 ?>
-      <div class="formtable">
+      <div class="form-group"  style="padding-left:15px; padding-right:15px;">
           <label for="user_password"><?php _e('Password',$textdomain);?></label>
-      <div class="upb_required upb_password">
-          <input id="inputPassword" name="inputPassword" type="password" onfocus="javascript:document.getElementById('user_confirm_password').value = '';" />
-          <div id="complexity" class="default" style="display:none;"></div>
-          <div id="password_info" class="password-pro"><?php _e('At least 7 characters please!',$textdomain);?></div>
-          <div class="reg_frontErr upb_error_text custom_error" style="display:none;"></div>
-          
-        </div>
+          <div class="upb_required upb_password">
+            <input id="inputPassword" class="form-control" name="inputPassword" type="password" onfocus="javascript:document.getElementById('user_confirm_password').value = '';" />
+            <div id="complexity" class="default" style="display:none;"></div>
+            <div id="password_info" class="reg_frontErr"><?php _e('At least 7 characters please!',$textdomain);?></div>
+            <div class="reg_frontErr upb_error_text custom_error" style="display:none;"></div>
+          </div>
       </div>
-      <div class="formtable">
+
+      <div class="form-group" style="padding-left:15px; padding-right:15px;">
           <label for="user_confirm_password"><?php _e('Confirm Password',$textdomain);?></label>
       
-      <div class="upb_required upb_confirmpassword">
-          <input id="user_confirm_password" name="user_confirm_password" type="password"/>
-          <div class="reg_frontErr upb_error_text custom_error" style="display:none;"></div>
-          <!--<div class="reg_frontErr upb_error_text" id="divuser_confirm_password" style="display:none;"><?php _e('Enter the password again to confirm',$textdomain);?></div>-->
-        </div>
+          <div class="upb_required upb_confirmpassword">
+            <input id="user_confirm_password" class="form-control" name="user_confirm_password" type="password"/>
+            <div class="reg_frontErr upb_error_text custom_error" style="display:none;"></div>
+            <!--<div class="reg_frontErr upb_error_text" id="divuser_confirm_password" style="display:none;"><?php _e('Enter the password again to confirm',$textdomain);?></div>-->
+          </div>
       </div>
+
       <?php
 }
 else//If auto password generation is enabled then this will create a random password
@@ -335,7 +337,6 @@ else//If auto password generation is enabled then this will create a random pass
 }
 ?>     
       <!-- HTML for displaying custom fields in Registration form -->
-      
         <?php 
 if(is_array($content) && $content['role']!="")
 {
@@ -568,10 +569,12 @@ if($row1->Type=='term_checkbox')
     <div id="UPB-Button-area">
       <div class="UPB-Button-input forgot-passwordd">
       <?php wp_nonce_field('upb_register_form'); ?>
-      <div class="pull-right" style="margin-right:50px;">
+
+      <div class="pull-right" style="">
         <input type="submit" value="Submit" class="btn btn-default " id="submit" name="submit" >
         <input type="reset" value="Reset" class="btn btn-default " style="height: 30px; font-size:14px;" id="reset" name="reset" />
       </div>
+
             <?php
       $qry="SELECT value FROM $upb_option WHERE fieldname='upb_facebook_login'";
       $facebook_login = $wpdb->get_var($qry);
