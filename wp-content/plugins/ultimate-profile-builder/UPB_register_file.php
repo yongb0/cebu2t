@@ -300,8 +300,7 @@ else
               <div class="reg_frontErr upb_error_text custom_error" style="display:none;" id="emailErr"></div>
             </div>
           </div>
-
-
+          
       <?php
 if($pwd_show == "no")//Shows password field if the user is allowed to chose password during registration
 {

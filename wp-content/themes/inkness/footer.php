@@ -30,7 +30,7 @@ jQuery(document).ready( function() {
     });
   },500);
   
-  /*
+  
   jQuery('.fdc p').readmore({
       speed: 500,
       afterToggle: function(trigger, element, expanded) {
@@ -56,7 +56,7 @@ jQuery(document).ready( function() {
           }
         });
       }
-  });*/
+  });
 
 
 
