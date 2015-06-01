@@ -144,7 +144,8 @@ $user_name             = trim($_POST['user_name']); // receiving username
 $user_email            = trim($_POST['user_email']); // receiving email address
 $inputPassword         = trim($_POST['inputPassword']); // receiving password
 $user_confirm_password = trim($_POST['user_confirm_password']); // receiving confirm password
-$user_id = username_exists( $user_name ); // Checks if username is already exists.
+$user_id               = username_exists( $user_name ); // Checks if username is already exists.
+
 if ( !$user_id and email_exists($user_email) == false )//Creates password if password auto-generation is turned on in the settings
 {
 	if($pwd_show != "no")
@@ -155,7 +156,7 @@ if ( !$user_id and email_exists($user_email) == false )//Creates password if pas
 	{
 		$random_password = $inputPassword;
 	}
-  
+
 $qry="SELECT value FROM $upb_option WHERE fieldname='upb_welcome_email_subject'";//Fetches registration email Subject from dashboard settings
 $subject = $wpdb->get_var($qry);
 $user_id = wp_create_user( $user_name, $random_password, $user_email );//Creates new WP user after successful registration
