@@ -502,7 +502,7 @@ background:none repeat scroll 0 0 #d1d1d1;
 height:12px !important;
 }
 #password_info {
-background-color: #ffe5e5;
+/* background-color: #ffe5e5;
 border: 1px solid #fadbdb;
 border-radius: 5px;
 color: #fea7a7;
@@ -511,19 +511,20 @@ padding: 3px;
 margin-top: 3px;
 margin-bottom:3px;
 float: right;
-width: 60%;
+width: 60%; */
 }
 .reg_frontErr {
-background-color: #ffe5e5;
-border: 1px solid #fadbdb;
+//background-color: #ffe5e5;
+//border: 1px solid #fadbdb;
 border-radius: 5px;
-color: #fea7a7;
-font-size: 11px;
-padding: 3px;
-margin-top:-7px;
-margin-bottom:3px;
-float:right;
-width: 60%;
+color: #b94a48;
+font-size: 13px;
+padding: 0px;
+margin:0px;
+//margin-top:-7px;
+//margin-bottom:3px;
+//float:right;
+//width: 60%;
 }
 .registration-form .reg_frontErr{
 margin-top:3px !important;

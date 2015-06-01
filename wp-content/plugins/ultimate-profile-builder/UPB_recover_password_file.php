@@ -60,7 +60,7 @@
 <style type="text/css">
 #recoverErr {
 	display: none;
-	width: 300px;
+	//width: 300px;
 }
 </style>
 <!--HTML for displaying success message after the password is emailed-->
@@ -132,8 +132,7 @@
 <style type="text/css">
 				.noErr{
 					display:none;
-					width:300px;
-					margin: -20px 0 23px 223px !important;					
+					//margin: -20px 0 23px 223px !important;					
 				}
 </style>
 <?php
@@ -160,36 +159,39 @@ function validate123()//Validation for fields in password recovery form
 <?php if($userstatus==0) : ?>
 <!--HTML for displaying password reset form-->
 <div id="UPB-Standard-Form">
-  <div id="top-entry-header">Forgot Password?</div>
-  <form method="post" class="UPB-login-form" action="" id="lostpasswordform" name="lostpasswordform" onsubmit="javascript:return validate123();">
-  <div id="UPB-Standard-Form-entry-content" >
-     <div class="UPB-Standard-Form-main-upb-form">
-       <div class="login-form">
-        <div class="formtable">
-         <label> Username / E-mail: </label>
-         <div class="input-box">
-            <input type="text" value="" class="input" id="user_login" name="user_login">
-         <div class="reg_frontErr <?php echo $lostErrC; ?>" id="recoverErr"><?php echo $lostErr; ?></div>
-          </div>
-        </div>
-        <div class="form-text">Please enter your registered username or email, and we will resend your password.</div>
-      </div>
-      
-      </div>
-      
-      
-    <div class="clear"></div>
-    </div>
-  <div id="UPB-Button-area">
-     <div class="UPB-Button-input forgot-passwordd">
-     <?php wp_nonce_field('upb_password_reset_form'); ?>
-     <input type="submit" value="Submit" class="UPB-Button" id="PRSubmit" name="PRSubmit">
-    </div>
-    </div>
-    
-  <div class="clear"></div>  
-  </form>
- <div class="clear"></div> 
+  	<div id="top-entry-header">Forgot Password?</div>
+	<form method="post" class="UPB-login-form form-horizontal" action="" id="lostpasswordform" name="lostpasswordform" onsubmit="javascript:return validate123();">
+		<div id="UPB-Standard-Form-entry-content" >
+
+		    <div class="UPB-Standard-Form-main-upb-form">
+		       	<div class="login-form">
+		        	
+	         		<div class="input-box form-group">
+	         			<label>Username / E-mail: </label>
+	            		<input type="text" value="" class="input form-control" id="user_login" name="user_login" style="border:1px solid #ccc; padding:5px;">
+	         			<div class="reg_frontErr <?php echo $lostErrC; ?>" id="recoverErr"><?php echo $lostErr; ?></div>
+	          		</div>
+		        	
+		        	<div class="form-group">
+		        		<div class="text-left">Please enter your registered username or email, and we will resend your password.</div>
+		        	</div>
+		      	</div>
+		    </div>
+		   	
+			<div class="clear"></div>
+		</div>
+
+
+		<div id="UPB-Button-area">
+			<div class="UPB-Button-input forgot-passwordd">
+				<?php wp_nonce_field('upb_password_reset_form'); ?>
+				<input type="submit" value="Submit" class="UPB-Button fdc-upb-custom" id="PRSubmit" name="PRSubmit">
+			</div>
+		</div>
+
+		<div class="clear"></div>  
+	</form>
+	<div class="clear"></div> 
 </div>
 <?php endif; ?>
 <?php

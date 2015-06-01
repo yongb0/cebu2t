@@ -181,67 +181,76 @@ function validateLogin()
 	}
 	return true;
 }
-
-
 </script>
-<form class="UPB-login-form" method="post" action="" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
+<form class="UPB-login-form form-horizontal" method="post" action="" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
   
   <div >
   <div id="UPB-Standard-Form-entry-content">
   <?php if(isset($loginErr)): ?>
-  <div id="loginErr" class="reg_frontErr"> <?php echo $loginErr; ?> </div>
+  <div  class="alert alert-danger"> <?php echo $loginErr; ?> </div>
   <?php endif; ?>
-
+	
    	<div class="UPB-Standard-Form-main-upb-form">
-    	<div class="login-form">
+    	<div class="login-form clearfix">
      		
-	      	<div class="formtable">
+	      	<div class="">
 		    	<label for="user_login"> Username </label>
-		     	<input type="text" size="20" value="<?php if(isset($user_login)) echo $user_login; ?>" class="input" id="user_login" name="user_login" >
+		     	<input type="text" size="20" value="<?php if(isset($user_login)) echo $user_login; ?>" class="input form-control" id="user_login" name="user_login" >
+	      		<div class="reg_frontErr" id="divuser_login" style="display:none;">Please enter a username.</div>
 	      	</div>
-      		<div class="reg_frontErr" id="divuser_login" style="display:none;">Please enter a username.</div>
-      
-      		<div class="formtable">
+			
+			<div class="clear" style="margin-top:5px; margin-bottom:5px;"></div>
+
+      		<div class="" >
 	      		<label for="user_pass"> Password </label>
-	      		<input type="password" size="20" value="" class="input" id="user_pass" name="user_pass" >
+	      		<input type="password" size="20" value="" class="input form-control" id="user_pass" name="user_pass" >
       		</div>
       
       		<div class="reg_frontErr" id="divuser_pass" style="display:none;">Please enter a password.</div>
       
        		<div class="clear"></div>
-       		<div class="formtable forgot-password">
-       			<label>&nbsp;</label>
-       			<input type="checkbox" value="true" id="rememberme" name="rememberme">
-       			Remember Me
+
+       		<div class="forgot-password form-group">
+       			<div class="col-xs-6">
+       				<label>
+		       			<input type="checkbox" value="true" id="rememberme" name="rememberme">
+		       			Remember Me
+		       		</label>
+       			</div>
+				<div class="col-xs-6 text-right">
+       				<div class="UPB-forgot-pass"> Forget Password? <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">Click here</a> to resend </div>
+      			</div>
        		</div>
-      	
+      		
      	</div>
-     
+     	
    		<div class="clear"></div>   
    	</div><!----------UPB-Standard-Form-main-upb-form------>
   </div><!--------UPB-Standard-Form-entry-content-------->
-  <div id="UPB-Button-area">
-      <div class="UPB-Button-input">
-      <?php wp_nonce_field('upb_login_form'); ?>
-        <input type="submit" value="Log In" class="UPB-Button pull-right" style="margin-right: 50px;" id="login" name="submit">
-      </div>
-      <div class="UPB-forgot-pass text-center"> Forget Password? <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">Click here</a> to resend </div>
-      
-      <div class="clear"></div>
+	
+  	<!--  button area -->
+  	<div id="UPB-Button-area">
+	    <div class="UPB-Button-input text-right">
+	      	<?php wp_nonce_field('upb_login_form'); ?>
+	        <input type="submit" value="Log In" class="UPB-Button" id="login" name="submit" >
+	    </div>
+      	
+      	<div class="clear"></div>
 	  
-      <?php
-$qry="SELECT value FROM $upb_option WHERE fieldname='upb_facebook_login'";
-$facebook_login = $wpdb->get_var($qry);
-if($facebook_login=='yes')
-{
-	include 'facebook/upb_facebook.php';
-	upb_fb_login_validate();
-	upb_fb_loginForm();
-}
-?>
+      	<?php
+			$qry="SELECT value FROM $upb_option WHERE fieldname='upb_facebook_login'";
+			$facebook_login = $wpdb->get_var($qry);
+			if($facebook_login=='yes')
+			{
+				include 'facebook/upb_facebook.php';
+				upb_fb_login_validate();
+				upb_fb_loginForm();
+			}
+		?>
     </div>
-    
- <div class="clear"></div>
+   	<!-- /. -->
+  	
+ 	<div class="clear"></div>
  
  </div><!------UPB-Standard-Form------>
   </form>
