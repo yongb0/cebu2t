@@ -20,7 +20,6 @@ get_header(); ?>
 							single_cat_title();
 							endif;
 							?>
-							content
 		</h1>
 
 	<div id="primary-home" class="content-area col-md-12">
