@@ -13,17 +13,22 @@
 
 get_header(); ?>
 
+
 <h1 class="page-title cat-page-title">
 					<?php
 						if ( is_category() ) :
 							single_cat_title();
 							endif;
 							?>
+							content
 		</h1>
 
 	<div id="primary-home" class="content-area col-md-12">
 		<main id="main" class="grid" role="main">
 		
+
+		
+
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ $ink_count = 0; $ink_row_count=0 ?>
@@ -53,7 +58,7 @@ get_header(); ?>
 				
 				endwhile; 
 			?>
-
+			
 			<?php inkness_pagination(); ?>
 
 		<?php else : ?>

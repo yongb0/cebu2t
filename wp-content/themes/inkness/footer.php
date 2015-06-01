@@ -7,23 +7,11 @@
  * @package Inkness
  */
 ?>
-
-
-
-
-
-
-
-
-
-
+  <div class="paginationSection pagination" style="margin-bottom:60px; display:none;">
+  </div>
+  
   <script src="<?php echo get_site_url(); ?>/wp-content/themes/inkness/reads/readmore.js"></script>
   
-
-
-
-
-
   <script>
 
 // external js: isotope.pkgd.js
@@ -40,10 +28,6 @@ jQuery(document).ready( function() {
     });
   },300);
   
-  
-
-
-
   /*jQuery('.fdc p').readmore({
 
       speed: 500,
@@ -71,8 +55,7 @@ jQuery(document).ready( function() {
         });
       }
   });*/
-
-    
+  
   //count the number of archives in the post
   var countChecker = jQuery('#main').find('article.archive').length;
   
@@ -106,10 +89,11 @@ jQuery(document).ready( function() {
 
     //check if the images is not 0
     if(images.length!==0){
+
       checkIfSingle.find('.entry-content img').each(function(i,e){
         //get the non-emoji images
         if(!jQuery(e).hasClass('emoji')){
-          var imageParent = jQuery(e).parent();
+          var imageParent   = jQuery(e).parent();
           var parentTagName = jQuery.trim(imageParent.prop("tagName").toLowerCase());
           if(parentTagName!="a"){
             var imageSrc = jQuery(e).attr("src"); //get the image src
@@ -118,6 +102,7 @@ jQuery(document).ready( function() {
           }
         }
       });
+
     }
   }
   
@@ -125,7 +110,14 @@ jQuery(document).ready( function() {
   if(fancyBox) {
    jQuery("a.fancybox").fancybox();//reinitialize fancybox
   }
-  
+
+  //check if page is in the archive section
+  if(jQuery('#main').find('.pagination').length!==0 && countChecker>0) {
+    var pageContent = jQuery('#main').find('.pagination').html();
+    jQuery('.paginationSection').html(pageContent).show();
+    jQuery('#main').find('.pagination').empty().hide();
+  }
+
 });
 
 /**
