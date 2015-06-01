@@ -44,8 +44,8 @@ height:auto;
 }
 #UPB-Standard-Form #UPB-Standard-Form-entry-content{
 height:auto;
-background-color: #f9f9f9;
-border-top: 8px solid #000;
+//background-color: #f9f9f9;
+border-top: 0px solid #000;
 padding: 26px 15px;
 }
 #UPB-Standard-Form #UPB-Standard-Form-entry-content .UPB-Standard-Form-main-upb-form{
@@ -92,20 +92,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc600', end
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 border-radius: 5px;
-border-top: 1px solid #ffc600;
+//border-top: 1px solid #ffc600;
 display:inline-block;
 text-decoration:none;
-color: white;
+//color: white;
 padding: 4px  23px 6px 23px;
 text-decoration: none;
-text-shadow: 0 -1px 0 #e09a00;
+//text-shadow: 0 -1px 0 #e09a00;
 cursor:pointer;
 vertical-align: middle;
+background-image:none !important;
 }
+
 #UPB-Standard-Form .UPB-Button-input .UPB-Button:hover,#UPB-Standard-Form .UPB-Button-input .UPB-Button:active{
 border-top-color: #f1b900;
 background: #f1b900;
 }
+
+
 #UPB-Standard-Form input[type="submit"]:hover,
 #UPB-Standard-Form input[type="submit"]:active{
 border-top-color: #f1b900;
