@@ -288,7 +288,7 @@ else
           <div class="form-group"  style="padding-left:15px; padding-right:15px;">
             <label for="user_login"><?php _e('Username',$textdomain);?></label>
             <div class="upb_required">
-              <input type="text" class="form-control" onblur="javascript:validete_userName();" onkeyup="javascript:validete_userName();" onfocus="javascript:validete_userName();" onchange="javascript:validete_userName();" value="<?php echo (!empty($_POST['user_name']))?  $_POST['user_name']: ''; ?>"  id="user_name" name="user_name">
+              <input type="text" class="form-control" onblur="javascript:validete_userName(); validate_userRegex();" onkeyup="javascript:validete_userName(); validate_userRegex();" onfocus="javascript:validete_userName(); validate_userRegex();" onchange="javascript:validete_userName(); validate_userRegex();" value="<?php echo (!empty($_POST['user_name']))?  $_POST['user_name']: ''; ?>"  id="user_name" name="user_name">
               <div class="reg_frontErr upb_error_text custom_error" style="display:none;" id="nameErr"></div>
             </div>
           </div>
@@ -602,31 +602,48 @@ if($row1->Type=='term_checkbox')
 <script language="javascript" type="text/javascript"> //AJAX username validation
       var name  =false;
       var email =false;
+
+      var checkingRegex = false;
+
 			function validete_userName()
 			{
 
-				jQuery.ajax(
-				{
-					type: "POST",
-					url: '<?php echo get_option('siteurl').'/wp-admin/admin-ajax.php';?>?action=ajaxcalls&cookie=encodeURIComponent(document.cookie)&function=validateUser&name=' + jQuery("#user_name").val(),
-					success : function (serverResponse)
-					{
-								
-						if (serverResponse == "true") {
-							jQuery("#nameErr").html("<?php _e('Sorry, username already exist',$textdomain);?>");
-							jQuery("#nameErr").css('display','block');
-							jQuery("#submit").attr('disabled', true);
-						} else {
-							jQuery("#nameErr").html('');
-							jQuery("#nameErr").css('display','none');
-							jQuery("#submit").attr('disabled', false);
-						}
-            	
-					}
-				});
 
+        var regexAN  = "/^([a-zA-Z0-9 _-]+)$/";
+        var userName = jQuery('#user_name').val();
+        if(userName.length!==0){
+          if (userName.match(/[^a-zA-Z0-9 ]/g)){
+            jQuery('#user_name').parent().find('.custom_error').html('<?php _e('Please enter a valid username.',$textdomain);?>');
+            jQuery('#user_name').parent().find('.custom_error').show();
+          } else {
+
+            jQuery.ajax(
+            {
+              type: "POST",
+              url: '<?php echo get_option('siteurl').'/wp-admin/admin-ajax.php';?>?action=ajaxcalls&cookie=encodeURIComponent(document.cookie)&function=validateUser&name=' + jQuery("#user_name").val(),
+              success : function (serverResponse)
+              {
+                    
+                if (serverResponse == "true") {
+                  jQuery("#nameErr").html("<?php _e('Sorry, username already exist',$textdomain);?>");
+                  jQuery("#nameErr").css('display','block');
+                  jQuery("#submit").attr('disabled', true);
+                } else {
+                  jQuery("#nameErr").html('');
+                  jQuery("#nameErr").css('display','none');
+                  jQuery("#submit").attr('disabled', false);
+                }
+                  
+              }
+            });
+          }
+        }
 			}
 
+      function validate_userRegex(){
+        
+      }
+      
 			function validete_email() //AJAX email validation
 			{
 				jQuery.ajax(
@@ -648,7 +665,7 @@ if($row1->Type=='term_checkbox')
 					}
 				})
 			}
-
+      
 </script>
 <?php
 	}
@@ -674,13 +691,6 @@ if($row1->Type=='term_checkbox')
     var confirmpassword = jQuery('#user_confirm_password').val();
     var passwordlength  = password.length;
     var userName        = jQuery('#user_name').val();
-		
-    if(userName.length!==0){
-      var isAlphaNumeric =  regexAN.test(userName);
-      console.log(isAlphaNumeric);
-    }
-
-
 
     if(password !="")
 		{
