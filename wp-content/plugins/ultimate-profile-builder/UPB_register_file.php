@@ -1,11 +1,11 @@
 <?php
 /*Controls registration form behavior on the front end*/
-	$textdomain = 'ultimate-profile-builder';
-	$path =  plugin_dir_url(__FILE__);  // define path to link and scripts
-	$pageURL = get_permalink();
-	$sign = strpos($pageURL,'?')?'&':'?';
-	global $wpdb;
-	$upb_fields =$wpdb->prefix."upb_fields";
+  $textdomain = 'ultimate-profile-builder';
+  $path       =  plugin_dir_url(__FILE__);  // define path to link and scripts
+  $pageURL    = get_permalink();
+  $sign       = strpos($pageURL,'?')?'&':'?';
+  global $wpdb;
+  $upb_fields =$wpdb->prefix."upb_fields";
 	extract($_REQUEST);
 	if(isset($login2))
 	{
@@ -140,10 +140,10 @@ if(isset($_POST['submit']) && $submit==1 ) // Checks if the submit button is pre
 	$retrieved_nonce = $_REQUEST['_wpnonce'];
 	if (!wp_verify_nonce($retrieved_nonce, 'upb_register_form' ) ) die( 'Failed security check' );
 
-$user_name = $_POST['user_name']; // receiving username
-$user_email = $_POST['user_email']; // receiving email address
-$inputPassword = $_POST['inputPassword']; // receiving password
-$user_confirm_password = $_POST['user_confirm_password']; // receiving confirm password
+$user_name             = trim($_POST['user_name']); // receiving username
+$user_email            = trim($_POST['user_email']); // receiving email address
+$inputPassword         = trim($_POST['inputPassword']); // receiving password
+$user_confirm_password = trim($_POST['user_confirm_password']); // receiving confirm password
 $user_id = username_exists( $user_name ); // Checks if username is already exists.
 if ( !$user_id and email_exists($user_email) == false )//Creates password if password auto-generation is turned on in the settings
 {
@@ -155,9 +155,11 @@ if ( !$user_id and email_exists($user_email) == false )//Creates password if pas
 	{
 		$random_password = $inputPassword;
 	}
+  
 $qry="SELECT value FROM $upb_option WHERE fieldname='upb_welcome_email_subject'";//Fetches registration email Subject from dashboard settings
 $subject = $wpdb->get_var($qry);
 $user_id = wp_create_user( $user_name, $random_password, $user_email );//Creates new WP user after successful registration
+
   if($subject == "")
   {
 	$subject = get_bloginfo('name');//Auto inserts email Subject if it is not defined in dashboard settings
@@ -288,7 +290,7 @@ else
           <div class="form-group"  style="padding-left:15px; padding-right:15px;">
             <label for="user_login"><?php _e('Username',$textdomain);?></label>
             <div class="upb_required">
-              <input type="text" class="form-control" onblur="javascript:validete_userName(); validate_userRegex();" onkeyup="javascript:validete_userName(); validate_userRegex();" onfocus="javascript:validete_userName(); validate_userRegex();" onchange="javascript:validete_userName(); validate_userRegex();" value="<?php echo (!empty($_POST['user_name']))?  $_POST['user_name']: ''; ?>"  id="user_name" name="user_name">
+              <input type="text" class="form-control" onblur="javascript:validete_userName();" onkeyup="javascript:validete_userName();" onfocus="javascript:validete_userName();" onchange="javascript:validete_userName();" value="<?php echo (!empty($_POST['user_name']))?  $_POST['user_name']: ''; ?>"  id="user_name" name="user_name">
               <div class="reg_frontErr upb_error_text custom_error" style="display:none;" id="nameErr"></div>
             </div>
           </div>
@@ -608,7 +610,6 @@ if($row1->Type=='term_checkbox')
 			function validete_userName()
 			{
 
-
         var regexAN  = "/^([a-zA-Z0-9 _-]+)$/";
         var userName = jQuery('#user_name').val();
         if(userName.length!==0){
@@ -640,10 +641,6 @@ if($row1->Type=='term_checkbox')
         }
 			}
 
-      function validate_userRegex(){
-        
-      }
-      
 			function validete_email() //AJAX email validation
 			{
 				jQuery.ajax(
@@ -665,7 +662,7 @@ if($row1->Type=='term_checkbox')
 					}
 				})
 			}
-      
+
 </script>
 <?php
 	}
