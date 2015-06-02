@@ -13,48 +13,24 @@
 
 get_header(); ?>
 
+	<div id="primary" class="content-area col-md-8">
+		<main id="main" class="site-main" role="main">
 
-<h1 class="page-title cat-page-title">
-					<?php
-						if ( is_category() ) :
-							single_cat_title();
-							endif;
-							?>
-		</h1>
-
-	<div id="primary-home" class="content-area col-md-12">
-		<main id="main" class="grid" role="main">
-		
 		<?php if ( have_posts() ) : ?>
 
-			<?php /* Start the Loop */ $ink_count = 0; $ink_row_count=0 ?>
-			<?php while ( have_posts() ) : the_post(); 
-				if ($ink_count == 0 ) {echo "<div class='row'>";}
-			?>
-			
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php
 					/* Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', 'home' );
+					get_template_part( 'content', get_post_format() );
 				?>
 
-			<?php 
-				if ($ink_count == 2 )
-					{
-						echo "</div>";
-						$ink_count=0;
-						$ink_row_count++;
-					}
-				else {	
-					$ink_count++;
-				}
-				
-				endwhile; 
-			?>
-			
+			<?php endwhile; ?>
+
 			<?php inkness_pagination(); ?>
 
 		<?php else : ?>
@@ -66,5 +42,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar('footer'); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
