@@ -210,7 +210,7 @@ function bbp_member_forums_topics_content() {
 		<?php bbp_get_template_part( 'user', 'topics-created' ); ?>
 
 	</div>
-
+	
 <?php
 }
 

@@ -5,18 +5,13 @@
  * @package Inkness
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
 
 /**
  * Initialize Options Panel
  */
 if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+	require_once get_template_directory() . '/inc/options-framework.php';
 }
 
 if ( ! function_exists( 'inkness_setup' ) ) :
@@ -37,7 +32,13 @@ function inkness_setup() {
 		'default-color' => 'f7f7f7',
 		'default-image' => '',
 	) ) );
-	
+	/**
+	 * Set the content width based on the theme's design and stylesheet.
+	 */
+	 global $content_width;
+	 if ( ! isset( $content_width ) )
+		$content_width = 640; /* pixels */
+		
 	add_editor_style();
 }
 endif; // inkness_setup
@@ -183,17 +184,6 @@ function inkness_pagination() {
 	           echo '</ul></div></div>';
 	 }
 }
-
-function SearchFilter($query) {
-	if ($query->is_search) {
-		$query->set('post_type', 'post');
-	}
-
-	return $query;
-}
-
-add_filter('pre_get_posts','SearchFilter');
-
 
 /**
  * Implement the Custom Header feature.

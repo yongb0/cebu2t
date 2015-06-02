@@ -62,6 +62,10 @@ function optionsframework_options() {
 		'type' => 'heading');	
 	
 	$options[] = array(
+		'desc' => __('With <a href="http://inkhive.com/product/inkness-plus/" target="_blank">Pro Version</a> You also have the option to Remove Search Bar from header, and move to a full width menu. Upgrade at Just $25.95'),
+		'type' => 'info');	
+		
+	$options[] = array(
 		'name' => "Sidebar Layout",
 		'desc' => "Select Layout for Posts & Pages.",
 		'id' => "sidebar-layout",
@@ -240,6 +244,11 @@ function optionsframework_options() {
 	'type' => 'heading');
 
 	$options[] = array(
+		'desc' => __('To Add your Own icons, and Choose different image styles for Social Icons, purchase <a href="http://inkhive.com/product/inkness-plus/" target="_blank">Pro Version (InkNess Plus)</a>. Upgrade at Just $25.95'),
+		'std' => '',
+		'type' => 'info');	
+
+	$options[] = array(
 		'name' => __('Facebook', 'inkness'),
 		'desc' => __('Facebook Profile or Page URL i.e. http://facebook.com/username/ ', 'inkness'),
 		'id' => 'facebook',
@@ -354,7 +363,7 @@ function optionsframework_options() {
 		
 	
 	$options[] = array(
-		'name' => __('Theme Credits', 'inkness'),
+		'name' => __('Remove Credit Links in Footer', 'inkness'),
 		'desc' => __('Check this if you want to you do not want to give us credit in your site footer.', 'inkness'),
 		'id' => 'credit1',
 		'std' => '0',

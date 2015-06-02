@@ -9,14 +9,6 @@
 
 ?>
 
-<?php
-			$current_user = wp_get_current_user();
-			$current_id = $current_user->ID;
-			$avtar_image = get_user_meta( bbp_get_topic_author_id(), 'avtar_image' );
-			$user_info = get_userdata($current_id);
-			$user_description = $user_info->user_description;
-?>
-
 <ul id="bbp-topic-<?php bbp_topic_id(); ?>" <?php bbp_topic_class(); ?>>
 
 	<li class="bbp-topic-title">
@@ -64,13 +56,9 @@
 		<p class="bbp-topic-meta">
 
 			<?php do_action( 'bbp_theme_before_topic_started_by' ); ?>
-			
-				<?php if (isset($avtar_image[0])&& $avtar_image[0]!=''): ?> 
-						<img src="<?php echo $avtar_image[0]; ?>" width="50" style="border:2px solid black;"/> 
-				<?php endif; ?>
-			 <span class="bbp-topic-started-by"><?php printf( __( 'Started by: %1$s', 'bbpress' ), bbp_get_topic_author_link() ); ?></span> 
-				
-		
+
+			<span class="bbp-topic-started-by"><?php printf( __( 'Started by: %1$s', 'bbpress' ), bbp_get_topic_author_link( array( 'size' => '14' ) ) ); ?></span>
+
 			<?php do_action( 'bbp_theme_after_topic_started_by' ); ?>
 
 			<?php if ( !bbp_is_single_forum() || ( bbp_get_topic_forum_id() !== bbp_get_forum_id() ) ) : ?>
@@ -107,8 +95,7 @@
 
 			<?php do_action( 'bbp_theme_before_topic_freshness_author' ); ?>
 
-			
-			<span class="bbp-topic-freshness-author"><?php  bbp_author_link( array( 'post_id' => bbp_get_topic_last_active_id(), 'size' => 14 ) ); ?></span>
+			<span class="bbp-topic-freshness-author"><?php bbp_author_link( array( 'post_id' => bbp_get_topic_last_active_id(), 'size' => 14 ) ); ?></span>
 
 			<?php do_action( 'bbp_theme_after_topic_freshness_author' ); ?>
 

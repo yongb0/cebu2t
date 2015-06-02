@@ -56,3 +56,43 @@ Version 1.0.2.2
 
 	i) Corrected Spelling which was being displayed on Front End.
 	ii) Fixed issues with Full Width Page Template. Now slider is full screen width.	
+	
+Version 1.0.2.3
+
+	i) Minor Changes in Options Page	
+	ii) Removed Stale code from Footer.php
+	iii) Changed Footer Link to AuthorURI
+	
+Version 1.0.2.4
+
+	i) [BUGFIX] Fixed a bug which caused Full Width Pages to display incorrectly.
+	
+Version 1.0.2.5
+
+	i) [BUGFIX]	Added Missing Strings to .pot file	
+	
+Version 1.0.2.6
+
+	i) [BUGFIX] Enhanced Child Theme Compatibility. Removed Unused Filter on Custom Header.	
+	
+Version 1.0.2.7	
+
+	i) [LANG] French Added
+	ii) [LANG] Italian Added
+	
+Version 1.0.2.8
+
+	i) Relocated Slider Code. For Future pursposes, to enable more different sliders.	
+	
+Version 1.0.2.9
+
+	i) Relocated Social Icons Code.
+	
+Version 1.0.3
+
+	i) FIxed Issues with $content_width	
+	ii) Added New Page Template (No Sidebar, No Title)
+	
+Version 1.0.3.1
+
+	i) PHP Fatal Error Bug Fixed.	

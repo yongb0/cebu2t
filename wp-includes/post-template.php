@@ -229,6 +229,7 @@ function get_the_guid( $id = 0 ) {
  * @param bool   $strip_teaser   Optional. Strip teaser content before the more text. Default is false.
  */
 function the_content( $more_link_text = null, $strip_teaser = false) {
+	
 	$content = get_the_content( $more_link_text, $strip_teaser );
 
 	/**

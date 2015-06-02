@@ -1,12 +1,3 @@
-
-
-<?php
-	global $current_user;
-      get_currentuserinfo();      
-	  $user = new WP_User( $current_user->ID  );
-	  if($user->roles[0]=='administrator') {
-?>
-
 <?php
 
 /**
@@ -86,29 +77,6 @@
 					</p>
 
 					<?php do_action( 'bbp_theme_after_topic_form_title' ); ?>
-
-
-
-<?php // Author :  John Robert - Roy ?>
-					<?php do_action( 'bbp_theme_before_topic_form_price' ); ?>
-					<p>
-						<label for="bbp_topic_price">Price</label><br />
-						<input type="text" id="bbp_topic_price" value="" tabindex="<?php bbp_tab_index(); ?>" size="40" name="bbp_topic_price" maxlength="<?php bbp_title_max_length(); ?>" />
-					</p>
-					<?php do_action( 'bbp_theme_after_topic_form_price' ); ?>
-
-
-					<p>
-					<input type="radio" name="bbp_topic_choice" value="buying"> Buying<br>
-					<input type="radio" name="bbp_topic_choice" value="Selling" checked> Selling
-					</p>
-<?php // Author :  John Robert - Roy ?>
-
-
-
-
-
-					
 
 					<?php do_action( 'bbp_theme_before_topic_form_content' ); ?>
 
@@ -274,6 +242,3 @@
 </div>
 
 <?php endif; ?>
-
-<?php } ?>
-

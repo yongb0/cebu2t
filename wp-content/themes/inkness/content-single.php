@@ -4,8 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('grid-item singular-item'); ?>>
-	
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
@@ -13,22 +12,13 @@
 			<?php inkness_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
-	
+
 	<div class="entry-content">
 		<?php if (has_post_thumbnail() ) : ?>
 		<div class="featured-image-single">
 			<?php
-				//the_post_thumbnail();
-			$postId = get_the_ID();
-
-
-	    		$imgId = get_post_thumbnail_id($postId);
-	    		$image = wp_get_attachment_image_src($imgId,'large');
+				the_post_thumbnail();
 				?>
-			<a href="<?php echo $image[0]; ?>" >
-	    		<img src="<?php echo $image[0]; ?>" alt="" style="border: 5px solid #ccc; height: 500px;">
-	   		</a>
-			
 		</div>
 		<?php endif; ?>
 		<?php
@@ -39,7 +29,7 @@
 		?>
 	<?php the_content(); ?>
 	</div><!-- .entry-content -->
-	
+
 	<footer class="entry-meta">
 		<?php
 			/* translators: used between list items, there is a space after the comma */

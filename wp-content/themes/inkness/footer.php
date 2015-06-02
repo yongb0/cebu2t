@@ -40,11 +40,11 @@ jQuery(document).ready( function() {
           },600);
 
         } else {
-	        setTimeout(function(){
-	       		
-	        jQuery(element).parent('.fdc').parent('.article-rest').parent('.article-wrapper').parent('article').css('height','auto');
-	       
-	        },600);
+          setTimeout(function(){
+            
+          jQuery(element).parent('.fdc').parent('.article-rest').parent('.article-wrapper').parent('article').css('height','auto');
+         
+          },600);
         }
 
         jQuery('.grid').isotope({
@@ -59,6 +59,7 @@ jQuery(document).ready( function() {
   //count the number of archives in the post
   var countChecker = jQuery('#main').find('article.archive').length;
   
+  console.log(countChecker);
   //check if counter is greater than 0
   if(countChecker>0){
     jQuery('#main').find('article.archive').each(function(i,e){
@@ -133,37 +134,37 @@ function stripHTML(dirtyString) {
 
     
   </script>
-
-	</div>
-	</div><!-- #content -->
+  
+  </div>
+  </div><!-- #content -->
 
 <nav  style="height: 20px;" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-	<div style="border-top: 2px solid #eee;" >
-	  	<div class="container " >
+  <div style="border-top: 2px solid #eee;" >
+      <div class="container " >
 
-	  	<div class="row" style="height: 20px; margin-top: 10px;">
-	  		<div class="col-sm-8">
-			  	<div>
-			  	Copyright &copy 2015 -2016 All About Cebu. All Rights Reserved
-			  	</div>
-			</div>
-			<div class="col-sm-4">
-			  	<div class="pull-right" >
-			  		www.cebu.2thinkers.net
-			  	</div>
-			</div>
-	  	</div>
+      <div class="row" style="height: 20px; margin-top: 10px;">
+        <div class="col-sm-8">
+          <div>
+          Copyright &copy 2015 -2016 All About Cebu. All Rights Reserved
+          </div>
+      </div>
+      <div class="col-sm-4">
+          <div class="pull-right" >
+            www.cebu.2thinkers.net
+          </div>
+      </div>
+      </div>
 
-	  	</div>
-  	</div>
+      </div>
+    </div>
 </nav>
 
-	
+  
 </div><!-- #page -->
 
-<?php		
-	if ( (function_exists( 'of_get_option' ) && (of_get_option('footercode1', true) != 1) ) ) {
-			 	echo of_get_option('footercode1', true); } ?>
+<?php   
+  if ( (function_exists( 'of_get_option' ) && (of_get_option('footercode1', true) != 1) ) ) {
+        echo of_get_option('footercode1', true); } ?>
 <?php wp_footer(); ?>
 </body>
 </html>

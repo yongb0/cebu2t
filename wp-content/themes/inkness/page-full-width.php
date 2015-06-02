@@ -5,7 +5,7 @@ Template Name: Full Width(No Sidebar)
 
 get_header(); ?>
 
-	<div id="primary" class="full-width content-area .col-md-12">
+	<div id="primary" class="full-width content-area col-md-12">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
