@@ -90,8 +90,8 @@ function inkness_comment( $comment, $args, $depth ) {
 				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'inkness' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
-
-			<div class="comment-content col-md-10 col-sm-10 col-xs-12">
+				
+			<div class="comment-content col-md-12 col-sm-12 col-xs-12">
 				<?php comment_text(); ?>
 				<?php
 				comment_reply_link( array_merge( $args, array(

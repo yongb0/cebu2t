@@ -28,43 +28,14 @@ jQuery(document).ready( function() {
     });
   },300);
   
-  /*jQuery('.fdc p').readmore({
-
-      speed: 500,
-      afterToggle: function(trigger, element, expanded) {
-        if(! expanded) { 
-          setTimeout(function(){
-            var parent = jQuery('#primary-home');
-            parent.find('.row').each(function(i,e){
-            });
-          },600);
-
-        } else {
-          setTimeout(function(){
-            
-          jQuery(element).parent('.fdc').parent('.article-rest').parent('.article-wrapper').parent('article').css('height','auto');
-         
-          },600);
-        }
-
-        jQuery('.grid').isotope({
-          itemSelector: 'article',
-          masonry: {
-            columnWidth: 2
-          }
-        });
-      }
-  });*/
-  
   //count the number of archives in the post
   var countChecker = jQuery('#main').find('article.archive').length;
   
-  console.log(countChecker);
   //check if counter is greater than 0
   if(countChecker>0){
+  
     jQuery('#main').find('article.archive').each(function(i,e){
       var content = jQuery(e).find('.entry-content').html();
-
 
       var contentCheck = stripHTML(jQuery(e).find('div.entry-content').html());
       var contentLink  = jQuery(e).find('h1.entry-title a').attr("href");

@@ -12,16 +12,17 @@
  */
 
 get_header(); ?>
-
+	
 	<div id="primary-home" class="content-area col-md-12">
-		<main id="main" class="site-main row container grid" role="main">
 		<h1 class="page-title cat-page-title">
-					<?php
-						if ( is_category() ) :
-							single_cat_title();
-							endif;
-							?>
+			<?php
+				if ( is_category() ) :
+					single_cat_title();
+					endif;
+					?>
 		</h1>
+		<main id="main" class="site-main row grid" role="main">
+		
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ $ink_count = 0; $ink_row_count=0 ?>
