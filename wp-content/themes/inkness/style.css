@@ -3,8 +3,8 @@ Theme Name: Inkness
 Theme URI: http://inkhive.com/product/inkness/
 Author: Rohit Tripathi
 Author URI: http://inkhive.com
-Description: Inkness is a Responsive theme with 3 Column Grid based homepage layout. This theme is overloaded with plenty of featured, including an amazing reponsive slider, Multiple Page Layouts, Configurable Sidebar Locations, Footer Widgets & Easy to use admin Panel. This theme is upgradable to a pro version to enable more features. .pot file has been provided, so that you can translate theme into any language.
-Version: 1.0.2.2
+Description: Inkness is a Responsive theme with 3 Column Grid based homepage layout. This theme is overloaded with plenty of featured, including an amazing reponsive slider, Multiple Page Layouts, Configurable Sidebar Locations, Footer Widgets & Easy to use admin Panel. This theme is upgradable to a pro version to enable more features. .pot file has been provided, so that you can translate theme into any language. Already Translated into Italian and French.
+Version: 1.0.3.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: inkness
@@ -121,7 +121,7 @@ p {
 	margin-bottom: 1.5em;
 }
 ul, ol {
-	//margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em 3em;
 }
 ul {
 	list-style: disc;
@@ -545,4 +545,6 @@ object {
 	}
 }
 
-
+.comment-list{
+	margin:0px;
+}

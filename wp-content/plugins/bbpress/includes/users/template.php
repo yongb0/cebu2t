@@ -1597,7 +1597,7 @@ function bbp_user_lost_pass_fields() {
  * @uses bbp_get_author_link() To get the post author link
  */
 function bbp_author_link( $args = '' ) {
-	//echo bbp_get_author_link( $args );
+	echo bbp_get_author_link( $args );
 }
 	/**
 	 * Return the author link of the post

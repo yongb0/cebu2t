@@ -1403,15 +1403,8 @@ function bbp_topic_author_avatar( $topic_id = 0, $size = 40 ) {
 	 *                        avatar, topic id and size
 	 * @return string Avatar of the author of the topic
 	 */
-//=============================================================================================================
 	function bbp_get_topic_author_avatar( $topic_id = 0, $size = 40 ) {
 		$author_avatar = '';
-
-			$current_user = wp_get_current_user();
-			$current_id = $current_user->ID;
-			$avtar_image = get_user_meta( bbp_get_topic_author_id(), 'avtar_image' );
-			$user_info = get_userdata($current_id);
-			$user_description = $user_info->user_description;
 
 		$topic_id = bbp_get_topic_id( $topic_id );
 		if ( !empty( $topic_id ) ) {
@@ -1495,13 +1488,12 @@ function bbp_topic_author_link( $args = '' ) {
 			// Setup title and author_links array
 			$link_title   = !empty( $link_title ) ? ' title="' . esc_attr( $link_title ) . '"' : '';
 			$author_links = array();
-//------------------------------------------------------------------------------------------------------
+
 			// Get avatar
 			if ( 'avatar' === $r['type'] || 'both' === $r['type'] ) {
-
-				//$author_links['avatar'] = bbp_get_topic_author_avatar( $topic_id, $r['size'] );
+				$author_links['avatar'] = bbp_get_topic_author_avatar( $topic_id, $r['size'] );
 			}
-//============================================================================
+
 			// Get display name
 			if ( 'name' === $r['type'] || 'both' === $r['type'] ) {
 				$author_links['name'] = bbp_get_topic_author_display_name( $topic_id );

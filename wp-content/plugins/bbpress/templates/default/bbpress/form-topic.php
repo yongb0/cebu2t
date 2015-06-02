@@ -1,12 +1,3 @@
-
-
-<?php
-	global $current_user;
-      get_currentuserinfo();      
-	  $user = new WP_User( $current_user->ID  );
-	  if($user->roles[0]=='administrator') {
-?>
-
 <?php
 
 /**
@@ -90,7 +81,6 @@
 
 
 
-
 <?php // Author :  John Robert - Roy ?>
 					<?php do_action( 'bbp_theme_before_topic_form_price' ); ?>
 					
@@ -113,13 +103,8 @@
 
 					</p>
 <?php // Author :  John Robert - Roy ?>
-
-
-
-
-
 					
-
+					
 					<?php do_action( 'bbp_theme_before_topic_form_content' ); ?>
 
 					<?php bbp_the_content( array( 'context' => 'topic' ) ); ?>
@@ -284,6 +269,3 @@
 </div>
 
 <?php endif; ?>
-
-<?php } ?>
-

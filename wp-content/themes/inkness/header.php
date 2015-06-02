@@ -20,7 +20,7 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.0/isotope.pkgd.min.js"></script>
 <style>
 	.grid {
-  max-width: 1200px;
+  max-width: 1200px !important;
 }
 
 /* clear fix */

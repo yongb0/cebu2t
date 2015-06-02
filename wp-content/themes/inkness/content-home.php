@@ -3,10 +3,11 @@
  * @package Inkness
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class("homa archive col-md-4 grid-item"); ?>>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class("homa archive col-md-4"); ?>>
 <div class="article-wrapper">	
 	<?php if (has_post_thumbnail()) : ?>
-	<div class="featured-thumb col-md-12 col-xs-12" style="max-height:50px; overflow: hidden;">
+	<div class="featured-thumb col-md-12 col-xs-12">
 	<a href="<?php the_permalink(); ?>">
 	<?php
 		the_post_thumbnail('homepage-banner');	
@@ -24,16 +25,14 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-	
+
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
-	<div class="entry-content fdc">
-	<p>
+	<div class="entry-content">
 		<?php the_excerpt(); ?>
-	</p>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 	</div>
