@@ -45,8 +45,15 @@
 
 		<?php do_action( 'bbp_theme_before_topic_title' ); ?>
 
-		<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>"><?php bbp_topic_title(); ?></a>
+		
 
+
+		<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>"><?php bbp_topic_title(); ?>, </a>
+
+		<!-- jacob edited start -->
+		<h5>Price: <?php echo bbp_show_extra_fields1(); ?></h5>
+		<!-- jacob edited end -->
+		
 		<?php do_action( 'bbp_theme_after_topic_title' ); ?>
 
 		<?php bbp_topic_pagination(); ?>
@@ -57,7 +64,7 @@
 
 			<?php do_action( 'bbp_theme_before_topic_started_by' ); ?>
 
-			<span class="bbp-topic-started-by"><?php printf( __( 'Started by: %1$s', 'bbpress' ), bbp_get_topic_author_link( array( 'size' => '14' ) ) ); ?></span>
+			<span class="bbp-topic-started-by"><?php printf( __( 'Started by: %1$s', 'bbpress' ), bbp_get_topic_author_link( array( 'size' => '50' ) ) ); ?></span>
 
 			<?php do_action( 'bbp_theme_after_topic_started_by' ); ?>
 

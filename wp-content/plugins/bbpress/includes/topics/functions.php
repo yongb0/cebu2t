@@ -39,10 +39,29 @@ function bbp_insert_topic( $topic_data = array(), $topic_meta = array() ) {
 		'post_title'     => '',
 		'comment_status' => 'closed',
 		'menu_order'     => 0,
+		'post_price'	 => '',     // JAcob
+		'post_choice'	 => '',		// JAcob
 	), 'insert_topic' );
 
 	// Insert topic
 	$topic_id   = wp_insert_post( $topic_data );
+
+
+	// jacob creating custom field in bbpress topic form
+
+	add_action ( 'bbp_theme_before_topic_form_content', 'bbp_extra_fields');
+	function bbp_extra_fields() {
+	   $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field1', true);
+	   echo '<label for="bbp_extra_field1">Extra Field 1</label><br>';
+	   echo "<input type='text' name='bbp_extra_field1' value='".$value."'>";
+
+	   $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field2', true);
+	   echo '<label for="bbp_extra_field1">Extra Field 2</label><br>';
+	   echo "<input type='text' name='bbp_extra_field2' value='".$value."'>";
+}
+
+	// end jacob creating custom field in bbpress topic form
+
 
 	// Bail if no topic was added
 	if ( empty( $topic_id ) )
@@ -174,7 +193,7 @@ function bbp_new_topic_handler( $action = '' ) {
 	if ( empty( $topic_title ) )
 		bbp_add_error( 'bbp_topic_title', __( '<strong>ERROR</strong>: Your topic needs a title.', 'bbpress' ) );
 
-	/** Topic Content *********************************************************/
+	/** Topic Content *********************************************************/  
 
 	if ( !empty( $_POST['bbp_topic_content'] ) )
 		$topic_content = $_POST['bbp_topic_content'];
@@ -185,6 +204,32 @@ function bbp_new_topic_handler( $action = '' ) {
 	// No topic content
 	if ( empty( $topic_content ) )
 		bbp_add_error( 'bbp_topic_content', __( '<strong>ERROR</strong>: Your topic cannot be empty.', 'bbpress' ) );
+
+	/* Topic Price  */  //  JAcob
+
+	if ( !empty( $_POST['bbp_topic_choice'] ) )
+		$topic_price = $_POST['bbp_topic_price'];
+
+	// Filter and sanitize
+	$topic_price = apply_filters( 'bbp_new_topic_pre_price', $topic_price );
+
+	// No topic choice
+	if ( empty( $topic_content ) )
+		bbp_add_error( 'bbp_topic_choice', __( '<strong>ERROR</strong>: Your topic cannot be empty.', 'bbpress' ) );
+
+
+	/* Topic Choice  */  //  JAcob
+
+	if ( !empty( $_POST['bbp_topic_choice'] ) )
+		$topic_choice = $_POST['bbp_topic_choice'];
+
+	// Filter and sanitize
+	$topic_content = apply_filters( 'bbp_new_topic_pre_choice', $topic_content );
+
+	// No topic choice
+	if ( empty( $topic_content ) )
+		bbp_add_error( 'bbp_topic_choice', __( '<strong>ERROR</strong>: Your topic cannot be empty.', 'bbpress' ) );
+
 
 	/** Topic Forum ***********************************************************/
 
@@ -320,6 +365,8 @@ function bbp_new_topic_handler( $action = '' ) {
 		'post_parent'    => $forum_id,
 		'post_type'      => bbp_get_topic_post_type(),
 		'tax_input'      => $terms,
+		'post_price'	 => $topic_price,
+		'post_choice'	 => $topic_choice,
 		'comment_status' => 'closed'
 	) );
 

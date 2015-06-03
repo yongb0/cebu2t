@@ -44,6 +44,39 @@ function inkness_setup() {
 endif; // inkness_setup
 add_action( 'after_setup_theme', 'inkness_setup' );
 
+// jacob start
+
+add_action ( 'bbp_theme_before_topic_form_content', 'bbp_extra_fields');
+function bbp_extra_fields() {
+   $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field1', true);
+   echo '<label for="price">Price</label><br>';
+   echo "<input type='text' name='price' value='".$value."'>";
+}
+
+add_action ( 'bbp_new_topic', 'bbp_save_extra_fields', 10, 1 );
+add_action ( 'bbp_edit_topic', 'bbp_save_extra_fields', 10, 1 );
+
+function bbp_save_extra_fields($topic_id=0) {
+  if (isset($_POST) && $_POST['price']!='')
+    update_post_meta( $topic_id, 'price', $_POST['price'] );
+}
+
+add_action('bbp_template_before_replies_loop', 'bbp_show_extra_fields');
+function bbp_show_extra_fields() {
+  $topic_id = bbp_get_topic_id();
+  $value1 = get_post_meta( $topic_id, 'price', true);
+  echo "<h4>Price: ".$value1."</h4><br>";
+  // return $value1;
+}
+
+function bbp_show_extra_fields1() {
+  $topic_id = bbp_get_topic_id();
+  $value1 = get_post_meta( $topic_id, 'price', true);
+  // echo "<h4>Price: ".$value1."</h4><br>";
+  return $value1;
+}
+// jacob end
+
 function inkness_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'inkness' ),

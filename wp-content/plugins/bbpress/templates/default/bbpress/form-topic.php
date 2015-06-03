@@ -13,6 +13,7 @@
 
 <div id="bbpress-forums">
 
+
 	<?php bbp_breadcrumb(); ?>
 
 <?php endif; ?>
@@ -28,6 +29,11 @@
 <?php if ( bbp_current_user_can_access_create_topic_form() ) : ?>
 
 	<div id="new-topic-<?php bbp_topic_id(); ?>" class="bbp-topic-form">
+
+	<?php
+		
+
+	?>
 
 		<form id="new-post" name="new-post" method="post" action="<?php the_permalink(); ?>">
 
@@ -77,14 +83,48 @@
 					</p>
 
 					<?php do_action( 'bbp_theme_after_topic_form_title' ); ?>
+					
+					<?php
+					
+					// add_action ( 'bbp_theme_before_topic_form_content', 'bbp_extra_fields');
+					
+					// function bbp_extra_fields() {
+					// 	   $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field1', true);
+					// 	   echo '<label for="bbp_extra_field1">Price</label><br>';
+					// 	   echo "<input type='text' name='bbp_extra_field1' value='".$value."'><br>";
 
+					// 	   $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field2', true);
+					// 	   echo '<label for="bbp_extra_field1">Extra Field 2</label><br>';
+					// 	   echo "<input type='radio' name='bbp_extra_field2' value='Buying'>Buying <br>";
+					// 	   echo "<input type='radio' name='bbp_extra_field2' value='Selling'>Selling";
+					// 	} 
+					// add_action ( 'bbp_new_topic', 'bbp_save_extra_fields', 10, 1 );
+					// add_action ( 'bbp_edit_topic', 'bbp_save_extra_fields', 10, 1 );
+
+					// function bbp_save_extra_fields($topic_id=0) {
+					// 	  if (isset($_POST) && $_POST['bbp_extra_field1']!='')
+					// 	    update_post_meta( $topic_id, 'bbp_extra_field1', $_POST['bbp_extra_field1'] );
+					// 	  if (isset($_POST) && $_POST['bbp_extra_field1']!='')
+					// 	    update_post_meta( $topic_id, 'bbp_extra_field1', $_POST['bbp_extra_field2'] );
+					// 	}
+
+					// add_action('bbp_template_before_replies_loop', 'bbp_show_extra_fields');
+					// function bbp_show_extra_fields() {
+					// 	  $topic_id = bbp_get_topic_id();
+					// 	  $value1 = get_post_meta( $topic_id, 'bbp_extra_field1', true);
+					// 	  $value2 = get_post_meta( $topic_id, 'bbp_extra_field2', true);
+					// 	  echo "Field 1: ".$value1."<br>";
+					// 	  echo "Field 2: ".$value2."<br>";
+					// }	
+
+					?>
 
 
 
 <?php // Author :  John Robert - Roy ?>
-					<?php do_action( 'bbp_theme_before_topic_form_price' ); ?>
+					<?php // do_action( 'bbp_theme_before_topic_form_price' ); ?>
 					
-					<p>
+					<!-- <p>
 
 						<label for="bbp_topic_price">Price</label><br />
 
@@ -92,20 +132,20 @@
 					
 					</p>
 
-					<?php do_action( 'bbp_theme_after_topic_form_price' ); ?>
+					<?php // do_action( 'bbp_theme_after_topic_form_price' ); ?>
 
 
 					<p>
 
-					<input type="radio" name="bbp_topic_choice" value="buying"> Buying<br>
+					<input type="radio" name="bbp_topic_choice" value="Buying"> Buying<br>
 
 					<input type="radio" name="bbp_topic_choice" value="Selling" checked> Selling
 
-					</p>
+					</p> -->
 <?php // Author :  John Robert - Roy ?>
 					
 					
-					<?php do_action( 'bbp_theme_before_topic_form_content' ); ?>
+					<?php do_action( 'bbp_theme_before_topic_form_content', array( 'name' => 'bbp_topic_content') ); ?>
 
 					<?php bbp_the_content( array( 'context' => 'topic' ) ); ?>
 

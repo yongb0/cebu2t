@@ -10,7 +10,6 @@
 ?>
 
 <div id="post-<?php bbp_reply_id(); ?>" class="bbp-reply-header">
-
 	<div class="bbp-meta">
 
 		<span class="bbp-reply-post-date"><?php bbp_reply_post_date(); ?></span>
