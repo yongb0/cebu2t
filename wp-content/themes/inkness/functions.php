@@ -50,7 +50,7 @@ add_action ( 'bbp_theme_before_topic_form_content', 'bbp_extra_fields');
 function bbp_extra_fields() {
    $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field1', true);
    echo '<label for="price">Price</label><br>';
-   echo "<input type='text' name='price' value='".$value."'>";
+   echo "<input type='text' name='price' class='form-control' value='".$value."'>";
    $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field2', true);
    echo '<br><label for="price">Choice</label><br>';
    echo "<input type='radio' name='choice' value='Buying'> Buying <br>";
@@ -89,6 +89,10 @@ function bbp_show_extra_fields1() {
   return $value1;
 }
 // jacob end
+
+
+
+
 
 function inkness_widgets_init() {
 	register_sidebar( array(

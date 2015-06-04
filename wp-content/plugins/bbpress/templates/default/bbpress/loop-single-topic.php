@@ -51,7 +51,9 @@
 		<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>"><?php bbp_topic_title(); ?>, </a>
 
 		<!-- jacob edited start -->
-		<h5>Price: <?php echo bbp_show_extra_fields1(); ?></h5>
+	    <?php if(bbp_show_extra_fields1()!=null) { ?>
+			<h5>Price: <?php echo bbp_show_extra_fields1(); ?></h5>
+		<?php } ?>
 		<!-- jacob edited end -->
 		
 		<?php do_action( 'bbp_theme_after_topic_title' ); ?>
