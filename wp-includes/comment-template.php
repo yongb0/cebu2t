@@ -2261,7 +2261,17 @@ function comment_form( $args = array(), $post_id = null ) {
 			 */
 			do_action( 'comment_form_before' );
 			?>
+
+
+<?php
+
+if('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] != 'http://2thinkerscebu.local/sample-page/') { ?> 
+
+?>
+
 			<div id="respond" class="comment-respond">
+
+
 				<h3 id="reply-title" class="comment-reply-title"><?php comment_form_title( $args['title_reply'], $args['title_reply_to'] ); ?> <small><?php cancel_comment_reply_link( $args['cancel_reply_link'] ); ?></small></h3>
 				<?php if ( get_option( 'comment_registration' ) && !is_user_logged_in() ) : ?>
 					<?php echo $args['must_log_in']; ?>
@@ -2403,6 +2413,9 @@ function comment_form( $args = array(), $post_id = null ) {
 					</form>
 				<?php endif; ?>
 			</div><!-- #respond -->
+
+<?php } ?>
+
 			<?php
 			/**
 			 * Fires after the comment form.
