@@ -71,11 +71,13 @@
 
 			</div><!-- .bbp-topic-author -->
 
+
 			<div class="bbp-topic-content">
 
 				<?php do_action( 'bbp_theme_before_topic_content' ); ?>
 
 				<?php bbp_topic_content(); ?>
+
 
 				<?php do_action( 'bbp_theme_after_topic_content' ); ?>
 
