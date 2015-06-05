@@ -1,3 +1,13 @@
+
+<?php
+
+if('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] != 'http://cebu.2thinkers.net/%e3%82%b5%e3%82%a4%e3%83%88%e7%b4%b9%e4%bb%8b/') { 
+
+?>
+
+
+
+
 <?php
 /**
  * The template for displaying Comments.
@@ -110,3 +120,6 @@ if ( post_password_required() )
 	comment_form($args); ?>
 
 </div><!-- #comments -->
+
+
+<?php } ?>

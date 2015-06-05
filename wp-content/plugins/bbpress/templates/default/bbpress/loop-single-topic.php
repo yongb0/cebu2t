@@ -51,6 +51,7 @@
 		<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>"><?php bbp_topic_title(); ?>, </a>
 
 		<!-- jacob edited start -->
+<<<<<<< HEAD
 		<?php  
 
 		// add_action('bbp_template_before_replies_loop', 'bbp_show_extra_fields');
@@ -76,6 +77,11 @@
 		<?php //if (bbp_show_extra_fields1() != null) { ?>
 		<!-- <h5>Price: <?php  // echo bbp_show_extra_fields1(); ?></h5> -->
 		<?php //} ?>
+=======
+	    <?php if(bbp_show_extra_fields1()!=null) { ?>
+			<h5>Price: <?php echo bbp_show_extra_fields1(); ?></h5>
+		<?php } ?>
+>>>>>>> dace43308edafbaaefa97c5be9b9a34315020562
 		<!-- jacob edited end -->
 		
 		<?php do_action( 'bbp_theme_after_topic_title' ); ?>
