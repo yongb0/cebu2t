@@ -21,7 +21,7 @@
 
 // ** MySQL 設定 - この情報はホスティング先から入手してください。 ** //
 /** WordPress のためのデータベース名 */
-define('DB_NAME', '2thinkers_cebu');
+define('DB_NAME', 'cebu_ewd_feup_fields');
 
 /** MySQL データベースのユーザー名 */
 //define('DB_USER', '2thinkers');
