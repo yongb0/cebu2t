@@ -39,8 +39,8 @@ function bbp_insert_topic( $topic_data = array(), $topic_meta = array() ) {
 		'post_title'     => '',
 		'comment_status' => 'closed',
 		'menu_order'     => 0,
-		'post_price'	 => '',     // JAcob
-		'post_choice'	 => '',		// JAcob
+	//	'post_price'	 => '',     // JAcob
+	//	'post_choice'	 => '',		// JAcob
 	), 'insert_topic' );
 
 	// Insert topic
@@ -50,15 +50,15 @@ function bbp_insert_topic( $topic_data = array(), $topic_meta = array() ) {
 	// jacob creating custom field in bbpress topic form
 
 	add_action ( 'bbp_theme_before_topic_form_content', 'bbp_extra_fields');
-	function bbp_extra_fields() {
-	   $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field1', true);
-	   echo '<label for="bbp_extra_field1">Extra Field 1</label><br>';
-	   echo "<input type='text' name='bbp_extra_field1' value='".$value."'>";
+	// function bbp_extra_fields() {
+	//    $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field1', true);
+	//    echo '<label for="bbp_extra_field1">Extra Field 1</label><br>';
+	//    echo "<input type='text' name='bbp_extra_field1' value='".$value."'>";
 
-	   $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field2', true);
-	   echo '<label for="bbp_extra_field1">Extra Field 2</label><br>';
-	   echo "<input type='text' name='bbp_extra_field2' value='".$value."'>";
-}
+	//    $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field2', true);
+	//    echo '<label for="bbp_extra_field1">Extra Field 2</label><br>';
+	//    echo "<input type='text' name='bbp_extra_field2' value='".$value."'>";
+// }
 
 	// end jacob creating custom field in bbpress topic form
 
