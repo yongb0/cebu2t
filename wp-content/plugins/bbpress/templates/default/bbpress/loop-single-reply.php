@@ -77,18 +77,18 @@
 			 	echo "<br>";
 			 }
 
-			 if ( $choice == '') {
-			 	echo "TYPE: UNSPECIFIED ";
-			 	echo "<br>";
-			 }
+			 // if ( $choice == '') {
+			 // 	echo "TYPE: UNSPECIFIED ";
+			 // 	echo "<br>";
+			 // }
 
 			 if ($price != 0 AND $price != '') {
 			 	echo "PRICE: " . $price;
 			 }
 
-			 if ($price == '' OR $price == 0) {
-			 	echo "PRICE: UNSPECIFIED";
-			 }
+			 // if ($price == '' OR $price == 0) {
+			 // 	echo "PRICE: UNSPECIFIED";
+			 // }
 	 
 			 
 		// jacob end
