@@ -38,6 +38,7 @@
 
 				<?php endif; ?>
 
+
 				<?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
 
 					<div class="bbp-template-notice">

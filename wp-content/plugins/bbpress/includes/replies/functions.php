@@ -10,6 +10,42 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
+
+## jacob start ##
+
+## ADDING EXTRA FIELDS IN REPLY FORM, AND SAVING
+
+// add_action ('bbp_theme_before_topic_form_content', 'bbp_extra_fields');
+add_action ('bbp_theme_before_reply_form_content', 'bbp_extra_fields');
+function bbp_extra_fields() {
+   $value = get_post_meta( bbp_get_reply_id(), 'bbp_extra_field1', true);
+   echo '<label for="price">Price</label><br>';
+   echo "<input type='text'  class='form-control' name='price' value='".$value."' placeholder=' Price'>";
+   echo '<label for="choice">Choice</label><br>';
+   echo "<input type='radio' name='choice' value='Buying'> Buying <br>";
+   echo "<input type='radio' name='choice' value='Selling'> Selling";
+}
+add_action ( 'bbp_new_reply', 'bbp_save_extra_fields', 10, 1 );
+add_action ( 'bbp_edit_reply', 'bbp_save_extra_fields', 10, 1 );
+
+
+
+function bbp_save_extra_fields($reply_id = 0) {
+	if (isset($_POST) && $_POST['price']!='')
+		$price = $_POST['price'];
+	update_post_meta( $reply_id, 'price', $price );
+	if (isset($_POST) && $_POST['choice']!='')
+		$choice = $_POST['choice'];
+	update_post_meta( $reply_id, 'choice', $choice );
+
+}
+					
+
+## jacob end ##
+
+
+
+
 /** Insert ********************************************************************/
 
 /**

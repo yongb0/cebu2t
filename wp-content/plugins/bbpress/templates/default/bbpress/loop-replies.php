@@ -56,7 +56,6 @@
 	</li><!-- .bbp-body -->
 
 	<li class="bbp-footer">
-
 		<div class="bbp-reply-author"><?php  _e( 'Author',  'bbpress' ); ?></div>
 
 		<div class="bbp-reply-content">

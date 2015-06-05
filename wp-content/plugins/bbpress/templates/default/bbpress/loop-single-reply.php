@@ -17,6 +17,7 @@
 		<?php if ( bbp_is_single_user_replies() ) : ?>
 
 			<span class="bbp-header">
+
 				<?php _e( 'in reply to: ', 'bbpress' ); ?>
 				<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink( bbp_get_reply_topic_id() ); ?>"><?php bbp_topic_title( bbp_get_reply_topic_id() ); ?></a>
 			</span>
@@ -60,6 +61,40 @@
 	<div class="bbp-reply-content">
 
 		<?php do_action( 'bbp_theme_before_reply_content' ); ?>
+
+		<?php  
+		// jacob start
+		
+		## FOR DISPLAYING DATA FROM POST_META,
+		## PRICE, TYPE
+
+			 $choice = get_post_meta( bbp_get_reply_id(), 'choice', true);
+
+			 $price = get_post_meta( bbp_get_reply_id(), 'price', true);
+
+			 if ( $choice != '') {
+			 	echo "TYPE: " . $choice;
+			 	echo "<br>";
+			 }
+
+			 if ( $choice == '') {
+			 	echo "TYPE: UNSPECIFIED ";
+			 	echo "<br>";
+			 }
+
+			 if ($price != 0 AND $price != '') {
+			 	echo "PRICE: " . $price;
+			 }
+
+			 if ($price == '' OR $price == 0) {
+			 	echo "PRICE: UNSPECIFIED";
+			 }
+	 
+			 
+		// jacob end
+		?>
+
+		<?php echo "<br>DESCRIPTION: <br>"; ?>
 
 		<?php bbp_reply_content(); ?>
 

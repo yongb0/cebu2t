@@ -44,50 +44,57 @@ function inkness_setup() {
 endif; // inkness_setup
 add_action( 'after_setup_theme', 'inkness_setup' );
 
-// jacob start
-
-add_action ( 'bbp_theme_before_topic_form_content', 'bbp_extra_fields');
-function bbp_extra_fields() {
-   $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field1', true);
-   echo '<label for="price">Price</label><br>';
-   echo "<input type='text' name='price' value='".$value."'>";
-   $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field2', true);
-   echo '<br><label for="price">Choice</label><br>';
-   echo "<input type='radio' name='choice' value='Buying'> Buying <br>";
-   echo "<input type='radio' name='choice' value='Selling'> Selling";
-}
 
 
+// // jacob start
 
-add_action ( 'bbp_new_topic', 'bbp_save_extra_fields', 10, 1 );
-add_action ( 'bbp_edit_topic', 'bbp_save_extra_fields', 10, 1 );
+// add_action ( 'bbp_theme_before_topic_form_content', 'bbp_extra_fields');
+// function bbp_extra_fields() {
+//    $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field1', true);
+//    echo '<label for="price">Price</label><br>';
+//    echo "<input type='text' name='price' value='".$value."'>";
+//    $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field2', true);
+//    echo '<br><label for="price">Choice</label><br>';
+//    echo "<input type='radio' name='choice' value='Buying'> Buying <br>";
+//    echo "<input type='radio' name='choice' value='Selling'> Selling";
+// }
 
-function bbp_save_extra_fields($topic_id=0) {
-	if (isset($_POST) && $_POST['price']!='')
-	update_post_meta( $topic_id, 'price', $_POST['price'] );
-	if (isset($_POST) && $_POST['choice']!='')
-	update_post_meta( $topic_id, 'choice', $_POST['choice'] );
+// // bbp_extra_fields();
 
-}
+// add_action ( 'bbp_new_topic', 'bbp_save_extra_fields', 10, 1 );
+// add_action ( 'bbp_edit_topic', 'bbp_save_extra_fields', 10, 1 );
 
-add_action('bbp_template_before_replies_loop', 'bbp_show_extra_fields');
+// function bbp_save_extra_fields($topic_id=0) {
+// 	if (isset($_POST) && $_POST['price']!='')
+// 	update_post_meta( $topic_id, 'price', $_POST['price'] );
+// 	if (isset($_POST) && $_POST['choice']!='')
+// 	update_post_meta( $topic_id, 'choice', $_POST['choice'] );
 
-function bbp_show_extra_fields() {
-  $topic_id = bbp_get_topic_id();
-  $value1 = get_post_meta( $topic_id, 'price', true);
-  $choice = get_post_meta($topic_id, 'choice', true);
-  echo "<h4>Price: ".$value1."</h4>";
-  echo "<h4>Type: ".$choice."</h4><br>";
-  // return $value1;
-}
+// }
+
+// add_action('bbp_template_before_replies_loop', 'bbp_show_extra_fields');
+
+// function bbp_show_extra_fields() {
+//   $topic_id = bbp_get_topic_id();
+// 	// $topic_id = get_current_user_id();
+//   $value1 = get_post_meta( $topic_id, 'price', true);
+//   $choice = get_post_meta($topic_id, 'choice', true);
+//   echo "<h4>Price: ".$value1."</h4>";
+//   echo "<h4>Type: ".$choice."</h4>";
+//   // echo the_content();
+//   // echo $topic_id;
+//   // return $value1;
+// }
 
 
-function bbp_show_extra_fields1() {
-  $topic_id = bbp_get_topic_id();
-  $value1 = get_post_meta( $topic_id, 'price', true);
-  // echo "<h4>Price: ".$value1."</h4><br>";
-  return $value1;
-}
+// function bbp_show_extra_fields1() {
+//   $topic_id = bbp_reply_id();
+//   $value1 = get_post_meta( $topic_id, '_bbp_author_ip', true);
+//   // echo "<h4>Price: ".$value1."</h4><br>";
+//   return $value1;
+// }
+
+
 // jacob end
 
 function inkness_widgets_init() {

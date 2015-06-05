@@ -608,6 +608,73 @@ function bbp_topic_permalink( $topic_id = 0, $redirect_to = '' ) {
  * @param int $topic_id Optional. Topic id
  * @uses bbp_get_topic_title() To get the topic title
  */
+
+
+
+
+
+
+function bbp_topic_price( $topic_id = 0 ) {
+	echo bbp_get_topic_price( $topic_id );
+}
+	/**
+	 * Return the title of the topic
+	 *
+	 * @since bbPress (r2485)
+	 *
+	 * @param int $topic_id Optional. Topic id
+	 * @uses bbp_get_topic_id() To get the topic id
+	 * @uses get_the_title() To get the title
+	 * @uses apply_filters() Calls 'bbp_get_topic_title' with the title and
+	 *                        topic id
+	 * @return string Title of topic
+	 */
+	function bbp_get_topic_price( $topic_id = 0 ) {
+		$topic_id = bbp_get_topic_id( $topic_id );
+		$title    = get_the_price( $topic_id );
+
+		return apply_filters( 'bbp_get_topic_price', $title, $topic_id );
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Output the topic archive title
+ *
+ * @since bbPress (r3249)
+ *
+ * @param string $title Default text to use as title
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function bbp_topic_title( $topic_id = 0 ) {
 	echo bbp_get_topic_title( $topic_id );
 }
