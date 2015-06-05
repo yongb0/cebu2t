@@ -44,11 +44,10 @@ function inkness_setup() {
 endif; // inkness_setup
 add_action( 'after_setup_theme', 'inkness_setup' );
 
-<<<<<<< HEAD
-=======
+
 // jacob start
 
-add_action ( 'bbp_theme_before_topic_form_content', 'bbp_extra_fields');
+/*add_action ( 'bbp_theme_before_topic_form_content', 'bbp_extra_fields');
 function bbp_extra_fields() {
    $value = get_post_meta( bbp_get_topic_id(), 'bbp_extra_field1', true);
    echo '<label for="price">Price</label><br>';
@@ -57,8 +56,8 @@ function bbp_extra_fields() {
    echo '<br><label for="price">Choice</label><br>';
    echo "<input type='radio' name='choice' value='Buying'> Buying <br>";
    echo "<input type='radio' name='choice' value='Selling'> Selling";
-}
->>>>>>> dace43308edafbaaefa97c5be9b9a34315020562
+}*/
+
 
 
 // // jacob start

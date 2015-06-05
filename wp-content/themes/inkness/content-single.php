@@ -3,7 +3,7 @@
  * @package Inkness
  */
 ?>
-<?php $productId =  $_GET['id']; ?>
+<?php if(isset($_GET['id'])) { $productId =  $_GET['id'];  ?>
 <?php if(site_url().$_SERVER['REQUEST_URI']=='http://cebu.2thinkers.net/2015/06/05/310/?id='.$productId) { 
 
 global $wpdb;
@@ -84,7 +84,7 @@ global $wpdb;
 	</article><!-- #post-## -->
 
 
-<?php } else { //this is the end of url condition Author : Roy John Robert Jerodiaz  ?>
+<?php } } else { //this is the end of url condition Author : Roy John Robert Jerodiaz  ?>
 
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class('singular-item'); ?>>
