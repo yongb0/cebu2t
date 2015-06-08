@@ -51,40 +51,8 @@
 		<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>"><?php bbp_topic_title(); ?>, </a>
 
 		<!-- jacob edited start -->
-<<<<<<< HEAD
 
 
-
-=======
-		<?php  
-
-		// add_action('bbp_template_before_replies_loop', 'bbp_show_extra_fields');
-
-		// 			function bbp_show_extra_fields() {
-		// 			  $topic_id = bbp_get_topic_id();
-		// 			  $value1 = get_post_meta( $topic_id, 'price', true);
-		// 			  $choice = get_post_meta($topic_id, 'choice', true);
-		// 			  echo "<h4>Price: ".$value1."</h4>";
-		// 			  echo "<h4>Type: ".$choice."</h4><br>";
-		// 			  // return $value1;
-		// 			}
-
-
-		// 			function bbp_show_extra_fields1() {
-		// 			  $topic_id = bbp_get_topic_id();
-		// 			  $value1 = get_post_meta( $topic_id, 'price', true);
-		// 			  // echo "<h4>Price: ".$value1."</h4><br>";
-		// 			  return $value1;
-		// 			}
-
-		?>
-		<?php //if (bbp_show_extra_fields1() != null) { ?>
-		<!-- <h5>Price: <?php  // echo bbp_show_extra_fields1(); ?></h5> -->
-		<?php //} ?>
-	    <?php // if(bbp_show_extra_fields1()!=null) { ?>
-			<!-- <h5>Price: <?php // echo bbp_show_extra_fields1(); ?></h5> -->
-		<?php // } ?>
->>>>>>> cc1bbf127f43d7970e65f49cc157d4039b67caf9
 		<!-- jacob edited end -->
 		
 		<?php do_action( 'bbp_theme_after_topic_title' ); ?>
