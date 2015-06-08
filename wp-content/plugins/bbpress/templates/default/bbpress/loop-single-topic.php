@@ -45,15 +45,15 @@
 
 		<?php do_action( 'bbp_theme_before_topic_title' ); ?>
 
-		
-
-
 		<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink(); ?>"><?php bbp_topic_title(); ?>, </a>
+<<<<<<< HEAD
+=======
 
 		<!-- jacob edited start -->
 
 
 		<!-- jacob edited end -->
+>>>>>>> c767961c869ce2d1c089b9e0fccce42392a8f244
 		
 		<?php do_action( 'bbp_theme_after_topic_title' ); ?>
 

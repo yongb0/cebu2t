@@ -73,28 +73,19 @@
 			 $price = get_post_meta( bbp_get_reply_id(), 'price', true);
 
 			 if ( $choice != '') {
-			 	echo "TYPE: " . $choice;
-			 	echo "<br>";
+			 	echo "TYPE: " . $choice;		 	
+			 	echo "<br>";	 				 	
 			 }
-
-			 // if ( $choice == '') {
-			 // 	echo "TYPE: UNSPECIFIED ";
-			 // 	echo "<br>";
-			 // }
 
 			 if ($price != 0 AND $price != '') {
 			 	echo "PRICE: " . $price;
+			 	echo "<br>";		 	
 			 }
-
-			 // if ($price == '' OR $price == 0) {
-			 // 	echo "PRICE: UNSPECIFIED";
-			 // }
-	 
 			 
 		// jacob end
 		?>
 
-		<?php echo "<br>DESCRIPTION: <br>"; ?>
+		<?php echo "DESCRIPTION: <br>"; ?>
 
 		<?php bbp_reply_content(); ?>
 
