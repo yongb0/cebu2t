@@ -15,12 +15,12 @@ if(isset($_SESSION['product_save_success'])){ ?>
 <?php session_destroy();} ?>
 
 <div class="breadcrumb">
-	<div class="panel panel-default" style="margin-top:60px;">
+	<div class="panel panel-default" style="margin-top:40px;">
 		<div class="panel-heading">
-		<h2>
-		<span class="glyphicon glyphicon-pencil"></span>
+		<h4>
+			<span class="glyphicon glyphicon-pencil"></span>
 		 	Add Product
-		 	</h2>
+		 </h4>
 		</div>
 		<form action="admin.php?page=add_product_exec" method="post">
 			<div class="panel-body">
@@ -40,7 +40,12 @@ if(isset($_SESSION['product_save_success'])){ ?>
 						</div>
 						<div class="form-group">
 							<label for="product_description">Description</label>
-							<textarea name="product_description" rows="15" id="product_description" class="form-control" required="">
+							<textarea name="product_description" rows="9" id="product_description" class="form-control" required="">
+							</textarea>
+						</div>
+						<div class="form-group">
+							<label for="product_image_link">Add Image Link</label>
+							<textarea name="product_image_link" rows="6" id="product_image_link" class="form-control" required="">
 							</textarea>
 						</div>
 					</div>
@@ -74,10 +79,18 @@ if(isset($_SESSION['product_save_success'])){ ?>
 							<input type="text" name="product_floor" id="product_floor" class="form-control" placeholder="...."/>
 						</div>
 						<div class="form-group">
-							<label for="product_contact_number">Contact No.</label>
+							<label for="product_contact_person">Contact Person</label>
+							<input type="text" name="product_contact_person" id="product_contact_person" class="form-control" placeholder="Enter contact person" />
+						</div>
+						<div class="form-group">
+							<label for="product_contact_number">Person Contact No.</label>
 							<input type="text" name="product_contact_number" id="product_contact_number" class="form-control" placeholder="Enter contact no." />
 						</div>
-						<input type="text" value="FDC-05-04-2015" name="fdci_tkf">
+						<div class="form-group">
+							<label for="product_person_email">Person Email</label>
+							<input type="email" name="product_person_email" id="product_person_email" class="form-control" placeholder="Enter email" />
+						</div>
+						<input type="hidden" value="FDC-05-04-2015" name="fdci_tkf">
 					</div>
 				</div>
 			</div>

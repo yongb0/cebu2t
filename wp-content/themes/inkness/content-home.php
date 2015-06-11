@@ -32,7 +32,8 @@
 							<header class="entry-header">
 								<h1 class="entry-title">
 									<a href="<?php the_permalink(); ?>?id=<?php echo $result->id; ?>" rel="bookmark">
-									<img src="<?php echo $result->product_image; ?>" style="width:100%;height: 200px;"/>
+									<?php $json 	=	json_decode($result->product_image); ?>
+									<img src="<?php echo $json['1']; ?>" style="width:100%;height: 200px;"/>
 										<?php echo $result->title; ?>
 									</a>
 								</h1>

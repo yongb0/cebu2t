@@ -3,7 +3,7 @@
 * Plugin Name: FDCI Web Crawler
 * Description: FDCI customed Plugin for crawling webs
 * Version: 1.0.0
-* Author: John Robert Jerodiaz
+* Author: ROY - John Robert Jerodiaz 
 * License: AAPPSS
 */
 
@@ -122,7 +122,7 @@ function clean($str) {
 }
 
 // function to generate random string for product reference Id
-function generateRandomString($length = 8) {
+function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';
@@ -141,6 +141,13 @@ function add_product_exec(){
 	if(isset($_POST['fdci_c_p_s'])){
 		if($_POST['fdci_tkf']=='FDC-05-04-2015'){
 			$dataFormat	= array('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');
+			date_default_timezone_set("Asia/Manila");
+			$date = date('d.m.Y');
+			$mydate = strtoTime($date);
+
+			$getImage = preg_split("/[\s,]+/",$_POST['product_image_link']);
+			$jsonImage	=	json_encode($getImage);
+
 			$productData	=	array(
 				'reference_no' => 'FDCI-'.generateRandomString(),
 				'original_site'	=>	clean($_POST['product_original_site']),
@@ -149,14 +156,17 @@ function add_product_exec(){
 				'title'	=>	clean($_POST['product_title']),
 				'description'	=>	clean($_POST['product_description']),
 				'price'	=>	clean($_POST['product_price']),
+				'product_image' => $jsonImage,
 				'furnishing'	=>	clean($_POST['product_furnishing']),
 				'location'	=>	clean($_POST['product_location']),
-				'posted_date'	=>	'',
+				'posted_date'	=>	date('F d, Y', $mydate),
+				'name_of_posted_person'	=>	clean($_POST['product_contact_person']),
 				'square_area'	=>	clean($_POST['product_square_area']),
 				'bedrooms'	=>	clean($_POST['product_bedroom']),
 				'bathrooms'	=>	clean($_POST['product_bathroom']),
 				'floor'	=>	clean($_POST['product_floor']),
 				'contact_mobile'	=>	clean($_POST['product_contact_number']),
+				'contact_email'		=>	clean($_POST['product_person_email']),
 				'status'	=>	1
 				);
 			$wpdb->insert($tableName,$productData,$dataFormat);
@@ -172,44 +182,60 @@ function add_product_exec(){
 
 function fdci_Initialize_Table() {
 	global $wpdb;
-	global $tableName;
+	global $tableName1;
+	global $tableName2;
 
-	$tableName  = "fdci_web_crawler";
+	$tableName1  = "fdci_web_crawler";
+	$tableName2  = "fdci_site_crawl";
 
 	// create the ECPT metabox database table
-	if($wpdb->get_var("show tables like '{$tableName}'") != $tableName) 
+	if($wpdb->get_var("show tables like '{$tableName1}'") != $tableName1) 
 	{
 
-		$sql = "CREATE TABLE " . $tableName . " (
-		`id` int(100) NOT NULL AUTO_INCREMENT primary key,
-		`reference_no` varchar(100),
-		`original_site` text,
-		`site_link_id` tinyint, 
-		`original_post_link` text,
-		`title` tinytext,
-		`description` text,
-		`price` varchar(100),
-		`product_image` text,
-		`furnishing` text,
-		`location` text,
-		`posted_date` datetime default '0000-00-00 00:00:00',
-		`square_area` text,
-		`bedrooms` text,
-		`bathrooms` text,
-		`floor` text,
-		`name_of_posted_person` varchar(100),
-		`contact_mobile` text,
-		`contact_email` text,
-		`contact_landline` text,
-		`created` timestamp default current_timestamp,
-		`modified` datetime default '0000-00-00 00:00:00',
-		`status` tinyint
-		);";
-		
-		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');	
-		dbDelta($sql);
+		$table1 = "CREATE TABLE " . $tableName1 . " (
+		  `id` int(100) NOT NULL AUTO_INCREMENT primary key,
+		  `reference_no` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+		  `original_site` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `site_link_id` tinyint(4) DEFAULT NULL,
+		  `original_post_link` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `title` tinytext CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `price` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+		  `product_image` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `furnishing` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `location` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `posted_date` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+		  `square_area` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `bedrooms` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `bathrooms` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `floor` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `name_of_posted_person` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+		  `contact_mobile` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `contact_email` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `contact_landline` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+		  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		  `modified` datetime DEFAULT '0000-00-00 00:00:00',
+		  `status` tinyint(4) DEFAULT NULL
+		) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;";
 
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');	
+		dbDelta($table1);
 	}
+
+    //create table for site_crawler
+	if($wpdb->get_var("show tables like '{$tableName2}'") != $tableName2) 
+	{
+	    $table2 = "CREATE TABLE " . $tableName2 . " (
+		  `id` int(4) NOT NULL AUTO_INCREMENT primary key,
+		  `url` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+		  `flag` int(4) NOT NULL,
+		  `class` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+		) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1; ";	
+
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+		dbDelta($table2);
+	}
+	
 }
 
 
