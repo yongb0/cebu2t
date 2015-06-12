@@ -4,7 +4,7 @@
  */
 ?>
 <?php if(isset($_GET['id'])) { $productId =  $_GET['id']; } else { $productId='00'; } ?>
-<?php if(site_url().$_SERVER['REQUEST_URI']=='http://cebu.2thinkers.net/2015/06/05/310/?id='.$productId) { ?>
+<?php if(site_url().$_SERVER['REQUEST_URI']=='http://2thinkerscebu.local/testing-single/?id='.$productId) { ?>
   
 <div class="breadcrumb">
 		<div class="row">
