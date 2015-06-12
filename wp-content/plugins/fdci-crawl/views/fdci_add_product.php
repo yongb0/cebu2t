@@ -44,7 +44,8 @@ if(isset($_SESSION['product_save_success'])){ ?>
 							</textarea>
 						</div>
 						<div class="form-group">
-							<label for="product_image_link">Add Image Link</label>
+							<label for="product_image_link">Add Image Link</label><br>
+							<small><b>Note: </b> Add space in every image link inputed</small>
 							<textarea name="product_image_link" rows="6" id="product_image_link" class="form-control" required="">
 							</textarea>
 						</div>

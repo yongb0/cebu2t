@@ -9,8 +9,7 @@
 	print_r($results);
 	print_r($sql);*/
 ?>
-
-<?php if(site_url().$_SERVER['REQUEST_URI']=='http://2thinkerscebu.local/category/cebu-listing/') { ?>
+<?php if(site_url().$_SERVER['REQUEST_URI']=='http://cebu.2thinkers.net/category/cebu-listing/') { ?>
 
 	<?php
 	global $wpdb;
@@ -39,7 +38,9 @@
 								</h1>
 
 								<div class="entry-meta">
+								 <?php if($result->posted_date!='') { ?>
 								   <b>Posted date : </b> <?php echo $result->posted_date; ?>
+								 <?php } ?>
 								</div><!-- .entry-meta -->
 							</header><!-- .entry-header -->
 							<b style="font-size:15px; color: orange ">Description : </b>

@@ -33,7 +33,12 @@ class fdci_web_crawler {
         {
             $con = $this->connection();
             $description = $this->clean(mysqli_real_escape_string($con,$description));
-            var_dump($description);
+            $furnishing = $this->clean(mysqli_real_escape_string($con,$furnishing));
+            $posted_date = $this->clean(mysqli_real_escape_string($con,$posted_date));
+            $bedrooms = $this->clean(mysqli_real_escape_string($con,$bedrooms));
+            $bathrooms = $this->clean(mysqli_real_escape_string($con,$bathrooms));
+            $floor = $this->clean(mysqli_real_escape_string($con,$floor));
+            $name_of_posted_person = $this->clean(mysqli_real_escape_string($con,$name_of_posted_person));
             
             $result = mysqli_query($con,"SELECT * FROM fdci_web_crawler WHERE reference_no = '$reference_no' AND site_link_id = '$site_link_id'");
             if(mysqli_num_rows($result)==0) {

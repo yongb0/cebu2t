@@ -70,8 +70,31 @@ function fdci_Plugin_Menu() {
     	"manage_options",
     	"execute_crawl",
     	"execute_crawl");
+    add_submenu_page(
+    	"",
+    	"Edit Field",
+    	"Edit Field",
+    	"manage_options",
+    	"delete_product",
+    	"delete_product");
+    add_submenu_page(
+    	"",
+    	"Edit Field",
+    	"Edit Field",
+    	"manage_options",
+    	"update_product",
+    	"update_product");
+    
+    add_submenu_page(
+    	"",
+    	"Edit Field",
+    	"Edit Field",
+    	"manage_options",
+    	"dis_in_product",
+    	"dis_in_product");
 
 }
+
 
 
 /**
@@ -100,6 +123,68 @@ function execute_crawl(){
 	header("location:".$url.'about_fdci_plugin');
 	exit();
 }
+function delete_product(){
+	global $wpdb;
+	$url = site_url().'/wp-admin/admin.php?page=';
+	if(isset($_POST['id'])){
+		$id = $_POST['id'];
+		$wpdb->query($wpdb->prepare("DELETE FROM fdci_web_crawler WHERE id='%d'",$id));
+		session_start();
+		$_SESSION['product_delete_success']	= 'One Product successfuly deleted.';
+		header("location:".$url.'fdci_view_product');
+		exit();
+	}else{
+		header("location:".$url.'fdci_view_product');
+		exit();
+	}
+	
+}
+
+function dis_in_product(){
+	global $wpdb;
+	$url = site_url().'/wp-admin/admin.php?page=';
+	if(isset($_POST['id'])){
+		$id = $_POST['id'];
+		$status = $_POST['status'];
+		session_start();
+		if($status==1){ 
+			$wpdb->query($wpdb->prepare("UPDATE fdci_web_crawler SET status=0 WHERE id=$id"));
+			$_SESSION['product_delete_success']	= 'One Product successfuly disable.';
+		}else{
+			$wpdb->query($wpdb->prepare("UPDATE fdci_web_crawler SET status=1 WHERE id=$id"));
+			$_SESSION['product_delete_success']	= 'One Product successfuly inable.';
+		}
+		header("location:".$url.'fdci_view_product');
+		exit();
+	}else{
+		header("location:".$url.'fdci_view_product');
+		exit();
+	}
+	
+}
+
+function update_product(){
+	global $wpdb;
+	$url = site_url().'/wp-admin/admin.php?page=';
+	if(isset($_POST['id'])){
+		$id = $_POST['id'];
+		$des = $_POST['description'];
+		$price = $_POST['price'];
+		$title = $_POST['title'];
+
+		$wpdb->query($wpdb->prepare("UPDATE fdci_web_crawler SET description='$des', price='$price', title='$title'  WHERE id=$id"));
+
+		session_start();
+		$_SESSION['product_delete_success']	= 'One Product successfuly updated.';
+		header("location:".$url.'fdci_view_product');
+		exit();
+	}else{
+		header("location:".$url.'fdci_view_product');
+		exit();
+	}
+	
+}
+
 function about_fdci_plugin(){
 	wp_enqueue_style( 'premium.css', plugin_dir_url(__FILE__) . 'webroot/css/bootstrap.min.css');
 	wp_enqueue_style( 'premium.css', plugin_dir_url(__FILE__) . 'webroot/css/bootstrap-theme.min.css');
@@ -108,7 +193,7 @@ function about_fdci_plugin(){
 
 function fdci_select_exec($selectTable){
 	global $wpdb;
-	$sql = "SELECT * FROM $selectTable ";
+	$sql = "SELECT * FROM $selectTable";
 	$results = $wpdb->get_results($sql) or die(mysql_error());
 	return $results;
 }

@@ -73,7 +73,9 @@ class locanto extends fdci_web_crawler {
                 $con = parent::connection();
 
                 $result = mysqli_query($con,"SELECT * FROM fdci_web_crawler WHERE reference_no = '$propID' AND site_link_id = '$site_link_id'");
-                if(mysqli_num_rows($result) == 0) {
+                if(mysqli_num_rows($result) > 0) {
+                    die();
+                }
 
 
 
@@ -202,7 +204,7 @@ class locanto extends fdci_web_crawler {
             $numberOfItem++;
             $allItem++;
                 
-                } }
+                 }
                 $page++;
             }while($numberOfItem==25);{
 
