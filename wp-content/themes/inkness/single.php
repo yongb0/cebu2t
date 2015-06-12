@@ -12,7 +12,7 @@ get_header(); ?>
 
 <?php $id = $_GET['id']; ?>
 
-<?php if(site_url().$_SERVER['REQUEST_URI']=='http://2thinkerscebu.local/2015/06/04/cebu-listing/?id='.$id) { ?>
+<?php if(site_url().$_SERVER['REQUEST_URI']=='http://2thinkerscebu.local/testing-single/?id='.$id) { ?>
 	<div class="breadcrumb">
 		<div class="row">
 			<div class="col-sm-12">
