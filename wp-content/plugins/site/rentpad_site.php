@@ -149,7 +149,7 @@ class rentpad extends fdci_web_crawler {
                   $jsonImage = json_encode($image);
 
                   // get contact person
-                  $person = $xpath->query('//div[@id="contact-name"]')[0]->nodeValue;
+                  $person = $xpath->query('//div[@id="contact-name"]')->nodeValue;
                   $contact_person = trim($person);
 
                } if($shortTerm==1) {
@@ -163,7 +163,7 @@ class rentpad extends fdci_web_crawler {
               $site_link_id  =  '2';
               $original_post_link    =  $siteUrl;
               $title =  $title;
-              $description   = $Communitydescription;
+              $description   = $descriptions;
               $price =  $longMonthRate;
               $product_image =  $jsonImage;
               $furnishing    =  $furnishing;

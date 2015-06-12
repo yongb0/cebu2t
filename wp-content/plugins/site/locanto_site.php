@@ -166,6 +166,7 @@ class locanto extends fdci_web_crawler {
                                         $imgs = $imgs.' '.$rowItem;
                                     }
                                 }
+                                $imgs = $imgs.' '.$prop_front_img;
 
                                 ## Location condition
                                 if ($propStreet != '') {

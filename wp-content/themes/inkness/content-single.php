@@ -77,7 +77,7 @@
 										<th>Price</th>
 									<?php } ?>
 
-									<?php if($row->square_area!='') { ?>
+									<?php if($row->square_area!=''&&$row->square_area!=0) { ?>
 										<th>Square Area</th>
 									<?php } ?>
 
@@ -100,11 +100,17 @@
 								</tr>
 								<tr>
 								    <?php if($row->price!='') { ?>
-										<td><?php echo $row->price; ?></td>
+										<td> ₱ 
+										<?php if($row->site_link_id==1) { ?>
+										<?php echo number_format($row->price); ?>
+										<?php }else { ?>
+										<?php echo $row->price; } ?>
+										.00
+										</td>
 									<?php } ?>
 
-									<?php if($row->square_area!='') { ?>
-										<td><?php echo $row->square_area; ?></td>
+									<?php if($row->square_area!=''&&$row->square_area!=0) { ?>
+										<td><?php echo $row->square_area; ?> sqm</td>
 									<?php } ?>
 
 
